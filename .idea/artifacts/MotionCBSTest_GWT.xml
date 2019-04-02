@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact name="MotionCBSTest:GWT">
+    <output-path>$PROJECT_DIR$/out/artifacts/MotionCBSTest_GWT</output-path>
+    <root id="root">
+      <element id="gwt-compiler-output" facet="MotionCBSTest/gwt/GWT" />
+    </root>
+  </artifact>
+</component>
