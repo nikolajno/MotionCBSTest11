@@ -2,76 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="254705e7-0ad4-425e-b90c-c4606346f8d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MotionCBSTest_GWT.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MotionCBSTest_Web_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/212b1bb3-f4eb-49c3-883b-36bf756854b9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b50b3d3-5be0-4dad-a024-37c24fc388c6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b50b3d3-5be0-4dad-a024-37c24fc388c6/storage_v2/_src_/schema/oevelse9.wMiVuA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b50b3d3-5be0-4dad-a024-37c24fc388c6/storage_v2/_src_/schema/oevelse99.eU8jWg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6b50b3d3-5be0-4dad-a024-37c24fc388c6/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/a0d8dad3-fc58-46f9-87e7-f1d1adca68c3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/a7834d0d-bda7-4076-885b-310d14ec1396.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/aef20edf-5bb5-4387-8b36-42fde4c1cd6d.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b2ea51cd-a5af-4802-9a13-3d3817258d40.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b2ea51cd-a5af-4802-9a13-3d3817258d40/storage_v2/_src_/schema/db.fgwAAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c653020a-689f-4e27-8f0b-34ca8c48c5fa.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/ccaaed20-264e-496d-afb1-a94823754e80.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gwt_user__3_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_15.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MotionCBSTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169CA943E26" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169CA944DDE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169CA950117" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169CA96765A" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169CA96EFB3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169CA97A2D5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169CAA651F7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169CAA65D19" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169CAAAC4D1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169CAAB81ED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169CACFB892" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169CAD42DFF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DD804756" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DD85BEB5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DD87B0E8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DDA3A330" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DDC01EDB" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DDDDD4B9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DDE164CB" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DDE3B622" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DDE5BF6D" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DDE5FF38" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DDE6169F" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DDE9013D" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DDEC400E" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gwt-unitCache/gwt-unitCache-72cb1b634ef8ae81083ee3d69c942d236fe6aafe-FF35F588CF7564DE259004F02565B00E-00000169DDEC9BA6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-java-8.0.15.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/motionCBSTest/MotionCBSTest.gwt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/MotionCBSTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/rpc/MotionCBSTestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/rpc/MotionCBSTestServiceAsync.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/ContentPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.ui.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/motionCBSTest/shared/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/MotionCBSTest.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/MotionCBSTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/MotionCBSTest/03CF8D881ABDFA1BB007B53D1C5FC8BF.gwt.rpc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/MotionCBSTest/B9AD01AE2CA60F1B2F3B072418F2FC9B.gwt.rpc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/MotionCBSTest/F42C0E8F29D124D4D32EA64BC1214F17.gwt.rpc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/MotionCBSTest/MotionCBSTest.nocache.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/MotionCBSTest/clear.cache.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/WEB-INF/lib/gwt-servlet.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -104,68 +36,15 @@
         <item name="motioncbs@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="motioncbs@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="motioncbs: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="motioncbs@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="motioncbs: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="trainers: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1357001370">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="271" />
-          <entry key="txt" value="9" />
-          <entry key="xml" value="49" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="271" />
-          <entry key="PLAIN_TEXT" value="9" />
-          <entry key="XML" value="49" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="11" />
-          <entry key="sql" value="8" />
-          <entry key="trainers" value="1" />
-          <entry key="xml" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Database Element" value="1" />
-          <entry key="JAVA" value="11" />
-          <entry key="Scratch" value="8" />
-          <entry key="XML" value="3" />
-        </counts>
-      </usages-collector>
-    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/MotionCBSTest.gwt.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="240">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
@@ -174,7 +53,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1429">
+            <state relative-caret-position="1155">
               <caret line="89" column="66" selection-start-line="89" selection-start-column="66" selection-end-line="89" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -186,7 +65,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/war/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="180">
               <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
             </state>
           </provider>
@@ -195,7 +74,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/rpc/MotionCBSTestService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="270">
               <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -207,7 +86,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/MotionCBSTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-509">
+            <state relative-caret-position="165">
               <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -219,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/ContentPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="315">
               <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
             </state>
           </provider>
@@ -228,7 +107,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/rpc/MotionCBSTestServiceAsync.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="165">
               <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -240,7 +119,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
+            <state relative-caret-position="195">
               <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -252,8 +131,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="15">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -264,7 +143,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
+            <state relative-caret-position="60">
               <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
@@ -304,12 +183,6 @@
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
@@ -323,105 +196,7 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="mysql-connector-java-8.0.15.jar" type="ab9368bb:PsiFileNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="rpc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="war" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="war" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -432,7 +207,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554207562000" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554369103072" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DoekBook v2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -501,16 +276,26 @@
       <workItem from="1553884437754" duration="1491000" />
       <workItem from="1553886113662" duration="759000" />
       <workItem from="1554198902268" duration="8506000" />
+      <workItem from="1554208710535" duration="325000" />
     </task>
+    <task id="LOCAL-00001" summary="hsh">
+      <created>1554208851268</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1554208851268</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22703000" />
+    <option name="totallyTimeSpent" value="23028000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1513" height="1013" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16563573" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16809729" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -518,10 +303,9 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Database Console" weight="0.32945284" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4975945" visible="true" weight="0.32945284" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49713877" weight="0.32866243" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.90772533" weight="0.3993015" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -529,28 +313,30 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection Results" order="9" weight="0.3299363" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.5024055" side_tool="true" visible="true" weight="0.32945284" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5028612" side_tool="true" visible="true" weight="0.32866243" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49928468" weight="0.32945284" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Console" order="15" weight="0.32945284" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.15463917" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.15450644" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="hsh" />
+    <option name="LAST_COMMIT_MESSAGE" value="hsh" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/../gwt-2.8.2/gwt-user.jar!/com/google/gwt/dom/client/Element.java" />
@@ -600,30 +386,14 @@
     <entry file="file://$PROJECT_DIR$/war/MotionCBSTest.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6b50b3d3-5be0-4dad-a024-37c24fc388c6/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b2ea51cd-a5af-4802-9a13-3d3817258d40/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c653020a-689f-4e27-8f0b-34ca8c48c5fa/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ccaaed20-264e-496d-afb1-a94823754e80/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a7834d0d-bda7-4076-885b-310d14ec1396/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/212b1bb3-f4eb-49c3-883b-36bf756854b9/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a0d8dad3-fc58-46f9-87e7-f1d1adca68c3/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/aef20edf-5bb5-4387-8b36-42fde4c1cd6d/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6b50b3d3-5be0-4dad-a024-37c24fc388c6/console.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b2ea51cd-a5af-4802-9a13-3d3817258d40/console.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c653020a-689f-4e27-8f0b-34ca8c48c5fa/console.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ccaaed20-264e-496d-afb1-a94823754e80/console.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a7834d0d-bda7-4076-885b-310d14ec1396/console.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/212b1bb3-f4eb-49c3-883b-36bf756854b9/console.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a0d8dad3-fc58-46f9-87e7-f1d1adca68c3/console.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/aef20edf-5bb5-4387-8b36-42fde4c1cd6d/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.ui.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
@@ -631,13 +401,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/GWT/gwt-2.8.2/gwt-user.jar!/com/google/gwt/core/client/EntryPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/GWT/gwt-2.8.2/gwt-user.jar!/com/google/gwt/core/client/EntryPoint.java" />
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/shared/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -645,47 +409,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://aef20edf-5bb5-4387-8b36-42fde4c1cd6d/schema/motioncbs/table/trainers" />
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/MotionCBSTest.gwt.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="240">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
+        <state relative-caret-position="1155">
+          <caret line="89" column="66" selection-start-line="89" selection-start-column="66" selection-end-line="89" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://aef20edf-5bb5-4387-8b36-42fde4c1cd6d/schema/motioncbs/table/trainers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/rpc/MotionCBSTestService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="270">
           <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -693,10 +444,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/rpc/MotionCBSTestServiceAsync.java">
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/MotionCBSTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="165">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -705,35 +456,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/ContentPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="315">
           <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/MotionCBSTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/rpc/MotionCBSTestServiceAsync.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-509">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        <state relative-caret-position="165">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1429">
-          <caret line="89" column="66" selection-start-line="89" selection-start-column="66" selection-end-line="89" selection-end-column="66" />
+        <state relative-caret-position="195">
+          <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="15">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -795,7 +553,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Web|MotionCBSTest</last-edited>
+          <last-edited>GWT|MotionCBSTest</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -819,7 +577,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>mysql-connector-java-8.0.15</last-edited>
+          <last-edited>gwt-user (3)</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
