@@ -72,7 +72,8 @@ public class MainController {
 
                         } else if (user.getType() == 2) {
                             userController.loadUser(user);
-
+                            content.changeView(content.getMainUserView());
+                            content.getMainUserView().changeView(content.getMainUserView().getUsersView());
                         }
                     }
 

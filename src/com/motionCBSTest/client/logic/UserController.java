@@ -20,8 +20,6 @@ public class UserController {
         this.motionCBSTestServiceAsync = motionCBSTestServiceAsync;
 
         listProviderUsers = new ListDataProvider<>();
-
-
     }
 
 

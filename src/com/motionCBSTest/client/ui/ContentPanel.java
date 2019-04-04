@@ -2,6 +2,7 @@ package com.motionCBSTest.client.ui;
 
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.DeckLayoutPanel;
+import com.google.gwt.user.client.ui.Widget;
 import com.motionCBSTest.client.ui.login.LoginView;
 
 public class ContentPanel  extends Composite {
@@ -19,6 +20,10 @@ public class ContentPanel  extends Composite {
         contentPanel.showWidget(loginView);
 
         initWidget(contentPanel);
+    }
+
+    public void changeView(Widget panel) {
+        contentPanel.showWidget(panel);
     }
 
     public LoginView getLoginView() {return loginView;}
