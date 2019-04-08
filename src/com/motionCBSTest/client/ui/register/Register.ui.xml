@@ -1,6 +1,72 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-    <g:HTMLPanel>
+    <ui:style>
+        .outerPanel {
+            display: flex;
+            width: 100%;
+            background-color: #E6E8EC;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .centerBox {
+            background-color: #48718e;
+            height: 250px;
+            width: 25%;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .textInput {
+            font-size: 18px;
+            height: 32px;
+            border-radius: 2px;
+            width: 100%;
+            color: #333;
+            border: none;
+        }
+
+        .btn {
+            height: 32px;
+            width: 100%;
+            border: none;
+            border-radius: 2px;
+            font-size: 18px;
+            background-color: #333;
+            cursor: pointer;
+            cursor: hand;
+            color: #fff;
+        }
+        .radioButtons {
+            margin-left: 10px;
+        }
+
+    </ui:style>
+
+    <g:HTMLPanel styleName="{style.outerPanel}">
+        <g:VerticalPanel styleName="{style.centerBox}" horizontalAlignment="ALIGN_CENTER">
+            <g:Label text="MotionCBS Register" styleName="{style.title}" />
+            <g:TextBox styleName="{style.textInput}" ui:field="newtxtFname" alignment="CENTER"/>
+            <g:TextBox styleName="{style.textInput}" ui:field="newtxtLname" alignment="CENTER"/>
+            <g:TextBox styleName="{style.textInput}" ui:field="newtxtEmail" alignment="CENTER"/>
+            <g:TextBox styleName="{style.textInput}" ui:field="newtxtAddress" alignment="CENTER"/>
+            <g:TextBox styleName="{style.textInput}" ui:field="newtxtMobileNo" alignment="CENTER"/>
+            <g:TextBox styleName="{style.textInput}" ui:field="newtxtEducation" alignment="CENTER"/>
+            <g:TextBox styleName="{style.textInput}" ui:field="newtxtExperience" alignment="CENTER"/>
+            <g:TextBox styleName="{style.textInput}" ui:field="newtxtHoursPrWeek" alignment="CENTER"/>
+            <g:PasswordTextBox styleName="{style.textInput}" ui:field="newtxtPassword" alignment="CENTER"/>
+            <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newCrossfitBtn" text="Crossfit"/>
+            <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newSpinningBtn" text="Spinning"/>
+            <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newHitBtn" text="H.I.T."/>
+            <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newStramopBtn" text="Stram-Op"/>
+            <g:Button styleName="{style.btn}" text="Register" ui:field="registerBtn" />
+        </g:VerticalPanel>
     </g:HTMLPanel>
 </ui:UiBinder>
