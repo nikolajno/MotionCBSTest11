@@ -21,7 +21,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
     //private static final String JDBC_DRIVER = "com.mysql.jdcb.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/motioncbs";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "20zsky2i";
+    private static final String PASSWORD = "emj39bqg";
 
     private static Connection connection = null;
 
@@ -85,10 +85,18 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             // This loop will create and set a user if anyone found and there by returned in the resultSet
             while (resultSet.next()) {
                 user = new User();
-                // user.setId(resultSet.getInt("id"));
                 user.setMobilenr(resultSet.getInt("mobileNr"));
                 user.setPassword(resultSet.getString("password"));
+                user.setFname(resultSet.getString("firstname"));
+                user.setLname(resultSet.getString("lastname"));
+                user.setEmail(resultSet.getString("email"));
+                user.setAddress(resultSet.getString("address"));
+                user.setEducation(resultSet.getString("education"));
+                user.setExperience(resultSet.getInt("experience"));
+                user.setHoursPrWeek(resultSet.getInt("hoursPrWeek"));
+                user.setTeamtype(resultSet.getString("teamtype_teamID"));
                 user.setType(resultSet.getInt("type"));
+                user.setId(resultSet.getInt("id"));
             }
             // The catch which is used if either the statement or connection is failing
         } catch (SQLException e) {

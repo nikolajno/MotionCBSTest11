@@ -1,5 +1,17 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+    <ui:style>
+        /*.outerPanel {
+            display: flex;
+            width: 100%;
+            background-color: #E6E8EC;
+            justify-content: center;
+            align-items: center;
+        }*/
+
+    </ui:style>
+
     <g:HTMLPanel>
 
     </g:HTMLPanel>

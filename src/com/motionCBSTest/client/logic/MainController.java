@@ -12,8 +12,9 @@ import com.motionCBSTest.shared.User;
 public class MainController {
     private ContentPanel content;
     private MotionCBSTestServiceAsync motionCBSTestService;
-
     private UserController userController;
+    private User currentUser;
+
 
     public MainController(ContentPanel content, MotionCBSTestServiceAsync motionCBSTestService){
         this.content = content;

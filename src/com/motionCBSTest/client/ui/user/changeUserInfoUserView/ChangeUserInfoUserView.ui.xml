@@ -2,6 +2,14 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <ui:style>
 
+        .outerPanel {
+            display: flex;
+            width: 100%;
+            background-color: #E6E8EC;
+            justify-content: center;
+            align-items: center;
+        }
+
         .changeInfoContainer {
             display: flex;
             width: 100%;
@@ -12,7 +20,7 @@
             font-size: 14px;
             font-weight: bold;
             color: black;
-            width: 75px;
+            width: 125px;
         }
 
         .input {
@@ -33,7 +41,7 @@
         }
 
         .textInput {
-            font-size: 18px;
+            font-size: 14px;
             height: 32px;
             border-radius: 2px;
             width: 100%;
@@ -60,7 +68,7 @@
 
     </ui:style>
 
-    <g:HTMLPanel>
+    <g:HTMLPanel styleName="{style.outerPanel}">
         <g:VerticalPanel spacing="15">
 
             <g:FlowPanel styleName="{style.changeInfoContainer}">
@@ -95,22 +103,22 @@
 
             <g:FlowPanel styleName="{style.changeInfoContainer}">
                 <g:Label styleName="{style.title}" text="Års erfaring:"></g:Label>
-                <g:ListBox ui:field="lstExperience" styleName="{style.textInput} {style.input}"></g:ListBox>
+                <g:TextBox ui:field="txtExperience" styleName="{style.textInput} {style.input}"></g:TextBox>
             </g:FlowPanel>
 
             <g:FlowPanel styleName="{style.changeInfoContainer}">
                 <g:Label styleName="{style.title}" text="Timer om ugen:"></g:Label>
-                <g:ListBox ui:field="lstHoursPrWeek" styleName="{style.textInput} {style.input}"></g:ListBox>
+                <g:TextBox ui:field="txtHoursPrWeek" styleName="{style.textInput} {style.input}"></g:TextBox>
             </g:FlowPanel>
 
             <g:FlowPanel styleName="{style.changeInfoContainer}">
                 <g:Label styleName="{style.title}" text="Pinkode:"></g:Label>
-                <g:TextBox ui:field="txtPassword" styleName="{style.textArea}"></g:TextBox>
+                <g:TextBox ui:field="txtPassword" styleName="{style.textInput}"></g:TextBox>
             </g:FlowPanel>
 
             <g:FlowPanel styleName="{style.changeInfoContainer}">
                 <g:Label styleName="{style.title}" text="Holdtype:"></g:Label>
-                <g:ListBox ui:field="lstTeamtype" styleName="{style.textInput} {style.input}"></g:ListBox>
+                <g:TextBox ui:field="txtTeamtype" styleName="{style.textInput} {style.input}"></g:TextBox>
             </g:FlowPanel>
 
             <g:Button styleName="{style.btn}" ui:field="changeProfileBtn" text="Ændre oplysninger"/>

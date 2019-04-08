@@ -2,6 +2,15 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <ui:style>
 
+        /*.outerPanel {
+            display: flex;
+            width: 100%;
+            background-color: #E6E8EC;
+            justify-content: center;
+            align-items: center;
+        }*/
+
+
         .btn {
             height: 32px;
             width: 100%;

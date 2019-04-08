@@ -24,13 +24,13 @@ public class ChangeUserInfoUserView extends Composite {
     @UiField
     TextBox txtEducation;
     @UiField
-    ListBox lstExperience;
+    TextBox txtExperience;
     @UiField
-    ListBox lstHoursPrWeek;
+    TextBox txtHoursPrWeek;
     @UiField
     TextBox txtPassword;
     @UiField
-    ListBox lstTeamtype;
+    TextBox txtTeamtype;
     @UiField
     Button changeProfileBtn;
 
@@ -53,10 +53,10 @@ public class ChangeUserInfoUserView extends Composite {
         txtAddress.setText(user.getAddress());
         txtMobileNo.setTabIndex(user.getMobilenr()); // Måske forkert??
         txtEducation.setText(user.getEducation());
-        lstExperience.setTabIndex(user.getExperience()); // Måske forkert??
-        lstHoursPrWeek.setTabIndex(user.getHoursPrWeek()); // Måske forkert??
+        txtExperience.setTabIndex(user.getExperience()); // Måske forkert??
+        txtHoursPrWeek.setTabIndex(user.getHoursPrWeek()); // Måske forkert??
         txtPassword.setText(user.getPassword());
-        lstTeamtype.setName(user.getTeamtype()); // måske forkert??
+        txtTeamtype.setText(user.getTeamtype()); // måske forkert??
     }
 
     // Getters
@@ -72,11 +72,11 @@ public class ChangeUserInfoUserView extends Composite {
 
     public TextBox getTxtEducation() { return txtEducation; }
 
-    public ListBox getLstExperience() { return lstExperience; }
+    public TextBox getTxtExperience() { return txtExperience; }
 
-    public ListBox getLstHoursPrWeek() { return lstHoursPrWeek; }
+    public TextBox getTxtHoursPrWeek() { return txtHoursPrWeek; }
 
     public TextBox getTxtPassword() { return txtPassword; }
 
-    public ListBox getLstTeamtype() { return lstTeamtype; }
+    public TextBox getTxtTeamtype() { return txtTeamtype; }
 }
