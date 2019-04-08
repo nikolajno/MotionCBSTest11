@@ -11,8 +11,8 @@
 
         .centerBox {
             background-color: #48718e;
-            height: 250px;
-            width: 25%;
+            height: 90%;
+            width: 30%;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
@@ -45,7 +45,9 @@
             color: #fff;
         }
         .radioButtons {
-            margin-left: 10px;
+            color: whitesmoke;
+            padding: 5px;
+
         }
 
     </ui:style>
@@ -62,10 +64,12 @@
             <g:TextBox styleName="{style.textInput}" ui:field="newtxtExperience" alignment="CENTER"/>
             <g:TextBox styleName="{style.textInput}" ui:field="newtxtHoursPrWeek" alignment="CENTER"/>
             <g:PasswordTextBox styleName="{style.textInput}" ui:field="newtxtPassword" alignment="CENTER"/>
-            <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newCrossfitBtn" text="Crossfit"/>
-            <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newSpinningBtn" text="Spinning"/>
-            <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newHitBtn" text="H.I.T."/>
-            <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newStramopBtn" text="Stram-Op"/>
+            <g:HorizontalPanel>
+                <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newCrossfitBtn" text="Crossfit"/>
+                <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newSpinningBtn" text="Spinning"/>
+                <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newHitBtn" text="H.I.T."/>
+                <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newStramopBtn" text="Stram-Op"/>
+            </g:HorizontalPanel>
             <g:Button styleName="{style.btn}" text="Register" ui:field="registerBtn" />
         </g:VerticalPanel>
     </g:HTMLPanel>

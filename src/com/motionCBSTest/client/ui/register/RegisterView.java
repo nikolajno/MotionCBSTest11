@@ -8,7 +8,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
 import com.motionCBSTest.shared.FieldVerifier;
 
-public class Register extends Composite {
+public class RegisterView extends Composite {
 
     @UiField TextBox newtxtFname;
     @UiField TextBox newtxtLname;
@@ -26,13 +26,13 @@ public class Register extends Composite {
     @UiField Button registerBtn;
 
 
-    interface registerUiBinder extends UiBinder<HTMLPanel, Register> {
+    interface registerUiBinder extends UiBinder<HTMLPanel, RegisterView> {
 
     }
 
     private static registerUiBinder ourUiBinder = GWT.create(registerUiBinder.class);
 
-    public Register() {
+    public RegisterView() {
         initWidget(ourUiBinder.createAndBindUi(this));
 
         // define widgets
@@ -42,7 +42,7 @@ public class Register extends Composite {
         newtxtAddress.getElement().setPropertyString("placeholder", "Address");
         newtxtMobileNo.getElement().setPropertyString("placeholder", "MobileNo");
         newtxtEducation.getElement().setPropertyString("placeholder", "Education");
-        newtxtExperience.getElement().setPropertyString("placeholde","Experince");
+        newtxtExperience.getElement().setPropertyString("placeholder","Experince");
         newtxtHoursPrWeek.getElement().setPropertyString("placeholder", "Hours Pr. Week");
         newtxtPassword.getElement().setPropertyString("placeholder", "Password");
 

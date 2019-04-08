@@ -53,7 +53,7 @@ public class FieldVerifier {
         }
         // check if mobile no. contains letters (not allowed)
         for (int n = 0; n < MobileNo.length(); n++) {
-            if (Character.isAlphabetic(MobileNo.charAt(n)))
+            //if (Character.isAlphabetic(MobileNo.charAt(n)))
                 return false;
         }
 

@@ -27,6 +27,7 @@ public class MainController {
 
     private void bindHandlers() {
         content.getLoginView().addClickHandlers(new LoginClickHandler());
+        content.getLoginView().addClickHandlers(new RegisterClickHandler());
     }
 
     class LoginClickHandler implements ClickHandler {
@@ -83,5 +84,13 @@ public class MainController {
 
         }
     }
+
+    class RegisterClickHandler implements ClickHandler {
+        @Override
+        public void onClick(ClickEvent event) {
+            content.changeView(content.getRegisterView());
+        }
+    }
+
 //hej
 }
