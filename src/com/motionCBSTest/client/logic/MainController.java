@@ -80,7 +80,7 @@ public class MainController {
                         } else if (user.getType() == 2){
                             userController.loadUser(user);
                             content.changeView(content.getMainUserView());
-                            content.getMainUserView().changeView(content.getMainUserView().getChangeUserInfoUserView());
+                            content.getMainUserView().changeView(content.getMainUserView().getStatisticsUserView());
                         }
 
                         // Clearing the text fields (mobileNr & password) from

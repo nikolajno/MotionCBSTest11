@@ -4,6 +4,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.ListDataProvider;
 import com.motionCBSTest.client.rpc.MotionCBSTestServiceAsync;
 import com.motionCBSTest.client.ui.ContentPanel;
+import com.motionCBSTest.client.ui.user.mainUserView.MainUserView;
 import com.motionCBSTest.shared.User;
 import java.util.ArrayList;
 
@@ -11,15 +12,18 @@ public class UserController {
     private ContentPanel content;
     private MotionCBSTestServiceAsync motionCBSTestServiceAsync;
     private User currentUser;
+    private MainUserView mainUserView;
 
     // A List Data Provider which contains an ArrayList with users is used for the DataGrid
     private ListDataProvider<User> listProviderUsers;
 
     public UserController(ContentPanel content, MotionCBSTestServiceAsync motionCBSTestServiceAsync) {
         this.content = content;
+        this.mainUserView = content.getMainUserView();
         this.motionCBSTestServiceAsync = motionCBSTestServiceAsync;
 
         listProviderUsers = new ListDataProvider<>();
+        mainUserView.getStatisticsUserView().initUsersTable(listProviderUsers);
     }
 
 
