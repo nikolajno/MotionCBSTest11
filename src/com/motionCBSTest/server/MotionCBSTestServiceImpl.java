@@ -147,4 +147,39 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         return users;
     }
 
+    // Her oprettes createUser
+    @Override
+    public boolean createUser(User user) throws IllegalArgumentException {
+        try {
+            // Same concept as createMessage method
+            PreparedStatement createUser = connection
+                  .prepareStatement("INSERT INTO users (firstname, lastname, email, adress, mobilenr, education," +
+                            "experience, hoursprweek, password, isapproved, teamtype_teamID, type) " +
+                          "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+
+            createUser.setString(1, user.getFname());
+            createUser.setString(2, user.getLname());
+            createUser.setString(3, user.getEmail());
+            createUser.setString(4, user.getAddress());
+            createUser.setInt(5, user.getMobilenr());
+            createUser.setString(6, user.getEducation());
+            createUser.setInt(7, user.getExperience());
+            createUser.setInt(8, user.getHoursPrWeek());
+            createUser.setString(9, user.getPassword());
+            createUser.setBoolean(10, user.getIsApproved());
+            createUser.setString(11, user.getTeamtype());
+            createUser.setInt(12, user.getType());
+
+            //
+            int rowsAffected = createUser.executeUpdate();
+            if (rowsAffected == 1) {
+                return true;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }

@@ -19,6 +19,9 @@ public interface MotionCBSTestService extends RemoteService {
 
     ArrayList<User> getUsers(int trainerID) throws Exception;
 
+    boolean createUser(User user) throws IllegalArgumentException;
+
+
     /**
      * Utility/Convenience class.
      * Use MotionCBSTestService.App.getInstance() to access static instance of MotionCBSTestServiceAsync

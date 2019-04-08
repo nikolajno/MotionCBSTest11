@@ -5,8 +5,10 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.view.client.ListDataProvider;
 import com.motionCBSTest.client.rpc.MotionCBSTestServiceAsync;
 import com.motionCBSTest.client.ui.ContentPanel;
+import com.motionCBSTest.client.ui.register.RegisterView;
 import com.motionCBSTest.shared.User;
 
 public class MainController {
@@ -16,6 +18,8 @@ public class MainController {
     private User currentUser;
 
 
+    private ListDataProvider<User> listProviderUsers;
+
     public MainController(ContentPanel content, MotionCBSTestServiceAsync motionCBSTestService){
         this.content = content;
         this.motionCBSTestService = motionCBSTestService;
@@ -23,12 +27,16 @@ public class MainController {
         userController = new UserController(content, motionCBSTestService);
         bindHandlers();
 
+        listProviderUsers = new ListDataProvider<>();
+
 
     }
 
     private void bindHandlers() {
         content.getLoginView().addClickHandlers(new LoginClickHandler());
-        content.getLoginView().addClickHandlers(new RegisterClickHandler());
+        content.getLoginView().addClickHandlers(new RegisterBtnClickHandler());
+        content.getRegisterView().addClickHandler(new RegisterClickHandler());
+        content.getRegisterView().addClickHandler(new GoBack());
     }
 
     class LoginClickHandler implements ClickHandler {
@@ -86,10 +94,86 @@ public class MainController {
         }
     }
 
-    class RegisterClickHandler implements ClickHandler {
+    class RegisterBtnClickHandler implements ClickHandler {
         @Override
         public void onClick(ClickEvent event) {
             content.changeView(content.getRegisterView());
+        }
+    }
+
+    class RegisterClickHandler implements ClickHandler{
+
+        RegisterView register;
+
+        @Override
+        public void onClick(ClickEvent event) {
+            // Getting the text from the two text boxes on the login screen
+            String fName = content.getRegisterView().getNewtxtFname().getText();
+            String lName = content.getRegisterView().getNewtxtLname().getText();
+            String email = content.getRegisterView().getNewtxtEmail().getText();
+            String address = content.getRegisterView().getNewtxtAddress().getText();
+            Integer mobileno = content.getRegisterView().getNewtxtMobileNo().getValue();
+            String education = content.getRegisterView().getNewtxtEducation().getText();
+            Integer experience = content.getRegisterView().getNewtxtExperience().getValue();
+            Integer hoursPrWeek = content.getRegisterView().getNewtxtHoursPrWeek().getValue();
+            String password = content.getRegisterView().getNewtxtPassword().getText();
+
+            User user = new User();
+            user.setFname(fName);
+            user.setLname(lName);
+            user.setEmail(email);
+            user.setAddress(address);
+            user.setMobilenr(mobileno);
+            user.setEducation(education);
+            user.setExperience(experience);
+            user.setHoursPrWeek(hoursPrWeek);
+            user.setPassword(password);
+            user.setType(2);
+            user.setIsApproved(false);
+            user.setTeamtype(null);
+
+            // check if all fields are valid
+                            /*if (FieldVerifier.isValidFname(fName)
+                                    && FieldVerifier.isValidLname(lName)
+                                    && FieldVerifier.isValidEmail(email)
+                                    && FieldVerifier.isValidAddress(address)
+                                    && FieldVerifier.isValidMobileNo(mobileno)
+                                    && FieldVerifier.isValidEducation(education)
+                                    && FieldVerifier.isValidExperience(experience)
+                                    && FieldVerifier.isValidHoursPrWeek(hoursPrWeek)
+                                    && FieldVerifier.isValidPassword(password);
+                            /*&& FieldVerifier.isValidTeamtype()*/
+
+            // RPC authenticating user method
+            motionCBSTestService.createUser(user, new AsyncCallback<Boolean>() {
+                        /*
+                         * Handles error from callback function
+                         */
+                        @Override
+                        public void onFailure(Throwable caught) {
+                            Window.alert("Something went wrong");
+
+                        }
+
+                        @Override
+                        public void onSuccess(Boolean isCreated) {
+                          if (!isCreated) {
+                              Window.alert("Could not create user");
+                          } else {
+                              content.getRegisterView().clearTextBoxFields();
+                              listProviderUsers.getList().add(user);
+                          }
+                        }
+
+
+                    });
+        }
+    }
+
+    class GoBack implements ClickHandler {
+        @Override
+        public void onClick(ClickEvent event) {
+            content.changeView(content.getLoginView());
         }
     }
 

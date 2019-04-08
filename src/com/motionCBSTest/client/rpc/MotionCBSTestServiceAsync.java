@@ -11,4 +11,6 @@ public interface MotionCBSTestServiceAsync {
     void authorizeUser(String mobileNr, String password, AsyncCallback<User> async) throws IllegalArgumentException;
 
     void getUsers(int trainerID, AsyncCallback<ArrayList<User>> asyncCallback) throws IllegalArgumentException;
+
+    void createUser(User user, AsyncCallback<Boolean> asyncCallback) throws IllegalArgumentException;
 }

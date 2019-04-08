@@ -59,10 +59,10 @@
             <g:TextBox styleName="{style.textInput}" ui:field="newtxtLname" alignment="CENTER"/>
             <g:TextBox styleName="{style.textInput}" ui:field="newtxtEmail" alignment="CENTER"/>
             <g:TextBox styleName="{style.textInput}" ui:field="newtxtAddress" alignment="CENTER"/>
-            <g:TextBox styleName="{style.textInput}" ui:field="newtxtMobileNo" alignment="CENTER"/>
+            <g:IntegerBox styleName="{style.textInput}" ui:field="newtxtMobileNo" alignment="CENTER"/>
             <g:TextBox styleName="{style.textInput}" ui:field="newtxtEducation" alignment="CENTER"/>
-            <g:TextBox styleName="{style.textInput}" ui:field="newtxtExperience" alignment="CENTER"/>
-            <g:TextBox styleName="{style.textInput}" ui:field="newtxtHoursPrWeek" alignment="CENTER"/>
+            <g:IntegerBox styleName="{style.textInput}" ui:field="newtxtExperience" alignment="CENTER"/>
+            <g:IntegerBox styleName="{style.textInput}" ui:field="newtxtHoursPrWeek" alignment="CENTER"/>
             <g:PasswordTextBox styleName="{style.textInput}" ui:field="newtxtPassword" alignment="CENTER"/>
             <g:HorizontalPanel>
                 <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newCrossfitBtn" text="Crossfit"/>
@@ -71,6 +71,7 @@
                 <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newStramopBtn" text="Stram-Op"/>
             </g:HorizontalPanel>
             <g:Button styleName="{style.btn}" text="Register" ui:field="registerBtn" />
+            <g:Button styleName="{style.btn}" text="Back" ui:field="gobackBtn" />
         </g:VerticalPanel>
     </g:HTMLPanel>
 </ui:UiBinder>

@@ -1,12 +1,10 @@
 package com.motionCBSTest.client.ui.register;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
-import com.motionCBSTest.shared.FieldVerifier;
 
 public class RegisterView extends Composite {
 
@@ -14,16 +12,17 @@ public class RegisterView extends Composite {
     @UiField TextBox newtxtLname;
     @UiField TextBox newtxtEmail;
     @UiField TextBox newtxtAddress;
-    @UiField TextBox newtxtMobileNo;
+    @UiField IntegerBox newtxtMobileNo;
     @UiField TextBox newtxtEducation;
-    @UiField TextBox newtxtExperience;
-    @UiField TextBox newtxtHoursPrWeek;
+    @UiField IntegerBox newtxtExperience;
+    @UiField IntegerBox newtxtHoursPrWeek;
     @UiField PasswordTextBox newtxtPassword;
     @UiField RadioButton newCrossfitBtn;
     @UiField RadioButton newHitBtn;
     @UiField RadioButton newStramopBtn;
     @UiField RadioButton newSpinningBtn;
     @UiField Button registerBtn;
+    @UiField Button gobackBtn;
 
 
     interface registerUiBinder extends UiBinder<HTMLPanel, RegisterView> {
@@ -57,31 +56,23 @@ public class RegisterView extends Composite {
         newtxtExperience.setTitle("Erfaring skal udfyldes");
         newtxtHoursPrWeek.setTitle("Timer pr. uge skal udfyldes");
         newtxtPassword.setTitle("Password skal mindst være 4 tegn");
-
-
-        // add click handler
-        registerBtn.addClickHandler(new Handler1());
     }
 
-    // click handler definition
-    private class Handler1 implements ClickHandler{
+    public void addClickHandler (ClickHandler clickHandler) {
+        registerBtn.addClickHandler(clickHandler);
+        gobackBtn.addClickHandler(clickHandler);
+    }
 
-        @Override
-        public void onClick(ClickEvent event) {
-            // check if all fields are valid jj
-            if (FieldVerifier.isValidFname(newtxtFname.getText())
-                    && FieldVerifier.isValidLname(newtxtLname.getText())
-                    && FieldVerifier.isValidEmail(newtxtEmail.getText())
-                    && FieldVerifier.isValidAddress(newtxtAddress.getText())
-                    && FieldVerifier.isValidMobileNo(newtxtMobileNo.getText())
-                    && FieldVerifier.isValidEducation(newtxtEducation.getText())
-                    && FieldVerifier.isValidExperience(newtxtExperience.getText())
-                    && FieldVerifier.isValidHoursPrWeek(newtxtHoursPrWeek.getText())
-                    && FieldVerifier.isValidPassword(newtxtPassword.getText()));
-            /*&& FieldVerifier.isValidTeamtype()*/
-
-
-        }
+    public void clearTextBoxFields () {
+        newtxtFname.setText("");
+        newtxtLname.setText("");
+        newtxtEmail.setText("");
+        newtxtAddress.setText("");
+        newtxtMobileNo.setText("");
+        newtxtEducation.setText("");
+        newtxtExperience.setText("");
+        newtxtHoursPrWeek.setText("");
+        newtxtPassword.setText("");
     }
 
 
@@ -93,13 +84,13 @@ public class RegisterView extends Composite {
 
     public TextBox getNewtxtAddress() {return newtxtAddress;}
 
-    public TextBox getNewtxtMobileNo() {return newtxtMobileNo;}
+    public IntegerBox getNewtxtMobileNo() {return newtxtMobileNo;}
 
     public TextBox getNewtxtEducation() {return newtxtEducation;}
 
-    public TextBox getNewtxtExperience() {return newtxtExperience;}
+    public IntegerBox getNewtxtExperience() {return newtxtExperience;}
 
-    public TextBox getNewtxtHoursPrWeek() {return newtxtHoursPrWeek;}
+    public IntegerBox getNewtxtHoursPrWeek() {return newtxtHoursPrWeek;}
 
     public PasswordTextBox getNewtxtPassword() {return newtxtPassword;}
 
