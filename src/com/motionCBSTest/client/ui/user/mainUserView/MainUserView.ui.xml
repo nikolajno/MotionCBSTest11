@@ -1,0 +1,48 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <ui:style>
+
+        .btn {
+            height: 32px;
+            width: 100%;
+            border: none;
+            border-radius: 2px;
+            font-size: 18px;
+            background-color: #333;
+            cursor: pointer;
+            cursor: hand;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .menu {
+            padding: 10px;
+            background-color: #E6E8EC;
+        }
+
+    </ui:style>
+
+    <g:HTMLPanel>
+        <g:DockLayoutPanel unit="EM" width="100%" height="100%">
+
+            <g:west size="10">
+                <g:FlowPanel styleName="{style.menu}">
+                    <g:Button styleName="{style.btn}" text="Ændrer dine oplysninger" ui:field="changeBtn"/>
+                    <g:Button styleName="{style.btn}" text="Se info om trænere" ui:field="statisticBtn"/>
+                </g:FlowPanel>
+            </g:west>
+
+            <g:center>
+                <g:DeckLayoutPanel ui:field="centerPanel"/>
+            </g:center>
+
+        </g:DockLayoutPanel>
+
+    </g:HTMLPanel>
+</ui:UiBinder>

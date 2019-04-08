@@ -1,0 +1,122 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <ui:style>
+
+        .changeInfoContainer {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 14px;
+            font-weight: bold;
+            color: black;
+            width: 75px;
+        }
+
+        .input {
+            font-size: 12px;
+            height: 28px;
+            border: thin solid #000000;
+            width: 250px;
+            margin-left: 10px;
+        }
+
+        .textArea {
+            font-size: 12px;
+            width: 550px;
+            height: 255px;
+            border-radius: 2px;
+            margin-bottom: 10px;
+            resize: none;
+        }
+
+        .textInput {
+            font-size: 18px;
+            height: 32px;
+            border-radius: 2px;
+            width: 100%;
+            color: #333;
+            border: none;
+        }
+
+        .btn {
+            height: 32px;
+            width: 100%;
+            border: none;
+            border-radius: 2px;
+            font-size: 18px;
+            background-color: #333;
+            cursor: pointer;
+            cursor: hand;
+            color: #fff;
+        }
+
+        .btn:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+    </ui:style>
+
+    <g:HTMLPanel>
+        <g:VerticalPanel spacing="15">
+
+            <g:FlowPanel styleName="{style.changeInfoContainer}">
+                <g:Label styleName="{style.title}" text="Fornavn:"></g:Label>
+                <g:TextBox ui:field="txtFname" styleName="{style.textInput} {style.input}"></g:TextBox>
+            </g:FlowPanel>
+
+            <g:FlowPanel styleName="{style.changeInfoContainer}">
+                <g:Label styleName="{style.title}" text="Efternavn:"></g:Label>
+                <g:TextBox ui:field="txtLname" styleName="{style.textInput} {style.input}"></g:TextBox>
+            </g:FlowPanel>
+
+            <g:FlowPanel styleName="{style.changeInfoContainer}">
+                <g:Label styleName="{style.title}" text="Email:"></g:Label>
+                <g:TextBox ui:field="txtEmail" styleName="{style.textInput} {style.input}"></g:TextBox>
+            </g:FlowPanel>
+
+            <g:FlowPanel styleName="{style.changeInfoContainer}">
+                <g:Label styleName="{style.title}" text="Addresse:"></g:Label>
+                <g:TextBox ui:field="txtAddress" styleName="{style.textInput} {style.input}"></g:TextBox>
+            </g:FlowPanel>
+
+            <g:FlowPanel styleName="{style.changeInfoContainer}">
+                <g:Label styleName="{style.title}" text="Mobil nr.:"></g:Label>
+                <g:TextBox ui:field="txtMobileNo" styleName="{style.textInput} {style.input}"></g:TextBox>
+            </g:FlowPanel>
+
+            <g:FlowPanel styleName="{style.changeInfoContainer}">
+                <g:Label styleName="{style.title}" text="Uddannelse:"></g:Label>
+                <g:TextBox ui:field="txtEducation" styleName="{style.textInput} {style.input}"></g:TextBox>
+            </g:FlowPanel>
+
+            <g:FlowPanel styleName="{style.changeInfoContainer}">
+                <g:Label styleName="{style.title}" text="Års erfaring:"></g:Label>
+                <g:ListBox ui:field="lstExperience" styleName="{style.textInput} {style.input}"></g:ListBox>
+            </g:FlowPanel>
+
+            <g:FlowPanel styleName="{style.changeInfoContainer}">
+                <g:Label styleName="{style.title}" text="Timer om ugen:"></g:Label>
+                <g:ListBox ui:field="lstHoursPrWeek" styleName="{style.textInput} {style.input}"></g:ListBox>
+            </g:FlowPanel>
+
+            <g:FlowPanel styleName="{style.changeInfoContainer}">
+                <g:Label styleName="{style.title}" text="Pinkode:"></g:Label>
+                <g:TextBox ui:field="txtPassword" styleName="{style.textArea}"></g:TextBox>
+            </g:FlowPanel>
+
+            <g:FlowPanel styleName="{style.changeInfoContainer}">
+                <g:Label styleName="{style.title}" text="Holdtype:"></g:Label>
+                <g:ListBox ui:field="lstTeamtype" styleName="{style.textInput} {style.input}"></g:ListBox>
+            </g:FlowPanel>
+
+            <g:Button styleName="{style.btn}" ui:field="changeProfileBtn" text="Ændre oplysninger"/>
+
+        </g:VerticalPanel>
+
+    </g:HTMLPanel>
+
+</ui:UiBinder>
