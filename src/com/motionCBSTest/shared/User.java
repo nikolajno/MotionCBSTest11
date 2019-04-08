@@ -1,5 +1,5 @@
 package com.motionCBSTest.shared;
-//Hej Christian
+//Hej Christia
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 
