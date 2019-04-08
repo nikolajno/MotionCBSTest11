@@ -1,11 +1,11 @@
-package com.motionCBS.client.UI.user.changeUserInfoUserView;
+package com.motionCBSTest.client.ui.user.changeUserInfoUserView;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
-import com.motionCBS.Shared.User;
+import com.motionCBSTest.shared.User;
 
 public class ChangeUserInfoUserView extends Composite {
 

@@ -71,7 +71,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
              * The username and password is set later in this method
              */
             PreparedStatement authorizeUser = connection
-                    .prepareStatement("SELECT * FROM trainers where mobilenr = ? AND password = ?");
+                    .prepareStatement("SELECT * FROM users where mobilenr = ? AND password = ?");
             /*
              * In the next two lines the username and password is set.
              * The 1 is referring to the first question mark and the 2 is referring to the second question mark
@@ -85,9 +85,10 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             // This loop will create and set a user if anyone found and there by returned in the resultSet
             while (resultSet.next()) {
                 user = new User();
-                user.setId(resultSet.getInt("id"));
+                // user.setId(resultSet.getInt("id"));
                 user.setMobilenr(resultSet.getInt("mobileNr"));
                 user.setPassword(resultSet.getString("password"));
+                user.setType(resultSet.getInt("type"));
             }
             // The catch which is used if either the statement or connection is failing
         } catch (SQLException e) {
@@ -110,7 +111,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
 
         try {
             // Same concept as getMessages method except there is no join in this statement
-            PreparedStatement getUsers = connection.prepareStatement("SELECT * FROM trainers WHERE type != 1");
+            PreparedStatement getUsers = connection.prepareStatement("SELECT * FROM users WHERE type != 1");
             //getUsers.setInt(1, userId);
             resultSet = getUsers.executeQuery();
 

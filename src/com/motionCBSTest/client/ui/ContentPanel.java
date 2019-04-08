@@ -4,7 +4,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.DeckLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.motionCBSTest.client.ui.login.LoginView;
-import com.motionCBS.client.UI.user.mainUserView.MainUserView;
+import com.motionCBSTest.client.ui.user.mainUserView.MainUserView;
 
 public class ContentPanel  extends Composite {
 

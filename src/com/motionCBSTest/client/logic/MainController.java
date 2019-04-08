@@ -59,21 +59,23 @@ public class MainController {
                         Window.alert("Wrong mobileNr or password");
                     } else {
 
-                        // Clearing the text fields (mobileNr & password) from
-                        // the login screen
-                        content.getLoginView().clearTextBoxFields();
-
                         /*
                          * 1) User match in database,
                          * 2) Checks access level Admin != User
                          * 3) Change the view to either admin og user view
                          */
+
                         if (user.getType() == 1) {
                             Window.alert("Vi er ikke noget til admin endnu");
-                        } else if (user.getType() == 2) {
+                        } else if (user.getType() == 2){
                             userController.loadUser(user);
                             content.changeView(content.getMainUserView());
+                            content.getMainUserView().changeView(content.getMainUserView().getChangeUserInfoUserView());
                         }
+
+                        // Clearing the text fields (mobileNr & password) from
+                        // the login screen
+                        content.getLoginView().clearTextBoxFields();
                     }
 
                 }

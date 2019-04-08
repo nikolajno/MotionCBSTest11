@@ -1,11 +1,11 @@
-package com.motionCBS.client.UI.user.mainUserView;
+package com.motionCBSTest.client.ui.user.mainUserView;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
-import com.motionCBS.client.UI.user.changeUserInfoUserView.ChangeUserInfoUserView;
+import com.motionCBSTest.client.ui.user.changeUserInfoUserView.ChangeUserInfoUserView;
 import com.motionCBSTest.client.ui.user.statisticsUserView.StatisticsUserView;
 
 // We use DockLayoutPanel which contains option to place panels/widgets in North, east, west, south
