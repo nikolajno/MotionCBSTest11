@@ -96,7 +96,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
                 user.setHoursPrWeek(resultSet.getInt("hoursPrWeek"));
                 user.setTeamtype(resultSet.getString("teamtype_teamID"));
                 user.setType(resultSet.getInt("type"));
-                user.setId(resultSet.getInt("id"));
+                user.setId(resultSet.getInt("TrainerID"));
             }
             // The catch which is used if either the statement or connection is failing
         } catch (SQLException e) {
@@ -125,7 +125,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
 
             while (resultSet.next()) {
                 User user = new User();
-                user.setId(resultSet.getInt("id"));
+                user.setId(resultSet.getInt("TrainerID"));
                 user.setMobilenr(resultSet.getInt("mobileNr"));
                 user.setPassword(resultSet.getString("password"));
                 user.setEmail(resultSet.getString("email"));

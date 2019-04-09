@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="254705e7-0ad4-425e-b90c-c4606346f8d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController$LoginClickHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController$LoginClickHandler$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController$LoginClickHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController$LoginClickHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/UserController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/UserController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/server/MotionCBSTestServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/server/MotionCBSTestServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,7 +40,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="428">
@@ -72,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/statisticsUserView/StatisticsUserView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+            <state relative-caret-position="133">
+              <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1568#1574#0" expanded="true" />
@@ -127,11 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-478">
-              <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+            <state relative-caret-position="680">
+              <caret line="48" column="23" lean-forward="true" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3540#3541#0" expanded="true" />
@@ -144,12 +136,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="84" selection-start-line="84" selection-end-line="84" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3459#3460#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="96">
+              <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -157,7 +145,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
+            <state relative-caret-position="287">
               <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -210,9 +198,9 @@
         <option value="$PROJECT_DIR$/war/MotionCBSTest.html" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/statisticsUserView/StatisticsUserView.ui.xml" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java" />
+        <option value="$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/statisticsUserView/StatisticsUserView.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java" />
-        <option value="$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -387,7 +375,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554805891060" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554807045788" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DoekBook v2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -505,15 +493,21 @@
       <option name="project" value="LOCAL" />
       <updated>1554730026256</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Hej">
+      <created>1554806299802</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1554806299802</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44152000" />
+    <option name="totallyTimeSpent" value="44733000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17668097" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -711,20 +705,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
+        <state relative-caret-position="428">
+          <caret line="137" column="13" lean-forward="true" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3459#3460#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
+        <state relative-caret-position="287">
           <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -734,8 +727,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/statisticsUserView/StatisticsUserView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+        <state relative-caret-position="133">
+          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1568#1574#0" expanded="true" />
@@ -772,24 +765,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-478">
-          <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+        <state relative-caret-position="680">
+          <caret line="48" column="23" lean-forward="true" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3540#3541#0" expanded="true" />
             <element signature="e#3608#3609#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="137" column="13" lean-forward="true" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

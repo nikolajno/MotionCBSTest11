@@ -65,8 +65,6 @@ public class UserController {
                  */
                 /*content.changeView(content.getLoginView());
                 listProviderUsers.getList().clear();
-                listProviderNewMessages.getList().clear();
-                listProviderOldMessages.getList().clear();
                 currentUser = null;
             }
         }
