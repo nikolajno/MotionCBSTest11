@@ -8,7 +8,7 @@ public class User implements IsSerializable {
     private String lname;
     private String email;
     private String address;
-    private int mobilenr;
+    private String mobilenr;
     private String education;
     private int experience;
     private int hoursPrWeek;
@@ -17,7 +17,7 @@ public class User implements IsSerializable {
     private int type;
     private boolean isApproved;
 
-    public User(int id, String fname, String lname, String email, String address, int mobilenr,
+    public User(int id, String fname, String lname, String email, String address, String mobilenr,
                 String education, int experience, int hoursPrWeek, String password, String teamtype, int type, boolean isApproved) {
         this.id = id;
         this.fname = fname;
@@ -48,7 +48,7 @@ public class User implements IsSerializable {
 
     public String getAddress() { return address; }
 
-    public int getMobilenr() { return mobilenr; }
+    public String getMobilenr() { return mobilenr; }
 
     public String getEducation() { return education; }
 
@@ -75,7 +75,7 @@ public class User implements IsSerializable {
 
     public void setAddress(String address) { this.address = address; }
 
-    public void setMobilenr(int mobilenr) { this.mobilenr = mobilenr; }
+    public void setMobilenr(String mobilenr) { this.mobilenr = mobilenr; }
 
     public void setEducation(String education) { this.education = education; }
 
