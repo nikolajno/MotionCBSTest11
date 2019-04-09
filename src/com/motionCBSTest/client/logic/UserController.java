@@ -6,6 +6,7 @@ import com.motionCBSTest.client.rpc.MotionCBSTestServiceAsync;
 import com.motionCBSTest.client.ui.ContentPanel;
 import com.motionCBSTest.client.ui.user.mainUserView.MainUserView;
 import com.motionCBSTest.shared.User;
+
 import java.util.ArrayList;
 
 public class UserController {
@@ -22,6 +23,8 @@ public class UserController {
         this.mainUserView = content.getMainUserView();
         this.motionCBSTestServiceAsync = motionCBSTestServiceAsync;
 
+        //bindHandlers();
+
         listProviderUsers = new ListDataProvider<>();
         mainUserView.getStatisticsUserView().initUsersTable(listProviderUsers);
     }
@@ -31,6 +34,43 @@ public class UserController {
         this.currentUser = currentUser;
         loadTables();
     }
+
+    /*private void bindHandlers() {
+        mainUserView.addClickHandlers(new MenuClickHandler());
+        mainUserView.getStatisticsUserView().addClickHandler(new ChooseRecieverHandler());
+        mainUserView.getChangeUserInfoUserView().addClickHandlers(new ChangeSettingsClickHandler());
+    }
+
+    class MenuClickHandler implements ClickHandler {
+
+        @Override
+        public void onClick(ClickEvent event) {
+            if (event.getSource() == mainUserView.getUsersBtn()) {
+                mainUserView.changeView(mainUserView.getUsersView());
+            } else if (event.getSource() == mainUserView.getMessageBtn()) {
+                mainUserView.changeView(mainUserView.getNewMessageView());
+            } else if (event.getSource() == mainUserView.getInboxBtn()) {
+                listProviderNewMessages.refresh();
+                mainUserView.changeView(mainUserView.getMessagesContainer());
+            } else if (event.getSource() == mainUserView.getSettingsBtn()) {
+                mainUserView.getSettingsView().setProfileSettings(currentUser);
+                mainUserView.changeView(mainUserView.getSettingsView());
+            } else if (event.getSource() == mainUserView.getLogoutBtn()) {
+                /*
+                 * When a user is logged out it:
+                 * 1) Changing to the login view
+                 * 2) Clearing the List of users in the DataProvider
+                 * 3) Clearing the List of messages in the DataProvider
+                 * 4) Clearing the current user by setting it to null
+                 */
+                /*content.changeView(content.getLoginView());
+                listProviderUsers.getList().clear();
+                listProviderNewMessages.getList().clear();
+                listProviderOldMessages.getList().clear();
+                currentUser = null;
+            }
+        }
+    }*/
 
 
 

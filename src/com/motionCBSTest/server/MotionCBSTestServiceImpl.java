@@ -130,6 +130,8 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
                 user.setPassword(resultSet.getString("password"));
                 user.setEmail(resultSet.getString("email"));
                 user.setType(resultSet.getInt("type"));
+                user.setFname(resultSet.getString("firstname"));
+                user.setLname(resultSet.getString("lastname"));
 
                 users.add(user);
 
