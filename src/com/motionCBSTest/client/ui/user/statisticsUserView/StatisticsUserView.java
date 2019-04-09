@@ -107,7 +107,7 @@ public class StatisticsUserView extends Composite {
         Column<User, String> teamtypeColumn = new Column<User, String>(new TextCell()) {
             @Override
             public String getValue(User user) {
-                return user.getTeamtype();
+                return user.getTeamName();
             }
         };
         // Setting the teamtype column to sortable
@@ -115,7 +115,7 @@ public class StatisticsUserView extends Composite {
         sortHandler.setComparator(teamtypeColumn, new Comparator<User>() {
             @Override
             public int compare(User u1, User u2) {
-                return u1.getTeamtype().compareTo(u2.getTeamtype());
+                return u1.getTeamName().compareTo(u2.getTeamName());
             }
         });
         // Adding the column to the table. The "Teamtype" is the title of the column
