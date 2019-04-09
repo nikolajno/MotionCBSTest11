@@ -16,9 +16,11 @@ public class User implements IsSerializable {
     private String teamtype;
     private int type;
     private boolean isApproved;
+    private String teamName;
+
 
     public User(int id, String fname, String lname, String email, String address, String mobilenr,
-                String education, int experience, int hoursPrWeek, String password, String teamtype, int type, boolean isApproved) {
+                String education, int experience, int hoursPrWeek, String password, String teamtype, int type, boolean isApproved, String teamName) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;
@@ -32,6 +34,7 @@ public class User implements IsSerializable {
         this.teamtype = teamtype;
         this.type = type;
         this.isApproved = isApproved;
+        this.teamName = teamName;
     }
 
     public User(){}
@@ -64,6 +67,10 @@ public class User implements IsSerializable {
 
     public boolean getIsApproved() { return isApproved; }
 
+    public String getTeamName() {
+        return teamName;
+    }
+
     // Setters
     public void setId(int id) { this.id = id; }
 
@@ -90,6 +97,12 @@ public class User implements IsSerializable {
     public void setType(int type) {this.type = type;}
 
     public void setIsApproved (Boolean isApproved) {this.isApproved = isApproved; }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+
 
 }
 

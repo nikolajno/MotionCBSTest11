@@ -78,7 +78,7 @@ public class StatisticsUserView extends Composite {
             }
         });
         // Adding the column to the table. The "firstname" is the title of the column
-        dataGrid.addColumn(firstnameColumn, "Firstname");
+        dataGrid.addColumn(firstnameColumn, "First name");
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
         dataGrid.setColumnWidth(firstnameColumn, 7, Style.Unit.PX);
 
@@ -98,30 +98,9 @@ public class StatisticsUserView extends Composite {
             }
         });
         // Adding the column to the table. The "lastname" is the title of the column
-        dataGrid.addColumn(lastnameColumn, "Lastname");
+        dataGrid.addColumn(lastnameColumn, "Last name");
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
         dataGrid.setColumnWidth(lastnameColumn, 7, Style.Unit.PX);
-
-
-
-        Column<User, String> teamtypeColumn = new Column<User, String>(new TextCell()) {
-            @Override
-            public String getValue(User user) {
-                return user.getTeamtype();
-            }
-        };
-        // Setting the teamtype column to sortable
-        teamtypeColumn.setSortable(true);
-        sortHandler.setComparator(teamtypeColumn, new Comparator<User>() {
-            @Override
-            public int compare(User u1, User u2) {
-                return u1.getTeamtype().compareTo(u2.getTeamtype());
-            }
-        });
-        // Adding the column to the table. The "Teamtype" is the title of the column
-        dataGrid.addColumn(teamtypeColumn, "Teamtype");
-        // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
-        dataGrid.setColumnWidth(teamtypeColumn, 7, Style.Unit.PX);
 
 
 
@@ -132,7 +111,7 @@ public class StatisticsUserView extends Composite {
             }
         };
         // Setting the MobileNr column to sortable
-        teamtypeColumn.setSortable(true);
+        mobileColumn.setSortable(true);
         sortHandler.setComparator(mobileColumn, new Comparator<User>() {
             @Override
             public int compare(User u1, User u2) {
@@ -143,6 +122,26 @@ public class StatisticsUserView extends Composite {
         dataGrid.addColumn(mobileColumn, "Mobile");
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
         dataGrid.setColumnWidth(mobileColumn, 7, Style.Unit.PX);
+
+
+        Column<User, String> teamNameColumn = new Column<User, String>(new TextCell()) {
+            @Override
+            public String getValue(User user) {
+                return user.getTeamName();
+            }
+        };
+        // Setting the teamName column to sortable
+        teamNameColumn.setSortable(true);
+        sortHandler.setComparator(teamNameColumn, new Comparator<User>() {
+            @Override
+            public int compare(User u1, User u2) {
+                return u1.getTeamName().compareTo(u2.getTeamName());
+            }
+        });
+        // Adding the column to the table. The "Team Name" is the title of the column
+        dataGrid.addColumn(teamNameColumn, "Team name");
+        // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
+        dataGrid.setColumnWidth(teamNameColumn, 7, Style.Unit.PX);
 
 
 
