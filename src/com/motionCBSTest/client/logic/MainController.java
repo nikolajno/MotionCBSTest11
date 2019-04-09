@@ -112,7 +112,7 @@ public class MainController {
             String lName = content.getRegisterView().getNewtxtLname().getText();
             String email = content.getRegisterView().getNewtxtEmail().getText();
             String address = content.getRegisterView().getNewtxtAddress().getText();
-            Integer mobileno = content.getRegisterView().getNewtxtMobileNo().getValue();
+            String mobileno = content.getRegisterView().getNewtxtMobileNo().getText();
             String education = content.getRegisterView().getNewtxtEducation().getText();
             Integer experience = content.getRegisterView().getNewtxtExperience().getValue();
             Integer hoursPrWeek = content.getRegisterView().getNewtxtHoursPrWeek().getValue();

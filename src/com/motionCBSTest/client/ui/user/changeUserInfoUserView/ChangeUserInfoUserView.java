@@ -51,7 +51,7 @@ public class ChangeUserInfoUserView extends Composite {
         txtLname.setText(user.getLname());
         txtEmail.setText(user.getEmail());
         txtAddress.setText(user.getAddress());
-        txtMobileNo.setTabIndex(user.getMobilenr()); // Måske forkert??
+        txtMobileNo.setText(user.getMobilenr()); // Måske forkert??
         txtEducation.setText(user.getEducation());
         txtExperience.setTabIndex(user.getExperience()); // Måske forkert??
         txtHoursPrWeek.setTabIndex(user.getHoursPrWeek()); // Måske forkert??

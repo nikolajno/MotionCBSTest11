@@ -125,6 +125,27 @@ public class StatisticsUserView extends Composite {
 
 
 
+        Column<User, String> mobileColumn = new Column<User, String>(new TextCell()) {
+            @Override
+            public String getValue(User user) {
+                return user.getMobilenr();
+            }
+        };
+        // Setting the MobileNr column to sortable
+        teamtypeColumn.setSortable(true);
+        sortHandler.setComparator(mobileColumn, new Comparator<User>() {
+            @Override
+            public int compare(User u1, User u2) {
+                return u1.getMobilenr().compareTo(u2.getMobilenr());
+            }
+        });
+        // Adding the column to the table. The "Mobile" is the title of the column
+        dataGrid.addColumn(mobileColumn, "Mobile");
+        // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
+        dataGrid.setColumnWidth(mobileColumn, 7, Style.Unit.PX);
+
+
+
 
     }
 }

@@ -85,7 +85,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             // This loop will create and set a user if anyone found and there by returned in the resultSet
             while (resultSet.next()) {
                 user = new User();
-                user.setMobilenr(resultSet.getInt("mobileNr"));
+                user.setMobilenr(resultSet.getString("mobileNr"));
                 user.setPassword(resultSet.getString("password"));
                 user.setFname(resultSet.getString("firstname"));
                 user.setLname(resultSet.getString("lastname"));
@@ -126,12 +126,13 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             while (resultSet.next()) {
                 User user = new User();
                 user.setId(resultSet.getInt("TrainerID"));
-                user.setMobilenr(resultSet.getInt("mobileNr"));
+                user.setMobilenr(resultSet.getString("mobileNr"));
                 user.setPassword(resultSet.getString("password"));
                 user.setEmail(resultSet.getString("email"));
                 user.setType(resultSet.getInt("type"));
                 user.setFname(resultSet.getString("firstname"));
                 user.setLname(resultSet.getString("lastname"));
+                user.setTeamtype(resultSet.getString("teamtype_teamID"));
 
                 users.add(user);
 
@@ -163,7 +164,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             createUser.setString(2, user.getLname());
             createUser.setString(3, user.getEmail());
             createUser.setString(4, user.getAddress());
-            createUser.setInt(5, user.getMobilenr());
+            createUser.setString(5, user.getMobilenr());
             createUser.setString(6, user.getEducation());
             createUser.setInt(7, user.getExperience());
             createUser.setInt(8, user.getHoursPrWeek());
