@@ -8,7 +8,6 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.ListDataProvider;
 import com.motionCBSTest.client.rpc.MotionCBSTestServiceAsync;
 import com.motionCBSTest.client.ui.ContentPanel;
-import com.motionCBSTest.client.ui.register.RegisterView;
 import com.motionCBSTest.shared.User;
 
 public class MainController {
@@ -33,8 +32,8 @@ public class MainController {
     }
 
     private void bindHandlers() {
-        content.getLoginView().addClickHandlers(new LoginClickHandler());
-        content.getLoginView().addClickHandlers(new RegisterBtnClickHandler());
+        content.getLoginView().getLoginBtn().addClickHandler(new LoginClickHandler());
+        content.getLoginView().getRegisterBtn().addClickHandler(new RegisterBtnClickHandler());
         content.getRegisterView().addClickHandler(new RegisterClickHandler());
         content.getRegisterView().addClickHandler(new GoBack());
     }
@@ -55,7 +54,6 @@ public class MainController {
                 @Override
                 public void onFailure(Throwable caught) {
                     Window.alert("Der skete en fejl");
-
                 }
 
                 /*
@@ -81,6 +79,8 @@ public class MainController {
                             userController.loadUser(user);
                             content.changeView(content.getMainUserView());
                             content.getMainUserView().changeView(content.getMainUserView().getStatisticsUserView());
+                        } else {
+                            Window.alert("Test");
                         }
 
                         // Clearing the text fields (mobileNr & password) from
@@ -102,8 +102,6 @@ public class MainController {
     }
 
     class RegisterClickHandler implements ClickHandler{
-
-        RegisterView register;
 
         @Override
         public void onClick(ClickEvent event) {

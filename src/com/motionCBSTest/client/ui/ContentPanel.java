@@ -41,4 +41,6 @@ public class ContentPanel  extends Composite {
     public MainUserView getMainUserView() {return mainUserView;}
 
     public RegisterView getRegisterView() {return registerView;}
+
+
 }

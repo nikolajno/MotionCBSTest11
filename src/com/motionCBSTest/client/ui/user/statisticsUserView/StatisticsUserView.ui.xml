@@ -3,20 +3,11 @@
              xmlns:c="urn:import:com.google.gwt.user.cellview.client">
 
     <ui:style>
-        /*.outerPanel {
-            display: flex;
-            width: 100%;
-            background-color: #E6E8EC;
-            justify-content: center;
-            align-items: center;
-        }*/
-
         .pager {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-
 
     </ui:style>
 
