@@ -119,8 +119,8 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
 
         try {
             // Same concept as getMessages method except there is no join in this statement
-            PreparedStatement getUsers = connection.prepareStatement("SELECT trainerID, firstname, lastname, mobileNr FROM users WHERE type != 1 " +
-                    "INNER JOIN teamtype on teamtype_ID = teamID");
+            PreparedStatement getUsers = connection.prepareStatement("SELECT trainerID, firstname, lastname, mobileNr, teamName FROM users " +
+                    "INNER JOIN teamtype on teamtype_teamID = teamID WHERE type != 1;");
             //getUsers.setInt(1, userId);
             resultSet = getUsers.executeQuery();
 
@@ -130,7 +130,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
                 user.setMobilenr(resultSet.getString("mobileNr"));
                 user.setFname(resultSet.getString("firstname"));
                 user.setLname(resultSet.getString("lastname"));
-                user.setTeamtype(resultSet.getString("teamName"));
+                user.setTeamName(resultSet.getString("teamName"));
 
                 users.add(user);
 
