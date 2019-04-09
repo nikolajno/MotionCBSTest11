@@ -15,6 +15,7 @@ public class MainController {
     private MotionCBSTestServiceAsync motionCBSTestService;
     private UserController userController;
     private User currentUser;
+    private AdminController adminController;
 
 
     private ListDataProvider<User> listProviderUsers;
@@ -24,6 +25,9 @@ public class MainController {
         this.motionCBSTestService = motionCBSTestService;
 
         userController = new UserController(content, motionCBSTestService);
+        bindHandlers();
+
+        adminController = new AdminController(content, motionCBSTestService);
         bindHandlers();
 
         listProviderUsers = new ListDataProvider<>();
@@ -36,6 +40,7 @@ public class MainController {
         content.getLoginView().getRegisterBtn().addClickHandler(new RegisterBtnClickHandler());
         content.getRegisterView().addClickHandler(new RegisterClickHandler());
         content.getRegisterView().addClickHandler(new GoBack());
+        content.getMainAdminView().addClickHandlers(new LoginClickHandler());
     }
 
     class LoginClickHandler implements ClickHandler {
@@ -74,7 +79,10 @@ public class MainController {
                          */
 
                         if (user.getType() == 1) {
-                            Window.alert("Vi er ikke noget til admin endnu");
+                            Window.alert("Videre til admin");
+                            adminController.loadUser(user);
+                            content.changeView(content.getMainAdminView());
+                            content.getMainAdminView().changeView(content.getMainAdminView());
                         } else if (user.getType() == 2){
                             userController.loadUser(user);
                             content.changeView(content.getMainUserView());
