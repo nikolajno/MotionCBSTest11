@@ -3,7 +3,7 @@
     <ui:style>
 
         .baggrund {
-            background-image: url("https://yarapraxair.dk/wp-content/uploads/2019/02/Depositphotos_153032898_s-2015.jpg");
+            background-image: url("https://www.crossfitdux.com/wp-content/uploads/2016/12/ggg.jpg");
             background-size: 100%;
             display: flex;
             width: 100%;
@@ -12,16 +12,18 @@
         }
 
         .centerBox {
-            background-color: #48718e;
+            background-color: #696969;
             height: 250px;
             width: 25%;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
+            border: none;
+            border-radius: 5px;
         }
 
         .title {
-            font-size: 30px;
+            font-size: 40px;
             font-weight: bold;
             color: #fff;
         }
