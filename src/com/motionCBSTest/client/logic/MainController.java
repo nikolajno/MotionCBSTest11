@@ -123,7 +123,7 @@ public class MainController {
             String experience = content.getRegisterView().getNewtxtExperience().getText();
             Integer hoursPrWeek = content.getRegisterView().getNewtxtHoursPrWeek().getValue();
             String password = content.getRegisterView().getNewtxtPassword().getText();
-
+            String teamtype = null;
 
                 if (event.getSource()instanceof RadioButton) {
                     if (event.getSource() == content.getRegisterView().getNewCrossfitBtn()) {
