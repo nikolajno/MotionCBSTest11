@@ -20,6 +20,10 @@ public class MainAdminView extends Composite {
 
     @UiField
     DeckLayoutPanel centerPanel;
+    @UiField
+    Button changeBtn;
+    @UiField
+    Button logoutBtn;
 
     interface MainAdminViewUiBinder extends UiBinder<HTMLPanel, MainAdminView> {}
 
@@ -40,6 +44,7 @@ public class MainAdminView extends Composite {
 
     //This method is used to add the clickHandlers from the logic to the menu buttons
     public void addClickHandlers(ClickHandler clickHandler) {
+        logoutBtn.addClickHandler(clickHandler);
     }
 
     // This method is used to change the centerView
@@ -52,5 +57,7 @@ public class MainAdminView extends Composite {
     public StatisticsUserView getStatisticsUserView() {return statisticsUserView; }
 
     // The following getters is used for the menu buttons
+    public Button getLogoutBtn() {return logoutBtn;}
+    public Button getChangeBtn() {return changeBtn;}
 
 }

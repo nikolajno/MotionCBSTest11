@@ -42,13 +42,14 @@
 
             <g:west size="10">
                 <g:FlowPanel styleName="{style.menu}">
-                    <g:Button text="Ændr træner oplysninger" styleName="{style.btn}"/>
+                    <g:Button text="Ændr træner oplysninger" styleName="{style.btn}" ui:field="changeBtn"/>
                     <g:Button text="Godkend trænere" styleName="{style.btn}"/>
                     <g:Button text="Slet trænere" styleName="{style.btn}"/>
                     <g:Button text="Vis oplysninger om trænere" styleName="{style.btn}"/>
                     <g:Button text="Træner oplysninger efter holdtype" styleName="{style.btn}"/>
                     <g:Button text="Vis træner- og holdliste" styleName="{style.btn}"/>
                     <g:Button text="Statistik" styleName="{style.btn}"/>
+                    <g:Button text="Log ud" styleName="{style.btn}" ui:field="logoutBtn"/>
                 </g:FlowPanel>
             </g:west>
 

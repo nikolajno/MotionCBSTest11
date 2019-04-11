@@ -1,4 +1,6 @@
 package com.motionCBSTest.client.logic;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.ListDataProvider;
@@ -23,7 +25,7 @@ public class AdminController {
         this.mainAdminView = content.getMainAdminView();
         this.motionCBSTestServiceAsync = motionCBSTestServiceAsync;
 
-        //bindHandlers();
+        bindHandlers();
 
         listProviderUsers = new ListDataProvider<>();
     }
@@ -34,45 +36,7 @@ public class AdminController {
         loadTables();
     }
 
-    /*private void bindHandlers() {
-        mainUserView.addClickHandlers(new MenuClickHandler());
-        mainUserView.getStatisticsUserView().addClickHandler(new ChooseRecieverHandler());
-        mainUserView.getChangeUserInfoUserView().addClickHandlers(new ChangeSettingsClickHandler());
-    }
-
-    class MenuClickHandler implements ClickHandler {
-
-        @Override
-        public void onClick(ClickEvent event) {
-            if (event.getSource() == mainUserView.getUsersBtn()) {
-                mainUserView.changeView(mainUserView.getUsersView());
-            } else if (event.getSource() == mainUserView.getMessageBtn()) {
-                mainUserView.changeView(mainUserView.getNewMessageView());
-            } else if (event.getSource() == mainUserView.getInboxBtn()) {
-                listProviderNewMessages.refresh();
-                mainUserView.changeView(mainUserView.getMessagesContainer());
-            } else if (event.getSource() == mainUserView.getSettingsBtn()) {
-                mainUserView.getSettingsView().setProfileSettings(currentUser);
-                mainUserView.changeView(mainUserView.getSettingsView());
-            } else if (event.getSource() == mainUserView.getLogoutBtn()) {
-                /*
-                 * When a user is logged out it:
-                 * 1) Changing to the login view
-                 * 2) Clearing the List of users in the DataProvider
-                 * 3) Clearing the List of messages in the DataProvider
-                 * 4) Clearing the current user by setting it to null
-                 */
-                /*content.changeView(content.getLoginView());
-                listProviderUsers.getList().clear();
-                currentUser = null;
-            }
-        }
-    }*/
-
-
-
     private void loadTables() {
-
         // The RPC to get all the users
         motionCBSTestServiceAsync.getUsers(currentUser.getId(), new AsyncCallback<ArrayList<User>>() {
 
@@ -88,4 +52,29 @@ public class AdminController {
             }
         });
     }
-}
+
+    private void bindHandlers() {
+        mainAdminView.addClickHandlers(new AdminController.MenuClickHandler());
+    }
+
+    class MenuClickHandler implements ClickHandler {
+
+        @Override
+        public void onClick(ClickEvent event) {
+            if (event.getSource() == mainAdminView.getLogoutBtn()) {
+                    /*
+                     * When a user is logged out it:
+                     * 1) Changing to the login view
+                     * 2) Clearing the List of users in the DataProvider
+                     * 3) Clearing the List of messages in the DataProvider
+                     * 4) Clearing the current user by setting it to null
+                     */
+
+                    content.changeView(content.getLoginView());
+                    listProviderUsers.getList().clear();
+                    currentUser = null;
+                }
+            }
+        }
+
+    }
