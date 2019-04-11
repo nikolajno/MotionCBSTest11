@@ -71,9 +71,9 @@ public class FieldVerifier {
         return !Experience.isEmpty();
     }
 
-    public static boolean isValidHoursPrWeek (String HoursPrWeek) {
+    public static boolean isValidHoursPrWeek (Integer HoursPrWeek) {
         // check if experience is empty (not allowed)
-        return !HoursPrWeek.isEmpty();
+        return !HoursPrWeek.toString().isEmpty();
     }
 
     public static boolean isValidPassword (String Password) {
@@ -81,7 +81,7 @@ public class FieldVerifier {
         return Password.length() > 3;
     }
 
-    /*public static boolean isValidTeamtype (String Teamtype) {
+    /** public static boolean isValidTeamtype (String Teamtype) {
         // check if teamtype is empty (not allowed)
         return !Teamtype.isEmpty();
     }*/

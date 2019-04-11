@@ -50,4 +50,6 @@ public class ContentPanel  extends Composite {
     public RegisterView getRegisterView() {return registerView;}
 
 
+
+
 }

@@ -60,4 +60,6 @@ public class MainAdminView extends Composite {
     public Button getLogoutBtn() {return logoutBtn;}
     public Button getChangeBtn() {return changeBtn;}
 
+
+
 }

@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="254705e7-0ad4-425e-b90c-c4606346f8d0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController$LoginClickHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController$LoginClickHandler$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController$LoginClickHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController$LoginClickHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/ContentPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/ContentPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/MainAdminView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/MainAdminView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.ui.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.ui.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/shared/FieldVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/shared/FieldVerifier.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,22 +70,27 @@
     <session id="1777044242">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="543" />
+          <entry key="java" value="791" />
+          <entry key="xml" value="103" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="543" />
+          <entry key="CSS" value="6" />
+          <entry key="JAVA" value="791" />
+          <entry key="XML" value="97" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="4" />
+          <entry key="java" value="12" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="4" />
+          <entry key="JAVA" value="12" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -86,58 +98,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/register/RegisterView.java">
+        <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+            <state relative-caret-position="160">
+              <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
               <folding>
-                <element signature="e#3969#3970#0" expanded="true" />
-                <element signature="e#4003#4004#0" expanded="true" />
-                <element signature="e#4039#4040#0" expanded="true" />
-                <element signature="e#4071#4072#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/shared/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java">
+        <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.ui.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="52" column="22" lean-forward="true" selection-start-line="52" selection-start-column="22" selection-end-line="54" selection-end-column="82" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/register/RegisterView.ui.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-803">
-              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+            <state relative-caret-position="255">
+              <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -177,7 +153,6 @@
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/statisticsUserView/StatisticsUserView.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.ui.xml" />
-        <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/ContentPanel.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/register/RegisterView.ui.xml" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/shared/User.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/rpc/MotionCBSTestServiceAsync.java" />
@@ -185,13 +160,15 @@
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/changeUserInfoUserView/ChangeUserInfoUserView.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.java" />
-        <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.ui.xml" />
-        <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/MainAdminView.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/MainAdminView.ui.xml" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/AdminController.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/register/RegisterView.java" />
+        <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/ContentPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/MainAdminView.java" />
+        <option value="$PROJECT_DIR$/src/com/motionCBSTest/shared/FieldVerifier.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java" />
+        <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.ui.xml" />
       </list>
     </option>
   </component>
@@ -267,6 +244,15 @@
               <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -276,7 +262,17 @@
               <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MotionCBSTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="mainUserView" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MotionCBSTest" type="b2602c69:ProjectViewProjectNode" />
@@ -309,7 +305,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554991122228" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554997710496" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/GWT/gwt-2.8.2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -317,7 +313,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.38390803" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -478,17 +474,23 @@
       <option name="project" value="LOCAL" />
       <updated>1554985411673</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Log ud knap tilføjet usercontroller">
+      <created>1554991130784</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1554991130784</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63940000" />
+    <option name="totallyTimeSpent" value="67573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2584814" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19709209" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -507,7 +509,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection Results" order="9" weight="0.32978722" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.19313304" side_tool="true" weight="0.34522292" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49928468" weight="0.32738853" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49928468" weight="0.32576984" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
@@ -537,7 +539,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Log ud knap tilføjet usercontroller" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/212b1bb3-f4eb-49c3-883b-36bf756854b9/console.sql" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a0d8dad3-fc58-46f9-87e7-f1d1adca68c3/console.sql" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/aef20edf-5bb5-4387-8b36-42fde4c1cd6d/console.sql" />
     <entry file="jar://$USER_HOME$/GWT/gwt-2.8.2/gwt-user.jar!/com/google/gwt/core/client/EntryPoint.java" />
@@ -590,22 +591,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.ui.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/705f4cb2-c736-4f83-8d27-dcd46615e5e6/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/ContentPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/MotionCBSTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
@@ -613,13 +600,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/shared/FieldVerifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -634,16 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/rpc/MotionCBSTestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -671,35 +641,6 @@
           <caret line="58" column="48" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.ui.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="52" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/MainAdminView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="62" column="1" lean-forward="true" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1721#1722#0" expanded="true" />
-            <element signature="e#1776#1777#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -733,30 +674,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="52" column="22" lean-forward="true" selection-start-line="52" selection-start-column="22" selection-end-line="54" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-          <folding>
-            <element signature="e#1507#1508#0" expanded="true" />
-            <element signature="e#1538#1539#0" expanded="true" />
-            <element signature="e#1576#1577#0" expanded="true" />
-            <element signature="e#1610#1611#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/rpc/MotionCBSTestServiceAsync.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <caret line="52" column="22" selection-start-line="52" selection-start-column="22" selection-end-line="54" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -777,10 +695,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/rpc/MotionCBSTestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/rpc/MotionCBSTestServiceAsync.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/register/RegisterView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
-          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
           <folding>
             <element signature="e#3969#3970#0" expanded="true" />
             <element signature="e#4003#4004#0" expanded="true" />
@@ -790,13 +728,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/ContentPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+        <state relative-caret-position="585">
+          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/MainAdminView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="868">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/shared/FieldVerifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2790">
+          <caret line="190" column="5" lean-forward="true" selection-start-line="190" selection-start-column="5" selection-end-line="190" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="e#1507#1508#0" expanded="true" />
+            <element signature="e#1538#1539#0" expanded="true" />
+            <element signature="e#1576#1577#0" expanded="true" />
+            <element signature="e#1610#1611#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.ui.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/jdk/internal/reflect/NativeMethodAccessorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.ui.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
         </state>
       </provider>
     </entry>

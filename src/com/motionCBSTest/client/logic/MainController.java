@@ -9,6 +9,7 @@ import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.view.client.ListDataProvider;
 import com.motionCBSTest.client.rpc.MotionCBSTestServiceAsync;
 import com.motionCBSTest.client.ui.ContentPanel;
+import com.motionCBSTest.shared.FieldVerifier;
 import com.motionCBSTest.shared.User;
 
 public class MainController {
@@ -141,34 +142,28 @@ public class MainController {
                 }
 
 
-            User user = new User();
-            user.setFname(fName);
-            user.setLname(lName);
-            user.setEmail(email);
-            user.setAddress(address);
-            user.setMobilenr(mobileno);
-            user.setEducation(education);
-            user.setExperience(experience);
-            user.setHoursPrWeek(hoursPrWeek);
-            user.setPassword(password);
-            user.setType(2);
-            user.setIsApproved(false);
-            user.setTeamtype(teamtype);
+                if (FieldVerifier.isValidFname(fName) && FieldVerifier.isValidLname(lName) && FieldVerifier.isValidEmail(email)
+                    && FieldVerifier.isValidAddress(address) && FieldVerifier.isValidMobileNo(mobileno) && FieldVerifier.isValidEducation(education)
+                    && FieldVerifier.isValidExperience(experience) && FieldVerifier.isValidHoursPrWeek(hoursPrWeek)
+                    && FieldVerifier.isValidPassword(password) /**&& FieldVerifier.isValidTeamtype(teamtype)*/) {
 
-            // check if all fields are valid
-                            /*if (FieldVerifier.isValidFname(fName)
-                                    && FieldVerifier.isValidLname(lName)
-                                    && FieldVerifier.isValidEmail(email)
-                                    && FieldVerifier.isValidAddress(address)
-                                    && FieldVerifier.isValidMobileNo(mobileno)
-                                    && FieldVerifier.isValidEducation(education)
-                                    && FieldVerifier.isValidExperience(experience)
-                                    && FieldVerifier.isValidHoursPrWeek(hoursPrWeek)
-                                    && FieldVerifier.isValidPassword(password);
-                            /*&& FieldVerifier.isValidTeamtype()*/
+                    User user = new User();
+                    user.setFname(fName);
+                    user.setLname(lName);
+                    user.setEmail(email);
+                    user.setAddress(address);
+                    user.setMobilenr(mobileno);
+                    user.setEducation(education);
+                    user.setExperience(experience);
+                    user.setHoursPrWeek(hoursPrWeek);
+                    user.setPassword(password);
+                    user.setType(2);
+                    user.setIsApproved(false);
+                    user.setTeamtype(teamtype);
 
-            // RPC authenticating user method
-            motionCBSTestService.createUser(user, new AsyncCallback<Boolean>() {
+
+                    // RPC authenticating user method
+                    motionCBSTestService.createUser(user, new AsyncCallback<Boolean>() {
                         /*
                          * Handles error from callback function
                          */
@@ -180,16 +175,18 @@ public class MainController {
 
                         @Override
                         public void onSuccess(Boolean isCreated) {
-                          if (!isCreated) {
-                              Window.alert("Could not create user");
-                          } else {
-                              content.getRegisterView().clearTextBoxFields();
-                              listProviderUsers.getList().add(user);
-                          }
+                            if (!isCreated) {
+                                Window.alert("Could not create user");
+                            } else {
+                                content.getRegisterView().clearTextBoxFields();
+                                listProviderUsers.getList().add(user);
+                                Window.alert("Du er nu tilføjet, vent på at en administrator godkender dig");
+                            }
                         }
 
 
                     });
+                } else { Window.alert("Du må have tastet noget forkert, prøv igen");}
         }
     }
 
