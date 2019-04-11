@@ -79,14 +79,13 @@ public class MainController {
                          */
 
                         if (user.getType() == 1) {
-                            Window.alert("Videre til admin");
                             adminController.loadUser(user);
                             content.changeView(content.getMainAdminView());
                             content.getMainAdminView().changeView(content.getMainAdminView());
                         } else if (user.getType() == 2){
                             userController.loadUser(user);
                             content.changeView(content.getMainUserView());
-                            content.getMainUserView().changeView(content.getMainUserView().getChangeUserInfoUserView());
+                            content.getMainUserView().changeView(content.getMainUserView().getStatisticsUserView());
                         } else {
                             Window.alert("Test");
                         }

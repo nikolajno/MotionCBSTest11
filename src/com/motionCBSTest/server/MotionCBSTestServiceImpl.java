@@ -154,7 +154,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         try {
             // Same concept as createMessage method
             PreparedStatement createUser = connection
-                  .prepareStatement("INSERT INTO users (firstname, lastname, email, adress, mobilenr, education," +
+                  .prepareStatement("INSERT INTO users (firstname, lastname, email, address, mobilenr, education," +
                             "experience, hoursprweek, password, isapproved, teamtype_teamID, type) " +
                           "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
 
