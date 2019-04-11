@@ -63,6 +63,8 @@ public class StatisticsUserView extends Composite {
 
     private void initTableColumns(ColumnSortEvent.ListHandler<User> sortHandler) {
         
+
+        //First name
         Column<User, String> firstnameColumn = new Column<User, String>(new TextCell()) {
             @Override
             public String getValue(User user) {
@@ -83,6 +85,7 @@ public class StatisticsUserView extends Composite {
         dataGrid.setColumnWidth(firstnameColumn, 7, Style.Unit.PX);
 
 
+        //Last name
         Column<User, String> lastnameColumn = new Column<User, String>(new TextCell()) {
             @Override
             public String getValue(User user) {
@@ -90,7 +93,7 @@ public class StatisticsUserView extends Composite {
             }
         };
         // Setting the lastname column to sortable
-        firstnameColumn.setSortable(true);
+        lastnameColumn.setSortable(true);
         sortHandler.setComparator(lastnameColumn, new Comparator<User>() {
             @Override
             public int compare(User u1, User u2) {
@@ -104,6 +107,7 @@ public class StatisticsUserView extends Composite {
 
 
 
+        //Mobile
         Column<User, String> mobileColumn = new Column<User, String>(new TextCell()) {
             @Override
             public String getValue(User user) {
@@ -124,6 +128,7 @@ public class StatisticsUserView extends Composite {
         dataGrid.setColumnWidth(mobileColumn, 7, Style.Unit.PX);
 
 
+        //Team
         Column<User, String> teamNameColumn = new Column<User, String>(new TextCell()) {
             @Override
             public String getValue(User user) {

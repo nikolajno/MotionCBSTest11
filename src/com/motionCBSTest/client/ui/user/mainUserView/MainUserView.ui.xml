@@ -12,7 +12,7 @@
 
 
         .btn {
-            height: 32px;
+            height: 35px;
             width: 100%;
             border: none;
             border-radius: 2px;
@@ -42,8 +42,9 @@
 
             <g:west size="10">
                 <g:FlowPanel styleName="{style.menu}">
-                    <g:Button styleName="{style.btn}" text="Ændrer dine oplysninger" ui:field="changeBtn"/>
+                    <g:Button styleName="{style.btn}" text="Ændre dine oplysninger" ui:field="changeBtn"/>
                     <g:Button styleName="{style.btn}" text="Se info om trænere" ui:field="statisticBtn"/>
+                    <g:Button styleName="{style.btn}" text="Log ud" ui:field="logoutBtn"/>
                 </g:FlowPanel>
             </g:west>
 

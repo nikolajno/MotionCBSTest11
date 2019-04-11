@@ -24,6 +24,8 @@ public class MainUserView extends Composite {
     Button changeBtn;
     @UiField
     Button statisticBtn;
+    @UiField
+    Button logoutBtn;
 
     interface MainUserViewUiBinder extends UiBinder<HTMLPanel, MainUserView> {}
 
