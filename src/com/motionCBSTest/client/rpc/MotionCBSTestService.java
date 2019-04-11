@@ -21,6 +21,8 @@ public interface MotionCBSTestService extends RemoteService {
 
     boolean createUser(User user) throws IllegalArgumentException;
 
+    boolean changeUserInfo(User user) throws IllegalArgumentException;
+
 
     /**
      * Utility/Convenience class.

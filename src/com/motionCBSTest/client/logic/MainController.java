@@ -86,7 +86,7 @@ public class MainController {
                         } else if (user.getType() == 2){
                             userController.loadUser(user);
                             content.changeView(content.getMainUserView());
-                            content.getMainUserView().changeView(content.getMainUserView().getStatisticsUserView());
+                            content.getMainUserView().changeView(content.getMainUserView().getChangeUserInfoUserView());
                         } else {
                             Window.alert("Test");
                         }
@@ -120,7 +120,7 @@ public class MainController {
             String address = content.getRegisterView().getNewtxtAddress().getText();
             String mobileno = content.getRegisterView().getNewtxtMobileNo().getText();
             String education = content.getRegisterView().getNewtxtEducation().getText();
-            Integer experience = content.getRegisterView().getNewtxtExperience().getValue();
+            String experience = content.getRegisterView().getNewtxtExperience().getText();
             Integer hoursPrWeek = content.getRegisterView().getNewtxtHoursPrWeek().getValue();
             String password = content.getRegisterView().getNewtxtPassword().getText();
 

@@ -1,4 +1,7 @@
 package com.motionCBSTest.client.logic;
+
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.ListDataProvider;
@@ -23,7 +26,7 @@ public class UserController {
         this.mainUserView = content.getMainUserView();
         this.motionCBSTestServiceAsync = motionCBSTestServiceAsync;
 
-        //bindHandlers();
+        bindHandlers();
 
         listProviderUsers = new ListDataProvider<>();
         mainUserView.getStatisticsUserView().initUsersTable(listProviderUsers);
@@ -35,9 +38,9 @@ public class UserController {
         loadTables();
     }
 
-    /*private void bindHandlers() {
+    private void bindHandlers() {
         mainUserView.addClickHandlers(new MenuClickHandler());
-        mainUserView.getStatisticsUserView().addClickHandler(new ChooseRecieverHandler());
+        //mainUserView.getStatisticsUserView().addClickHandler(new ChooseRecieverHandler());
         mainUserView.getChangeUserInfoUserView().addClickHandlers(new ChangeSettingsClickHandler());
     }
 
@@ -45,16 +48,11 @@ public class UserController {
 
         @Override
         public void onClick(ClickEvent event) {
-            if (event.getSource() == mainUserView.getUsersBtn()) {
-                mainUserView.changeView(mainUserView.getUsersView());
-            } else if (event.getSource() == mainUserView.getMessageBtn()) {
-                mainUserView.changeView(mainUserView.getNewMessageView());
-            } else if (event.getSource() == mainUserView.getInboxBtn()) {
-                listProviderNewMessages.refresh();
-                mainUserView.changeView(mainUserView.getMessagesContainer());
-            } else if (event.getSource() == mainUserView.getSettingsBtn()) {
-                mainUserView.getSettingsView().setProfileSettings(currentUser);
-                mainUserView.changeView(mainUserView.getSettingsView());
+            if (event.getSource() == mainUserView.getStatisticBtn()) {
+                mainUserView.changeView(mainUserView.getStatisticsUserView());
+            } else if (event.getSource() == mainUserView.getChangeBtn()) {
+                mainUserView.getChangeUserInfoUserView().setProfileChanges(currentUser);
+                mainUserView.changeView(mainUserView.getChangeUserInfoUserView());
             } else if (event.getSource() == mainUserView.getLogoutBtn()) {
                 /*
                  * When a user is logged out it:
@@ -63,12 +61,12 @@ public class UserController {
                  * 3) Clearing the List of messages in the DataProvider
                  * 4) Clearing the current user by setting it to null
                  */
-                /*content.changeView(content.getLoginView());
+                content.changeView(content.getLoginView());
                 listProviderUsers.getList().clear();
                 currentUser = null;
             }
         }
-    }*/
+    }
 
 
 
@@ -88,5 +86,56 @@ public class UserController {
                 listProviderUsers.getList().addAll(users);
             }
         });
+    }
+
+    class ChangeSettingsClickHandler implements ClickHandler {
+
+        @Override
+        public void onClick(ClickEvent event) {
+            /*
+             * It firsts sets(change) all the user info with the info from
+             * the text fields and radio button in the settings view
+             */
+            currentUser.setFname(mainUserView.getChangeUserInfoUserView().getTxtFname().getText());
+            currentUser.setLname(mainUserView.getChangeUserInfoUserView().getTxtLname().getText());
+            currentUser.setEmail(mainUserView.getChangeUserInfoUserView().getTxtEmail().getText());
+            currentUser.setAddress(mainUserView.getChangeUserInfoUserView().getTxtAddress().getText());
+            currentUser.setMobilenr(mainUserView.getChangeUserInfoUserView().getTxtMobileNo().getText());
+            currentUser.setEducation(mainUserView.getChangeUserInfoUserView().getTxtEducation().getText());
+            currentUser.setExperience(mainUserView.getChangeUserInfoUserView().getTxtExperience().getText());
+            currentUser.setHoursPrWeek(mainUserView.getChangeUserInfoUserView().getTxtHoursPrWeek().getTabIndex());
+            currentUser.setPassword(mainUserView.getChangeUserInfoUserView().getTxtPassword().getText());
+            currentUser.setTeamtype(mainUserView.getChangeUserInfoUserView().getTxtTeamtype().getText());
+
+            //Sådan skal det gøres hvis vi bruger radio buttons
+            /*if (mainUserView.getChangeUserInfoUserView().getGenderMaleRBtn().getValue() == true) {
+                currentUser.setGender('m');
+            } else if (mainUserView.getChangeUserInfoUserView().getGenderFemaleRBtn().getValue() == true) {
+                currentUser.setGender('f');
+            }*/
+
+            // The RPC call which through the server updates the user info in the users table in the database
+            motionCBSTestServiceAsync.changeUserInfo(currentUser, new AsyncCallback<Boolean>() {
+
+                @Override
+                public void onFailure(Throwable caught) {
+                    // TODO Auto-generated method stub
+
+                }
+
+                /*
+                 * Confirmation if the info was updated
+                 */
+                @Override
+                public void onSuccess(Boolean updated) {
+                    if (updated) {
+                        Window.alert("Change succes");
+                    } else {
+                        Window.alert("Could not make changes");
+                    }
+
+                }
+            });
+        }
     }
 }

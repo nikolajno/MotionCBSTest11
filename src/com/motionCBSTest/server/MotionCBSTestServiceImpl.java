@@ -21,7 +21,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
     //private static final String JDBC_DRIVER = "com.mysql.jdcb.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/motioncbs?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "Mpv58tuu";
+    private static final String PASSWORD = "emj39bqg";
 
     private static Connection connection = null;
 
@@ -92,7 +92,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
                 user.setEmail(resultSet.getString("email"));
                 user.setAddress(resultSet.getString("address"));
                 user.setEducation(resultSet.getString("education"));
-                user.setExperience(resultSet.getInt("experience"));
+                user.setExperience(resultSet.getString("experience"));
                 user.setHoursPrWeek(resultSet.getInt("hoursPrWeek"));
                 user.setTeamtype(resultSet.getString("teamtype_teamID"));
                 user.setType(resultSet.getInt("type"));
@@ -164,7 +164,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             createUser.setString(4, user.getAddress());
             createUser.setString(5, user.getMobilenr());
             createUser.setString(6, user.getEducation());
-            createUser.setInt(7, user.getExperience());
+            createUser.setString(7, user.getExperience());
             createUser.setInt(8, user.getHoursPrWeek());
             createUser.setString(9, user.getPassword());
             createUser.setBoolean(10, user.getIsApproved());
@@ -179,6 +179,36 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean changeUserInfo(User user) throws IllegalArgumentException {
+        try {
+            // Look at the previous method
+            PreparedStatement updateUser = connection.prepareStatement("UPDATE users SET " + "firstname = ?, "
+                    + "lastname = ?, " + "email = ?, " + "address = ?, " + "mobileNr = ?, "+ "education = ?," + "experience = ?," +
+                            "hoursPrWeek = ?," + "password = ?," + "teamtype_teamID = ?");
+
+            updateUser.setString(1, user.getFname());
+            updateUser.setString(2, user.getLname());
+            updateUser.setString(3, user.getEmail());
+            updateUser.setString(4, user.getAddress());
+            updateUser.setString(5, user.getMobilenr());
+            updateUser.setString(6, user.getEducation());
+            updateUser.setString(7, user.getExperience());
+            updateUser.setInt(8, user.getHoursPrWeek());
+            updateUser.setString(9, user.getPassword());
+            updateUser.setString(10, user.getTeamtype());
+
+            int rowsAffected = updateUser.executeUpdate();
+
+            if (rowsAffected == 1) {
+                return true;
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
         }
         return false;
     }

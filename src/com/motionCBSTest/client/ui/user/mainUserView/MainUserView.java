@@ -48,6 +48,7 @@ public class MainUserView extends Composite {
     public void addClickHandlers(ClickHandler clickHandler) {
         changeBtn.addClickHandler(clickHandler);
         statisticBtn.addClickHandler(clickHandler);
+        logoutBtn.addClickHandler(clickHandler);
     }
 
     // This method is used to change the centerView
@@ -62,4 +63,5 @@ public class MainUserView extends Composite {
     // The following getters is used for the menu buttons
     public Button getChangeBtn() {return changeBtn; }
     public Button getStatisticBtn() {return statisticBtn; }
+    public Button getLogoutBtn() {return logoutBtn;}
 }
