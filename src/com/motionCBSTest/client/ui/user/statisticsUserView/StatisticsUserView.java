@@ -1,6 +1,5 @@
 package com.motionCBSTest.client.ui.user.statisticsUserView;
 
-import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style;
@@ -27,8 +26,6 @@ public class StatisticsUserView extends Composite {
     @UiField
     SimplePager pager;
 
-    private ActionCell.Delegate<User> actionCell;
-
     interface StatisticsUserViewUiBinder extends UiBinder<HTMLPanel, StatisticsUserView> {
     }
 
@@ -54,7 +51,7 @@ public class StatisticsUserView extends Composite {
         initTableColumns(sortHandler);
 
         /*
-         * Adding the data grid to the DataProvider The DataPrivider is
+         * Adding the data grid to the DataProvider The DataProvider is
          * containing a List with all the data
          */
         dataProvider.addDataDisplay(dataGrid);

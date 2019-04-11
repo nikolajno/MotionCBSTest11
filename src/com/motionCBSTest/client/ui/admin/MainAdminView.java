@@ -35,7 +35,7 @@ public class MainAdminView extends Composite {
         centerPanel.add(changeUserInfoUserView);
 
         statisticsUserView = new StatisticsUserView();
-        centerPanel.add((IsWidget) statisticsUserView); // Hjælp / forstå
+        centerPanel.add(statisticsUserView); // Hjælp / forstå
 
         // The panel that is shown when the application start
         centerPanel.showWidget(changeUserInfoUserView);

@@ -54,7 +54,7 @@ public class AdminController {
     }
 
     private void bindHandlers() {
-        mainAdminView.addClickHandlers(new AdminController.MenuClickHandler());
+        mainAdminView.addClickHandlers(new MenuClickHandler());
     }
 
     class MenuClickHandler implements ClickHandler {

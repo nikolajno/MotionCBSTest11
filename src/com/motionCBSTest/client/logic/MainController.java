@@ -27,12 +27,12 @@ public class MainController {
         this.motionCBSTestService = motionCBSTestService;
 
         userController = new UserController(content, motionCBSTestService);
-        bindHandlers();
 
         adminController = new AdminController(content, motionCBSTestService);
-        bindHandlers();
 
         listProviderUsers = new ListDataProvider<>();
+
+        bindHandlers();
 
 
     }
@@ -83,11 +83,9 @@ public class MainController {
                         if (user.getType() == 1) {
                             adminController.loadUser(user);
                             content.changeView(content.getMainAdminView());
-                            content.getMainAdminView().changeView(content.getMainAdminView());
                         } else if (user.getType() == 2){
                             userController.loadUser(user);
                             content.changeView(content.getMainUserView());
-                            content.getMainUserView().changeView(content.getMainUserView().getStatisticsUserView());
                         } else {
                             Window.alert("Test");
                         }
