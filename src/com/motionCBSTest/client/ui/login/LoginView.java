@@ -45,4 +45,12 @@ public class LoginView extends Composite {
     // Getters for the mobilenrTxtBox and passwordTxtBox
     public TextBox getMobilenrTxtBox() { return mobilenrTxtBox; }
     public PasswordTextBox getPasswordTxtBox() { return passwordTxtBox; }
+
+    public Button getLoginBtn() {
+        return loginBtn;
+    }
+
+    public Button getRegisterBtn() {
+        return registerBtn;
+    }
 }

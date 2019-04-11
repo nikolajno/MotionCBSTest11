@@ -4,9 +4,10 @@
         .outerPanel {
             display: flex;
             width: 100%;
-            background-color: #E6E8EC;
             justify-content: center;
             align-items: center;
+            background-image: url("https://yarapraxair.dk/wp-content/uploads/2019/02/Depositphotos_153032898_s-2015.jpg");
+            background-size: 100%;
         }
 
         .centerBox {

@@ -1,10 +1,12 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <ui:style>
-        .outerPanel {
+
+        .baggrund {
+            background-image: url("https://yarapraxair.dk/wp-content/uploads/2019/02/Depositphotos_153032898_s-2015.jpg");
+            background-size: 100%;
             display: flex;
             width: 100%;
-            background-color: #E6E8EC;
             justify-content: center;
             align-items: center;
         }
@@ -47,7 +49,7 @@
 
     </ui:style>
 
-    <g:HTMLPanel styleName="{style.outerPanel}">
+    <g:HTMLPanel styleName="{style.baggrund}">
         <g:VerticalPanel styleName="{style.centerBox}" horizontalAlignment="ALIGN_CENTER">
             <g:Label text="MotionCBS" styleName="{style.title}" />
             <g:TextBox styleName="{style.textInput}" ui:field="mobilenrTxtBox" alignment="CENTER"/>
