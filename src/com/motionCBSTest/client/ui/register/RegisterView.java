@@ -101,4 +101,12 @@ public class RegisterView extends Composite {
     public RadioButton getNewStramopBtn() {return newStramopBtn;}
 
     public RadioButton getNewSpinningBtn() {return newSpinningBtn;}
+
+    public Button getRegisterBtn() {
+        return registerBtn;
+    }
+
+    public Button getGobackBtn() {
+        return gobackBtn;
+    }
 }

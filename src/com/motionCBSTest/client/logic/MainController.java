@@ -5,6 +5,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.view.client.ListDataProvider;
 import com.motionCBSTest.client.rpc.MotionCBSTestServiceAsync;
 import com.motionCBSTest.client.ui.ContentPanel;
@@ -38,8 +39,8 @@ public class MainController {
     private void bindHandlers() {
         content.getLoginView().getLoginBtn().addClickHandler(new LoginClickHandler());
         content.getLoginView().getRegisterBtn().addClickHandler(new RegisterBtnClickHandler());
-        content.getRegisterView().addClickHandler(new RegisterClickHandler());
-        content.getRegisterView().addClickHandler(new GoBack());
+        content.getRegisterView().getRegisterBtn().addClickHandler(new RegisterClickHandler());
+        content.getRegisterView().getGobackBtn().addClickHandler(new GoBack());
         content.getMainAdminView().addClickHandlers(new LoginClickHandler());
     }
 
@@ -123,6 +124,23 @@ public class MainController {
             Integer hoursPrWeek = content.getRegisterView().getNewtxtHoursPrWeek().getValue();
             String password = content.getRegisterView().getNewtxtPassword().getText();
 
+
+                if (event.getSource()instanceof RadioButton) {
+                    if (event.getSource() == content.getRegisterView().getNewCrossfitBtn()) {
+                        teamtype = "Crossfit";
+                    }
+                    if (event.getSource() == content.getRegisterView().getNewSpinningBtn()) {
+                        teamtype = "Spinning";
+                    }
+                    if (event.getSource() == content.getRegisterView().getNewHitBtn()) {
+                        teamtype = "H.I.T.";
+                    }
+                    if (event.getSource() == content.getRegisterView().getNewStramopBtn()) {
+                        teamtype = "Stram op";
+                    }
+                }
+
+
             User user = new User();
             user.setFname(fName);
             user.setLname(lName);
@@ -135,7 +153,7 @@ public class MainController {
             user.setPassword(password);
             user.setType(2);
             user.setIsApproved(false);
-            user.setTeamtype(null);
+            user.setTeamtype(teamtype);
 
             // check if all fields are valid
                             /*if (FieldVerifier.isValidFname(fName)
