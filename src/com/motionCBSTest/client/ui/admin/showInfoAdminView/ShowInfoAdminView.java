@@ -42,6 +42,7 @@ public class ShowInfoAdminView extends Composite {
 
         // Ensures the headers doesn't get refreshed every time the data is updated
         dataGrid.setAutoHeaderRefreshDisabled(true);
+
     }
 
     // This method is called from the logic so it is possible to load the table with data from the database
@@ -81,10 +82,10 @@ public class ShowInfoAdminView extends Composite {
         });
 
         // Adding the column to the table. The "Træner id" is the title of the column
-        dataGrid.addColumn(userIdColumn, "Træner id");
+        dataGrid.addColumn(userIdColumn, "Trainer Id");
 
         // Setting the size of the column.
-        dataGrid.setColumnWidth(userIdColumn, 8, Unit.PX);
+        dataGrid.setColumnWidth(userIdColumn, 4, Unit.PX);
 
         // Firstname will be explained in details
         Column<User, String> fnameColumn = new Column<User, String>(new TextCell()) {
@@ -104,7 +105,7 @@ public class ShowInfoAdminView extends Composite {
         });
 
         // Adding the column to the table. The "Fornavn" is the title of the column
-        dataGrid.addColumn(fnameColumn, "Fornavn");
+        dataGrid.addColumn(fnameColumn, "First Name");
 
         // Setting the size of the column
         dataGrid.setColumnWidth(fnameColumn,8, Unit.PX);
@@ -127,7 +128,7 @@ public class ShowInfoAdminView extends Composite {
         });
 
         // Adding the column to the table. The "Efternavn" is the title of the column
-        dataGrid.addColumn(lnameColumn, "Efternavn");
+        dataGrid.addColumn(lnameColumn, "Last Name");
 
         // Setting the size of the column
         dataGrid.setColumnWidth(lnameColumn,8, Unit.PX);
@@ -136,8 +137,8 @@ public class ShowInfoAdminView extends Composite {
         // Teamtype will be explained in details
         Column<User, String> teamtypeColumn = new Column<User, String>(new TextCell()) {
             @Override
-            public String getValue(User user) {
-                return user.getTeamtype();
+            public String getValue (User user) {
+                return user.getTeamName();
             }
         };
 
@@ -146,12 +147,12 @@ public class ShowInfoAdminView extends Composite {
         sortHandler.setComparator(teamtypeColumn, new Comparator<User>() {
             @Override
             public int compare(User u1, User u2) {
-                return u1.getTeamtype().compareTo(u2.getTeamtype());
+                return u1.getTeamName().compareTo(u2.getTeamName());
             }
         });
 
         // Adding the column to the table. The "Hold" is the title of the column
-        dataGrid.addColumn(teamtypeColumn, "Hold");
+        dataGrid.addColumn(teamtypeColumn, "Team");
 
         // Setting the size of the column
         dataGrid.setColumnWidth(teamtypeColumn,8, Unit.PX);
@@ -175,10 +176,26 @@ public class ShowInfoAdminView extends Composite {
         });
 
         // Adding the column to the table. The "Hold" is the title of the column
-        dataGrid.addColumn(mobileColumn, "Mobil nr.");
+        dataGrid.addColumn(mobileColumn, "Mobile");
 
         // Setting the size of the column
         dataGrid.setColumnWidth(mobileColumn,8, Unit.PX);
+
+        //Here we create a button to show all info about the specific user
+        ActionCell<User> selectUserCell = new ActionCell<>("Info", actionCell);
+        Column<User, User> joinColumn = new Column<User, User>(selectUserCell) {
+            @Override
+            public User getValue(User user) {
+                return user;
+            }
+        };
+
+        dataGrid.addColumn(joinColumn, "More Info");
+        dataGrid.setColumnWidth(joinColumn, 7, Unit.PX);
+    }
+
+    public void addClickHandler(ActionCell.Delegate<User> actionCell) {
+        this.actionCell = actionCell;
     }
 
     public static ShowInfoAdminViewUiBinder getOurUiBinder() {
@@ -191,9 +208,5 @@ public class ShowInfoAdminView extends Composite {
 
     public SimplePager getPager() {
         return pager;
-    }
-
-    public ActionCell.Delegate<User> getActionCell() {
-        return actionCell;
     }
 }

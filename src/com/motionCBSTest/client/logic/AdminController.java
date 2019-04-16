@@ -1,4 +1,5 @@
 package com.motionCBSTest.client.logic;
+import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
@@ -29,6 +30,7 @@ public class AdminController {
 
         listProviderUsers = new ListDataProvider<>();
         mainAdminView.getTrainerStatusView().initUsersTable(listProviderUsers);
+        mainAdminView.getShowInfoAdminView().initUsersTable(listProviderUsers);
     }
 
 
@@ -55,8 +57,30 @@ public class AdminController {
     }
 
     private void bindHandlers() {
+
         mainAdminView.addClickHandlers(new MenuClickHandler());
+        mainAdminView.getShowInfoAdminView().addClickHandler(new SelectInfoHandler());
     }
+
+    class SelectInfoHandler implements ActionCell.Delegate<User> {
+        @Override
+        public void execute(User user) {
+            Window.alert("Here is all the information about " + user.getFname() + " " + user.getLname() +
+                    "\n\nTrainer ID: " + user.getId() +
+                    "\nFirst Name: " + user.getFname() +
+                    "\nLast Name: " + user.getLname() +
+                    "\nEmail: " + user.getEmail() +
+                    "\nAddress: " + user.getAddress() +
+                    "\nMobile: " + user.getMobilenr() +
+                    "\nEducation: " + user.getEducation() +
+                    "\nExperience: " + user.getExperience() +
+                    "\nHours Pr. Week: " + user.getHoursPrWeek() +
+                    "\nApproved?: " + user.getIsApproved() +
+                    "\nPassword: " + user.getPassword() +
+                    "\nTeam: " + user.getTeamName());
+        }
+    }
+
 
     class MenuClickHandler implements ClickHandler {
 
