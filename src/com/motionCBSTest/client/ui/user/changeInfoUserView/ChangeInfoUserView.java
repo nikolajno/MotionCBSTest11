@@ -1,4 +1,4 @@
-package com.motionCBSTest.client.ui.user.changeUserInfoUserView;
+package com.motionCBSTest.client.ui.user.changeInfoUserView;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -7,7 +7,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
 import com.motionCBSTest.shared.User;
 
-public class ChangeUserInfoUserView extends Composite {
+public class ChangeInfoUserView extends Composite {
 
     private static ChangeUserInfoUserViewUiBinder ourUiBinder = GWT.create(ChangeUserInfoUserViewUiBinder.class);
 
@@ -34,9 +34,9 @@ public class ChangeUserInfoUserView extends Composite {
     @UiField
     Button changeProfileBtn;
 
-    interface ChangeUserInfoUserViewUiBinder extends UiBinder<HTMLPanel, ChangeUserInfoUserView> {}
+    interface ChangeUserInfoUserViewUiBinder extends UiBinder<HTMLPanel, ChangeInfoUserView> {}
 
-    public ChangeUserInfoUserView() {initWidget(ourUiBinder.createAndBindUi(this));}
+    public ChangeInfoUserView() {initWidget(ourUiBinder.createAndBindUi(this));}
 
 
     // This method is adding the click handler to the change profile button

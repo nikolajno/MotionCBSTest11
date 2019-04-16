@@ -1,4 +1,4 @@
-package com.motionCBSTest.client.ui.admin;
+package com.motionCBSTest.client.ui.admin.showInfoAdminView;
 
 import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.cell.client.NumberCell;

@@ -1,4 +1,4 @@
-package com.motionCBSTest.client.ui.user.statisticsUserView;
+package com.motionCBSTest.client.ui.user.trainersTableUserView;
 
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
@@ -17,7 +17,7 @@ import com.motionCBSTest.shared.User;
 import java.util.Comparator;
 
 
-public class StatisticsUserView extends Composite {
+public class TrainersTableUserView extends Composite {
 
     private static StatisticsUserViewUiBinder UiBinder = GWT.create(StatisticsUserViewUiBinder.class);
 
@@ -26,11 +26,11 @@ public class StatisticsUserView extends Composite {
     @UiField
     SimplePager pager;
 
-    interface StatisticsUserViewUiBinder extends UiBinder<HTMLPanel, StatisticsUserView> {
+    interface StatisticsUserViewUiBinder extends UiBinder<HTMLPanel, TrainersTableUserView> {
     }
 
 
-    public StatisticsUserView() {
+    public TrainersTableUserView() {
         initWidget(UiBinder.createAndBindUi(this));
 
         // Setting the page size of the table

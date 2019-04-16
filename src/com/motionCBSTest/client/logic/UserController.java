@@ -29,7 +29,7 @@ public class UserController {
         bindHandlers();
 
         listProviderUsers = new ListDataProvider<>();
-        mainUserView.getStatisticsUserView().initUsersTable(listProviderUsers);
+        mainUserView.getTrainersTableUserView().initUsersTable(listProviderUsers);
     }
 
 
@@ -40,8 +40,8 @@ public class UserController {
 
     private void bindHandlers() {
         mainUserView.addClickHandlers(new MenuClickHandler());
-        //mainUserView.getStatisticsUserView().addClickHandler(new ChooseRecieverHandler());
-        mainUserView.getChangeUserInfoUserView().addClickHandlers(new ChangeSettingsClickHandler());
+        //mainUserView.getTrainersTableUserView().addClickHandler(new ChooseRecieverHandler());
+        mainUserView.getChangeInfoUserView().addClickHandlers(new ChangeSettingsClickHandler());
     }
 
     class MenuClickHandler implements ClickHandler {
@@ -49,10 +49,10 @@ public class UserController {
         @Override
         public void onClick(ClickEvent event) {
             if (event.getSource() == mainUserView.getStatisticBtn()) {
-                mainUserView.changeView(mainUserView.getStatisticsUserView());
+                mainUserView.changeView(mainUserView.getTrainersTableUserView());
             } else if (event.getSource() == mainUserView.getChangeBtn()) {
-                mainUserView.getChangeUserInfoUserView().setProfileChanges(currentUser);
-                mainUserView.changeView(mainUserView.getChangeUserInfoUserView());
+                mainUserView.getChangeInfoUserView().setProfileChanges(currentUser);
+                mainUserView.changeView(mainUserView.getChangeInfoUserView());
             } else if (event.getSource() == mainUserView.getLogoutBtn()) {
                 /*
                  * When a user is logged out it:
@@ -96,21 +96,21 @@ public class UserController {
              * It firsts sets(change) all the user info with the info from
              * the text fields and radio button in the settings view
              */
-            currentUser.setFname(mainUserView.getChangeUserInfoUserView().getTxtFname().getText());
-            currentUser.setLname(mainUserView.getChangeUserInfoUserView().getTxtLname().getText());
-            currentUser.setEmail(mainUserView.getChangeUserInfoUserView().getTxtEmail().getText());
-            currentUser.setAddress(mainUserView.getChangeUserInfoUserView().getTxtAddress().getText());
-            currentUser.setMobilenr(mainUserView.getChangeUserInfoUserView().getTxtMobileNo().getText());
-            currentUser.setEducation(mainUserView.getChangeUserInfoUserView().getTxtEducation().getText());
-            currentUser.setExperience(mainUserView.getChangeUserInfoUserView().getTxtExperience().getText());
-            currentUser.setHoursPrWeek(mainUserView.getChangeUserInfoUserView().getTxtHoursPrWeek().getTabIndex());
-            currentUser.setPassword(mainUserView.getChangeUserInfoUserView().getTxtPassword().getText());
-            currentUser.setTeamtype(mainUserView.getChangeUserInfoUserView().getTxtTeamtype().getText());
+            currentUser.setFname(mainUserView.getChangeInfoUserView().getTxtFname().getText());
+            currentUser.setLname(mainUserView.getChangeInfoUserView().getTxtLname().getText());
+            currentUser.setEmail(mainUserView.getChangeInfoUserView().getTxtEmail().getText());
+            currentUser.setAddress(mainUserView.getChangeInfoUserView().getTxtAddress().getText());
+            currentUser.setMobilenr(mainUserView.getChangeInfoUserView().getTxtMobileNo().getText());
+            currentUser.setEducation(mainUserView.getChangeInfoUserView().getTxtEducation().getText());
+            currentUser.setExperience(mainUserView.getChangeInfoUserView().getTxtExperience().getText());
+            currentUser.setHoursPrWeek(mainUserView.getChangeInfoUserView().getTxtHoursPrWeek().getTabIndex());
+            currentUser.setPassword(mainUserView.getChangeInfoUserView().getTxtPassword().getText());
+            currentUser.setTeamtype(mainUserView.getChangeInfoUserView().getTxtTeamtype().getText());
 
             //Sådan skal det gøres hvis vi bruger radio buttons
-            /*if (mainUserView.getChangeUserInfoUserView().getGenderMaleRBtn().getValue() == true) {
+            /*if (mainUserView.getChangeInfoUserView().getGenderMaleRBtn().getValue() == true) {
                 currentUser.setGender('m');
-            } else if (mainUserView.getChangeUserInfoUserView().getGenderFemaleRBtn().getValue() == true) {
+            } else if (mainUserView.getChangeInfoUserView().getGenderFemaleRBtn().getValue() == true) {
                 currentUser.setGender('f');
             }*/
 

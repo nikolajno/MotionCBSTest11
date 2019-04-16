@@ -5,8 +5,8 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
-import com.motionCBSTest.client.ui.user.changeUserInfoUserView.ChangeUserInfoUserView;
-import com.motionCBSTest.client.ui.user.statisticsUserView.StatisticsUserView;
+import com.motionCBSTest.client.ui.user.changeInfoUserView.ChangeInfoUserView;
+import com.motionCBSTest.client.ui.user.trainersTableUserView.TrainersTableUserView;
 
 // We use DockLayoutPanel which contains option to place panels/widgets in North, east, west, south
 // and center of the screen. We use DeckLayoutPanel in the center.
@@ -15,8 +15,8 @@ public class MainUserView extends Composite {
 
     private static MainUserViewUiBinder UiBinder = GWT.create(MainUserViewUiBinder.class);
 
-    private ChangeUserInfoUserView changeUserInfoUserView;
-    private StatisticsUserView statisticsUserView;
+    private ChangeInfoUserView changeInfoUserView;
+    private TrainersTableUserView trainersTableUserView;
 
     @UiField
     DeckLayoutPanel centerPanel;
@@ -33,14 +33,14 @@ public class MainUserView extends Composite {
     public MainUserView() {
         initWidget(UiBinder.createAndBindUi(this));
 
-        changeUserInfoUserView = new ChangeUserInfoUserView();
-        centerPanel.add(changeUserInfoUserView);
+        changeInfoUserView = new ChangeInfoUserView();
+        centerPanel.add(changeInfoUserView);
 
-        statisticsUserView = new StatisticsUserView();
-        centerPanel.add((IsWidget) statisticsUserView); // Hjælp / forstå
+        trainersTableUserView = new TrainersTableUserView();
+        centerPanel.add((IsWidget) trainersTableUserView); // Hjælp / forstå
 
         // The panel that is shown when the application start
-        centerPanel.showWidget(changeUserInfoUserView);
+        centerPanel.showWidget(changeInfoUserView);
     }
 
 
@@ -57,8 +57,8 @@ public class MainUserView extends Composite {
     }
 
     // The following getters is for view and tables
-    public ChangeUserInfoUserView getChangeUserInfoUserView() {return changeUserInfoUserView; }
-    public StatisticsUserView getStatisticsUserView() {return statisticsUserView; }
+    public ChangeInfoUserView getChangeInfoUserView() {return changeInfoUserView; }
+    public TrainersTableUserView getTrainersTableUserView() {return trainersTableUserView; }
 
     // The following getters is used for the menu buttons
     public Button getChangeBtn() {return changeBtn; }

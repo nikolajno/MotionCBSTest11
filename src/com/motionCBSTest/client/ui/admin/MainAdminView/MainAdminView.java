@@ -6,9 +6,9 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
 import com.motionCBSTest.client.ui.admin.DeleteTrainerView.DeleteTrainerView;
-import com.motionCBSTest.client.ui.admin.ShowInfoAdminView;
-import com.motionCBSTest.client.ui.user.changeUserInfoUserView.ChangeUserInfoUserView;
-import com.motionCBSTest.client.ui.user.statisticsUserView.StatisticsUserView;
+import com.motionCBSTest.client.ui.admin.showInfoAdminView.ShowInfoAdminView;
+import com.motionCBSTest.client.ui.user.changeInfoUserView.ChangeInfoUserView;
+import com.motionCBSTest.client.ui.user.trainersTableUserView.TrainersTableUserView;
 
 // We use DockLayoutPanel which contains option to place panels/widgets in North, east, west, south
 // and center of the screen. We use DeckLayoutPanel in the center.
@@ -17,8 +17,8 @@ public class MainAdminView extends Composite {
 
     private static MainAdminViewUiBinder UiBinder = GWT.create(MainAdminViewUiBinder.class);
 
-    private ChangeUserInfoUserView changeUserInfoUserView;
-    private StatisticsUserView statisticsUserView;
+    private ChangeInfoUserView changeInfoUserView;
+    private TrainersTableUserView trainersTableUserView;
     private ShowInfoAdminView showInfoAdminView;
     private DeleteTrainerView deleteTrainerView;
 
@@ -39,11 +39,11 @@ public class MainAdminView extends Composite {
     public MainAdminView() {
         initWidget(UiBinder.createAndBindUi(this));
 
-        changeUserInfoUserView = new ChangeUserInfoUserView();
-        centerPanel.add(changeUserInfoUserView);
+        changeInfoUserView = new ChangeInfoUserView();
+        centerPanel.add(changeInfoUserView);
 
-        statisticsUserView = new StatisticsUserView();
-        centerPanel.add(statisticsUserView);
+        trainersTableUserView = new TrainersTableUserView();
+        centerPanel.add(trainersTableUserView);
 
         showInfoAdminView = new ShowInfoAdminView();
         centerPanel.add(showInfoAdminView);
@@ -52,7 +52,7 @@ public class MainAdminView extends Composite {
         centerPanel.add(deleteTrainerView);
 
         // The panel that is shown when the application start
-        centerPanel.showWidget(changeUserInfoUserView);
+        centerPanel.showWidget(changeInfoUserView);
     }
 
 
@@ -70,8 +70,8 @@ public class MainAdminView extends Composite {
     }
 
     // The following getters is for view and tables
-    public ChangeUserInfoUserView getChangeUserInfoUserView() {return changeUserInfoUserView; }
-    public StatisticsUserView getStatisticsUserView() {return statisticsUserView; }
+    public ChangeInfoUserView getChangeInfoUserView() {return changeInfoUserView; }
+    public TrainersTableUserView getTrainersTableUserView() {return trainersTableUserView; }
     public ShowInfoAdminView getShowInfoAdminView() {return showInfoAdminView;}
     public DeleteTrainerView getDeleteTrainerView(){return deleteTrainerView;}
 
