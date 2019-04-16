@@ -14,4 +14,9 @@ public class StatisticsAdminView extends Composite {
     public StatisticsAdminView() {
         initWidget(ourUiBinder.createAndBindUi(this));
     }
+
+
+
+
+
 }
