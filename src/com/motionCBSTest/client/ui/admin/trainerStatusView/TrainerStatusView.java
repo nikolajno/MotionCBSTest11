@@ -1,4 +1,4 @@
-package com.motionCBSTest.client.ui.admin.DeleteTrainerView;
+package com.motionCBSTest.client.ui.admin.trainerStatusView;
 
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
@@ -9,6 +9,7 @@ import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.cellview.client.ColumnSortEvent;
 import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.cellview.client.SimplePager;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.view.client.ListDataProvider;
@@ -17,19 +18,27 @@ import com.motionCBSTest.shared.User;
 import java.util.Comparator;
 
 
-public class DeleteTrainerView extends Composite {
+public class TrainerStatusView extends Composite {
 
-    private static DeleteTrainerView.DeleteTrainerViewUiBinder UiBinder = GWT.create(DeleteTrainerView.DeleteTrainerViewUiBinder.class);
+    Button greenBtn = new Button("Green");
+    Button redBtn = new Button("Red");
+
+
+
+
+    private static TrainerStatusView.DeleteTrainerViewUiBinder UiBinder = GWT.create(TrainerStatusView.DeleteTrainerViewUiBinder.class);
 
     @UiField
     DataGrid<User> dataGrid;
     @UiField
     SimplePager pager;
 
-    interface DeleteTrainerViewUiBinder extends UiBinder<HTMLPanel, DeleteTrainerView>{}
+
+    interface DeleteTrainerViewUiBinder extends UiBinder<HTMLPanel, TrainerStatusView> {
+    }
 
 
-    public DeleteTrainerView() {
+    public TrainerStatusView() {
         initWidget(UiBinder.createAndBindUi(this));
 
         // Setting the page size of the table
@@ -102,50 +111,36 @@ public class DeleteTrainerView extends Composite {
         dataGrid.setColumnWidth(lastnameColumn, 7, Style.Unit.PX);
 
 
-
-        //Mobile
-        Column<User, String> mobileColumn = new Column<User, String>(new TextCell()) {
+        //Last name
+        Column<User, String> isApprovedColumn = new Column<User, String>(new TextCell()) {
             @Override
             public String getValue(User user) {
-                return user.getMobilenr();
+                return user.getIsApproved() ? "Approved" : "Not Approved";
+
             }
         };
-        // Setting the MobileNr column to sortable
-        mobileColumn.setSortable(true);
-        sortHandler.setComparator(mobileColumn, new Comparator<User>() {
+
+        isApprovedColumn.setSortable(true);
+        sortHandler.setComparator(isApprovedColumn, new Comparator<User>() {
             @Override
-            public int compare(User u1, User u2) {
-                return u1.getMobilenr().compareTo(u2.getMobilenr());
+            public int compare(User o1, User o2) {
+                boolean _o1 = o1.getIsApproved();
+                boolean _o2 = o2.getIsApproved();
+
+                if(_o1 && _o2 || !_o1 && !_o2) {
+                    return 0;
+                }
+                else if(_o1 && !_o2) {
+                    return 1;
+                } else {
+                    return -1;
+                }
             }
         });
-        // Adding the column to the table. The "Mobile" is the title of the column
-        dataGrid.addColumn(mobileColumn, "Mobile");
-        // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
-        dataGrid.setColumnWidth(mobileColumn, 7, Style.Unit.PX);
 
-
-        //Team
-        Column<User, String> teamNameColumn = new Column<User, String>(new TextCell()) {
-            @Override
-            public String getValue(User user) {
-                return user.getTeamName();
-            }
-        };
-        // Setting the teamName column to sortable
-        teamNameColumn.setSortable(true);
-        sortHandler.setComparator(teamNameColumn, new Comparator<User>() {
-            @Override
-            public int compare(User u1, User u2) {
-                return u1.getTeamName().compareTo(u2.getTeamName());
-            }
-        });
-        // Adding the column to the table. The "Team Name" is the title of the column
-        dataGrid.addColumn(teamNameColumn, "Team name");
-        // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
-        dataGrid.setColumnWidth(teamNameColumn, 7, Style.Unit.PX);
-
-
+        dataGrid.addColumn(isApprovedColumn, "Status");
+        dataGrid.setColumnWidth(isApprovedColumn, 7, Style.Unit.PX);
 
 
     }
-        }
+}

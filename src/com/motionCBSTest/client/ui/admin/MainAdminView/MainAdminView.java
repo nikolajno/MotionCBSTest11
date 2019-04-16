@@ -5,8 +5,8 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
-import com.motionCBSTest.client.ui.admin.DeleteTrainerView.DeleteTrainerView;
 import com.motionCBSTest.client.ui.admin.showInfoAdminView.ShowInfoAdminView;
+import com.motionCBSTest.client.ui.admin.trainerStatusView.TrainerStatusView;
 import com.motionCBSTest.client.ui.user.changeInfoUserView.ChangeInfoUserView;
 import com.motionCBSTest.client.ui.user.trainersTableUserView.TrainersTableUserView;
 
@@ -20,14 +20,14 @@ public class MainAdminView extends Composite {
     private ChangeInfoUserView changeInfoUserView;
     private TrainersTableUserView trainersTableUserView;
     private ShowInfoAdminView showInfoAdminView;
-    private DeleteTrainerView deleteTrainerView;
+    private TrainerStatusView trainerStatusView;
 
     @UiField
     DeckLayoutPanel centerPanel;
     @UiField
     Button showInfoBtn;
     @UiField
-    Button deleteTrainerBtn;
+    Button trainerStatusBtn;
     @UiField
     Button changeBtn;
     @UiField
@@ -48,8 +48,8 @@ public class MainAdminView extends Composite {
         showInfoAdminView = new ShowInfoAdminView();
         centerPanel.add(showInfoAdminView);
 
-        deleteTrainerView = new DeleteTrainerView();
-        centerPanel.add(deleteTrainerView);
+        trainerStatusView = new TrainerStatusView();
+        centerPanel.add(trainerStatusView);
 
         // The panel that is shown when the application start
         centerPanel.showWidget(changeInfoUserView);
@@ -61,7 +61,7 @@ public class MainAdminView extends Composite {
 
         logoutBtn.addClickHandler(clickHandler);
         showInfoBtn.addClickHandler(clickHandler);
-        deleteTrainerBtn.addClickHandler(clickHandler);
+        trainerStatusBtn.addClickHandler(clickHandler);
     }
 
     // This method is used to change the centerView
@@ -73,10 +73,10 @@ public class MainAdminView extends Composite {
     public ChangeInfoUserView getChangeInfoUserView() {return changeInfoUserView; }
     public TrainersTableUserView getTrainersTableUserView() {return trainersTableUserView; }
     public ShowInfoAdminView getShowInfoAdminView() {return showInfoAdminView;}
-    public DeleteTrainerView getDeleteTrainerView(){return deleteTrainerView;}
+    public TrainerStatusView getTrainerStatusView(){return trainerStatusView;}
 
     // The following getters is used for the menu buttons
-    public Button getDeleteTrainerBtn(){return deleteTrainerBtn;}
+    public Button getTrainerStatusBtn(){return trainerStatusBtn;}
     public Button getLogoutBtn() {return logoutBtn;}
     public Button getChangeBtn() {return changeBtn;}
     public Button getShowInfoBtn() {return showInfoBtn; }

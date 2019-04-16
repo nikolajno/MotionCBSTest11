@@ -16,7 +16,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
     //private static final String JDBC_DRIVER = "com.mysql.jdcb.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/motioncbs?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "emj39bqg";
+    private static final String PASSWORD = "Mpv58tuu";
 
     private static Connection connection = null;
 
@@ -82,6 +82,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
                 user.setTeamtype(resultSet.getString("teamtype_teamID"));
                 user.setType(resultSet.getInt("type"));
                 user.setId(resultSet.getInt("TrainerID"));
+                user.setIsApproved(resultSet.getBoolean("isApproved"));
             }
             // The catch which is used if either the statement or connection is failing
         } catch (SQLException e) {
@@ -94,9 +95,8 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
                 ex.printStackTrace();
                 close();
             }
-        }
-        return user;
-}
+        } return user;
+    }
     @Override
     public boolean changeUserInfo(User user) throws IllegalArgumentException {
         try {
@@ -134,7 +134,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
 
         try {
             // Same concept as getMessages method except there is no join in this statement
-            PreparedStatement getUsers = connection.prepareStatement("SELECT trainerID, firstname, lastname, mobileNr, teamName FROM users " +
+            PreparedStatement getUsers = connection.prepareStatement("SELECT trainerID, firstname, lastname, mobileNr, teamName, isApproved FROM users " +
                     "INNER JOIN teamtype on teamtype_teamID = teamID WHERE type != 1;");
             //getUsers.setInt(1, userId);
             resultSet = getUsers.executeQuery();
@@ -146,7 +146,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
                 user.setFname(resultSet.getString("firstname"));
                 user.setLname(resultSet.getString("lastname"));
                 user.setTeamName(resultSet.getString("teamName"));
-
+                user.setIsApproved(resultSet.getBoolean("isApproved"));
                 users.add(user);
 
             }

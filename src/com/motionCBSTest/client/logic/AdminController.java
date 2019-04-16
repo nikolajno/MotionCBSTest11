@@ -28,6 +28,7 @@ public class AdminController {
         bindHandlers();
 
         listProviderUsers = new ListDataProvider<>();
+        mainAdminView.getTrainerStatusView().initUsersTable(listProviderUsers);
     }
 
 
@@ -65,8 +66,8 @@ public class AdminController {
                     content.changeView(content.getLoginView());
                     listProviderUsers.getList().clear();
                     currentUser = null;
-            } else if (event.getSource() == mainAdminView.getDeleteTrainerBtn()){
-                    mainAdminView.changeView(mainAdminView.getDeleteTrainerView());
+            } else if (event.getSource() == mainAdminView.getTrainerStatusBtn()){
+                    mainAdminView.changeView(mainAdminView.getTrainerStatusView());
             } else if (event.getSource() == mainAdminView.getShowInfoBtn()){
                 mainAdminView.changeView(mainAdminView.getShowInfoAdminView());
             }

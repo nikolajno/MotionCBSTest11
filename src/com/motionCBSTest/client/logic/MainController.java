@@ -70,8 +70,11 @@ public class MainController {
                 public void onSuccess(User user) {
                     // Failed to match input with User in database
                     if (user == null) {
-                        Window.alert("Wrong mobileNr or password");
-                    } else {
+                        Window.alert("Wrong mobile number or password!");
+                    } else if (user.getIsApproved() != true){
+                        Window.alert("User not approved!");
+                    }
+                    else {
 
                         /*
                          * 1) User match in database,
@@ -85,15 +88,12 @@ public class MainController {
                         } else if (user.getType() == 2){
                             userController.loadUser(user);
                             content.changeView(content.getMainUserView());
-                        } else {
-                            Window.alert("Test");
                         }
 
                         // Clearing the text fields (mobileNr & password) from
                         // the login screen
                         content.getLoginView().clearTextBoxFields();
                     }
-
                 }
             });
 
