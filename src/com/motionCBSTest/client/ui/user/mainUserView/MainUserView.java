@@ -23,7 +23,7 @@ public class MainUserView extends Composite {
     @UiField
     Button changeBtn;
     @UiField
-    Button statisticBtn;
+    Button trainersTable;
     @UiField
     Button logoutBtn;
 
@@ -37,7 +37,7 @@ public class MainUserView extends Composite {
         centerPanel.add(changeInfoUserView);
 
         trainersTableUserView = new TrainersTableUserView();
-        centerPanel.add((IsWidget) trainersTableUserView); // Hjælp / forstå
+        centerPanel.add( trainersTableUserView); // Hjælp / forstå
 
         // The panel that is shown when the application start
         centerPanel.showWidget(changeInfoUserView);
@@ -47,7 +47,7 @@ public class MainUserView extends Composite {
     //This method is used to add the clickHandlers from the logic to the menu buttons
     public void addClickHandlers(ClickHandler clickHandler) {
         changeBtn.addClickHandler(clickHandler);
-        statisticBtn.addClickHandler(clickHandler);
+        trainersTable.addClickHandler(clickHandler);
         logoutBtn.addClickHandler(clickHandler);
     }
 
@@ -62,6 +62,6 @@ public class MainUserView extends Composite {
 
     // The following getters is used for the menu buttons
     public Button getChangeBtn() {return changeBtn; }
-    public Button getStatisticBtn() {return statisticBtn; }
+    public Button getTrainersTable() {return trainersTable; }
     public Button getLogoutBtn() {return logoutBtn;}
 }

@@ -5,7 +5,7 @@
       <configuration>
         <setting name="compilerMaxHeapSize" value="1024" />
         <setting name="gwtScriptOutputStyle" value="DETAILED" />
-        <setting name="gwtSdkUrl" value="file://$MODULE_DIR$/../../GWT/gwt-2.8.2" />
+        <setting name="gwtSdkUrl" value="file://$MODULE_DIR$/../Programmering/gwt-2.8.2" />
         <setting name="webFacet" value="Web" />
       </configuration>
     </facet>
@@ -35,5 +35,8 @@
     <orderEntry type="library" name="gwt-user (3)" level="project" />
     <orderEntry type="library" name="gwt-user (4)" level="project" />
     <orderEntry type="library" name="gwt-user (5)" level="project" />
+    <orderEntry type="library" name="gwt-user (6)" level="project" />
+    <orderEntry type="library" name="gwt-charts-0.9.9  (2)" level="project" />
+    <orderEntry type="library" name="gwt-servlet (2)" level="project" />
   </component>
 </module>

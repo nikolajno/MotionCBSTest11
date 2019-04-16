@@ -48,7 +48,7 @@ public class UserController {
 
         @Override
         public void onClick(ClickEvent event) {
-            if (event.getSource() == mainUserView.getStatisticBtn()) {
+            if (event.getSource() == mainUserView.getTrainersTable()) {
                 mainUserView.changeView(mainUserView.getTrainersTableUserView());
             } else if (event.getSource() == mainUserView.getChangeBtn()) {
                 mainUserView.getChangeInfoUserView().setProfileChanges(currentUser);
