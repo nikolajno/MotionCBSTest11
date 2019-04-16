@@ -42,7 +42,7 @@ public class TrainerStatusView extends Composite {
         initWidget(UiBinder.createAndBindUi(this));
 
         // Setting the page size of the table
-        dataGrid.setPageSize(25);
+        dataGrid.setPageSize(20);
         // Adding the pager to the datagrid
         pager.setDisplay(dataGrid);
         // Ensures the headers doesn't get refreshed every time the data is
