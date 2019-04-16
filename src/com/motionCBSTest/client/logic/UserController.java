@@ -71,7 +71,7 @@ public class UserController {
 
 
 
-    private void loadTables() {
+    public void loadTables() {
 
         // The RPC to get all the users
         motionCBSTestServiceAsync.getUsers(currentUser.getId(), new AsyncCallback<ArrayList<User>>() {
@@ -142,4 +142,5 @@ public class UserController {
             });
         }
     }
+
 }

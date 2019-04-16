@@ -14,6 +14,7 @@ public class User implements IsSerializable {
     private int hoursPrWeek;
     private String password;
     private String teamtype;
+    private int teamtype_teamID;
     private int type;
     private boolean isApproved;
     private String teamName;
@@ -32,6 +33,7 @@ public class User implements IsSerializable {
         this.hoursPrWeek = hoursPrWeek;
         this.password = password;
         this.teamtype = teamtype;
+        this.teamtype_teamID = teamtype_teamID;
         this.type = type;
         this.isApproved = isApproved;
         this.teamName = teamName;
@@ -102,7 +104,12 @@ public class User implements IsSerializable {
         this.teamName = teamName;
     }
 
+    public void setTeamtype_teamID(int teamtype_teamID) {
+        this.teamtype_teamID = teamtype_teamID;
+    }
 
-
+    public int getTeamtype_teamID() {
+        return teamtype_teamID;
+    }
 }
 

@@ -5,8 +5,6 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.RadioButton;
-import com.google.gwt.view.client.ListDataProvider;
 import com.motionCBSTest.client.rpc.MotionCBSTestServiceAsync;
 import com.motionCBSTest.client.ui.ContentPanel;
 import com.motionCBSTest.shared.User;
@@ -19,8 +17,6 @@ public class MainController {
     private AdminController adminController;
 
 
-    private ListDataProvider<User> listProviderUsers;
-
     public MainController(ContentPanel content, MotionCBSTestServiceAsync motionCBSTestService){
         this.content = content;
         this.motionCBSTestService = motionCBSTestService;
@@ -29,11 +25,7 @@ public class MainController {
 
         adminController = new AdminController(content, motionCBSTestService);
 
-        listProviderUsers = new ListDataProvider<>();
-
         bindHandlers();
-
-
     }
 
     private void bindHandlers() {
@@ -69,12 +61,11 @@ public class MainController {
                 @Override
                 public void onSuccess(User user) {
                     // Failed to match input with User in database
-                    if (user == null) {
-                        Window.alert("Wrong mobile number or password!");
-                    } else if (user.getIsApproved() != true){
+                    if (user.getIsApproved() != true){
                         Window.alert("User not approved!");
-                    }
-                    else {
+                    } else if (user == null) {
+                        Window.alert("Wrong password or mobilenumber");
+                    }else {
 
                         /*
                          * 1) User match in database,
@@ -122,22 +113,26 @@ public class MainController {
             Integer hoursPrWeek = content.getRegisterView().getNewtxtHoursPrWeek().getValue();
             String password = content.getRegisterView().getNewtxtPassword().getText();
             String teamtype = null;
+            int teamtype_teamID = 0;
 
-                if (event.getSource()instanceof RadioButton) {
-                    if (event.getSource() == content.getRegisterView().getNewCrossfitBtn()) {
+                    if (content.getRegisterView().getNewCrossfitBtn().getValue() == true) {
                         teamtype = "Crossfit";
+                        teamtype_teamID = 1;
                     }
-                    if (event.getSource() == content.getRegisterView().getNewSpinningBtn()) {
+                    if (content.getRegisterView().getNewSpinningBtn().getValue() == true) {
                         teamtype = "Spinning";
+                        teamtype_teamID = 3;
                     }
-                    if (event.getSource() == content.getRegisterView().getNewHitBtn()) {
+                    if (content.getRegisterView().getNewHitBtn().getValue() == true) {
                         teamtype = "H.I.T.";
+                        teamtype_teamID = 2;
                     }
-                    if (event.getSource() == content.getRegisterView().getNewStramopBtn()) {
+                    if (content.getRegisterView().getNewStramopBtn().getValue() == true) {
                         teamtype = "Stram op";
+                        teamtype_teamID = 4;
                     }
-                }
 
+                    
                 // Skal slettes når vi får styr på FieldVerifier
                 int nødvendig = 1;
 
@@ -159,6 +154,8 @@ public class MainController {
                     user.setType(2);
                     user.setIsApproved(false);
                     user.setTeamtype(teamtype);
+                    user.setTeamtype_teamID(teamtype_teamID);
+                    System.out.println(teamtype_teamID + "Det her er dit teamtypeid");
 
 
                     // RPC authenticating user method
@@ -178,7 +175,7 @@ public class MainController {
                                 Window.alert("Could not create user");
                             } else {
                                 content.getRegisterView().clearTextBoxFields();
-                                listProviderUsers.getList().add(user);
+                               // userController.loadTables();
                                 Window.alert("Du er nu tilføjet, vent på at en administrator godkender dig");
                             }
                         }
@@ -195,6 +192,4 @@ public class MainController {
             content.changeView(content.getLoginView());
         }
     }
-
-//hej
 }

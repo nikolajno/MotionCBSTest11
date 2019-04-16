@@ -179,7 +179,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             // Same concept as createMessage method
             PreparedStatement createUser = connection
                   .prepareStatement("INSERT INTO users (firstname, lastname, email, address, mobilenr, education," +
-                            "experience, hoursprweek, password, isapproved, teamtype_teamID, type) " +
+                            "experience, hoursprweek, password, isapproved, type, teamtype_teamID) " +
                           "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
 
             createUser.setString(1, user.getFname());
@@ -192,9 +192,11 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             createUser.setInt(8, user.getHoursPrWeek());
             createUser.setString(9, user.getPassword());
             createUser.setBoolean(10, user.getIsApproved());
-            createUser.setString(11, user.getTeamtype());
-            createUser.setInt(12, user.getType());
+            createUser.setInt(11, user.getType());
 
+            System.out.println(user.getTeamtype_teamID());
+            createUser.setInt(12, user.getTeamtype_teamID());
+            System.out.println(user.getTeamtype_teamID());
             //
             int rowsAffected = createUser.executeUpdate();
             if (rowsAffected == 1) {
