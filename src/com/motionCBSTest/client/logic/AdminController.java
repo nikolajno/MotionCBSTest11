@@ -6,7 +6,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.ListDataProvider;
 import com.motionCBSTest.client.rpc.MotionCBSTestServiceAsync;
 import com.motionCBSTest.client.ui.ContentPanel;
-import com.motionCBSTest.client.ui.admin.MainAdminView;
+import com.motionCBSTest.client.ui.admin.MainAdminView.MainAdminView;
 import com.motionCBSTest.shared.User;
 
 import java.util.ArrayList;
@@ -74,7 +74,10 @@ public class AdminController {
                     listProviderUsers.getList().clear();
                     currentUser = null;
                 }
+                else if (event.getSource() == mainAdminView.getDeleteTrainerBtn()){
+                    mainAdminView.changeView(mainAdminView.getDeleteTrainerView());
             }
+         }
         }
 
     }

@@ -3,7 +3,7 @@ package com.motionCBSTest.client.ui;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.DeckLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
-import com.motionCBSTest.client.ui.admin.MainAdminView;
+import com.motionCBSTest.client.ui.admin.MainAdminView.MainAdminView;
 import com.motionCBSTest.client.ui.login.LoginView;
 import com.motionCBSTest.client.ui.register.RegisterView;
 import com.motionCBSTest.client.ui.user.mainUserView.MainUserView;
