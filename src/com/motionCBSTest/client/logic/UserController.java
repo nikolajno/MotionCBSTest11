@@ -50,6 +50,7 @@ public class UserController {
         public void onClick(ClickEvent event) {
             if (event.getSource() == mainUserView.getTrainersTable()) {
                 mainUserView.changeView(mainUserView.getTrainersTableUserView());
+                listProviderUsers.refresh();
             } else if (event.getSource() == mainUserView.getChangeBtn()) {
                 mainUserView.getChangeInfoUserView().setProfileChanges(currentUser);
                 mainUserView.changeView(mainUserView.getChangeInfoUserView());
@@ -82,6 +83,7 @@ public class UserController {
 
             @Override
             public void onSuccess(ArrayList<User> users) {
+                listProviderUsers.getList().clear();
                 // Adding all the users to the DataProvider (ArrayList)
                 listProviderUsers.getList().addAll(users);
             }
@@ -130,6 +132,8 @@ public class UserController {
                 public void onSuccess(Boolean updated) {
                     if (updated) {
                         Window.alert("Change succes");
+                        loadTables();
+
                     } else {
                         Window.alert("Could not make changes");
                     }

@@ -2,8 +2,9 @@
         "http://gwtproject.org/doctype/2.8.0/gwt-module.dtd">
 <module rename-to="MotionCBSTest">
 
-    <!-- Inherit the core Web Toolkit stuff.                  -->
     <inherits name='com.google.gwt.user.User'/>
+    <!-- Inherit the core Web Toolkit stuff.
+    <
     <inherits name="com.googlecode.gwt.charts.Charts"/>
     <inherits name="com.googlecode.gwt.charts.Charts"/>
     <inherits name="com.googlecode.gwt.charts.Charts"/>
@@ -12,7 +13,7 @@
     <inherits name="com.googlecode.gwt.charts.Charts"/>
     <inherits name="com.googlecode.gwt.charts.Charts"/>
     <inherits name="com.googlecode.gwt.charts.Charts"/>
-
+-->
 
     <!-- Specify the app entry point class.                   -->
     <entry-point class='com.motionCBSTest.client.MotionCBSTest'/>
