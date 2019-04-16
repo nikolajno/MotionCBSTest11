@@ -4,12 +4,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.motionCBSTest.client.rpc.MotionCBSTestService;
 import com.motionCBSTest.shared.User;
 
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements MotionCBSTestService {
@@ -113,7 +108,37 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         return user;
 }
     @Override
-    public ArrayList<User> getUsers(int userId) throws IllegalArgumentException {
+    public boolean changeUserInfo(User user) throws IllegalArgumentException {
+        try {
+            // Look at the previous method
+            PreparedStatement updateUser = connection.prepareStatement("UPDATE users SET " + "firstname = ?, "
+                    + "lastname = ?, " + "email = ?, " + "address = ?, " + "mobileNr = ?, "+ "education = ?," + "experience = ?," +
+                    "hoursPrWeek = ?," + "password = ?," + "teamtype_teamID = ?" + "WHERE trainerID = ?");
+
+            updateUser.setString(1, user.getFname());
+            updateUser.setString(2, user.getLname());
+            updateUser.setString(3, user.getEmail());
+            updateUser.setString(4, user.getAddress());
+            updateUser.setString(5, user.getMobilenr());
+            updateUser.setString(6, user.getEducation());
+            updateUser.setString(7, user.getExperience());
+            updateUser.setInt(8, user.getHoursPrWeek());
+            updateUser.setString(9, user.getPassword());
+            updateUser.setString(10, user.getTeamtype());
+            updateUser.setInt(11, user.getId());
+
+            int rowsAffected = updateUser.executeUpdate();
+
+            if (rowsAffected == 1) {
+                return true;
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        return false;
+    }
+    @Override
+    public ArrayList<User> getUsers(int id) throws IllegalArgumentException {
         ResultSet resultSet = null;
         ArrayList<User> users = new ArrayList<>();
 
@@ -182,35 +207,4 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         }
         return false;
     }
-
-    @Override
-    public boolean changeUserInfo(User user) throws IllegalArgumentException {
-        try {
-            // Look at the previous method
-            PreparedStatement updateUser = connection.prepareStatement("UPDATE users SET " + "firstname = ?, "
-                    + "lastname = ?, " + "email = ?, " + "address = ?, " + "mobileNr = ?, "+ "education = ?," + "experience = ?," +
-                            "hoursPrWeek = ?," + "password = ?," + "teamtype_teamID = ?");
-
-            updateUser.setString(1, user.getFname());
-            updateUser.setString(2, user.getLname());
-            updateUser.setString(3, user.getEmail());
-            updateUser.setString(4, user.getAddress());
-            updateUser.setString(5, user.getMobilenr());
-            updateUser.setString(6, user.getEducation());
-            updateUser.setString(7, user.getExperience());
-            updateUser.setInt(8, user.getHoursPrWeek());
-            updateUser.setString(9, user.getPassword());
-            updateUser.setString(10, user.getTeamtype());
-
-            int rowsAffected = updateUser.executeUpdate();
-
-            if (rowsAffected == 1) {
-                return true;
-            }
-        } catch (SQLException sqlException) {
-            sqlException.printStackTrace();
-        }
-        return false;
-    }
-
 }
