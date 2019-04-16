@@ -9,7 +9,6 @@ import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.view.client.ListDataProvider;
 import com.motionCBSTest.client.rpc.MotionCBSTestServiceAsync;
 import com.motionCBSTest.client.ui.ContentPanel;
-import com.motionCBSTest.shared.FieldVerifier;
 import com.motionCBSTest.shared.User;
 
 public class MainController {
@@ -139,11 +138,13 @@ public class MainController {
                     }
                 }
 
+                // Skal slettes når vi får styr på FieldVerifier
+                int nødvendig = 1;
 
-                if (FieldVerifier.isValidFname(fName) && FieldVerifier.isValidLname(lName) && FieldVerifier.isValidEmail(email)
+                if ( nødvendig == 1 /**FieldVerifier.isValidFname(fName) && FieldVerifier.isValidLname(lName) && FieldVerifier.isValidEmail(email)
                     && FieldVerifier.isValidAddress(address) && FieldVerifier.isValidMobileNo(mobileno) && FieldVerifier.isValidEducation(education)
                     && FieldVerifier.isValidExperience(experience) && FieldVerifier.isValidHoursPrWeek(hoursPrWeek)
-                    && FieldVerifier.isValidPassword(password) /**&& FieldVerifier.isValidTeamtype(teamtype)*/) {
+                    && FieldVerifier.isValidPassword(password) && FieldVerifier.isValidTeamtype(teamtype)*/) {
 
                     User user = new User();
                     user.setFname(fName);

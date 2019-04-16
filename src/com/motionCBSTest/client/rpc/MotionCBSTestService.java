@@ -11,10 +11,6 @@ public interface MotionCBSTestService extends RemoteService {
 
     // Sample interface method of remote interface
 
-    void test() throws IllegalArgumentException;
-
-    String getMessage(String msg);
-
     User authorizeUser(String mobileNr, String password) throws Exception;
 
     ArrayList<User> getUsers(int trainerID) throws Exception;

@@ -62,20 +62,13 @@ public class AdminController {
         @Override
         public void onClick(ClickEvent event) {
             if (event.getSource() == mainAdminView.getLogoutBtn()) {
-                    /*
-                     * When a user is logged out it:
-                     * 1) Changing to the login view
-                     * 2) Clearing the List of users in the DataProvider
-                     * 3) Clearing the List of messages in the DataProvider
-                     * 4) Clearing the current user by setting it to null
-                     */
-
                     content.changeView(content.getLoginView());
                     listProviderUsers.getList().clear();
                     currentUser = null;
-                }
-                else if (event.getSource() == mainAdminView.getDeleteTrainerBtn()){
+            } else if (event.getSource() == mainAdminView.getDeleteTrainerBtn()){
                     mainAdminView.changeView(mainAdminView.getDeleteTrainerView());
+            } else if (event.getSource() == mainAdminView.getShowInfoBtn()){
+                mainAdminView.changeView(mainAdminView.getShowInfoAdminView());
             }
          }
         }

@@ -6,6 +6,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
 import com.motionCBSTest.client.ui.admin.DeleteTrainerView.DeleteTrainerView;
+import com.motionCBSTest.client.ui.admin.ShowInfoAdminView;
 import com.motionCBSTest.client.ui.user.changeUserInfoUserView.ChangeUserInfoUserView;
 import com.motionCBSTest.client.ui.user.statisticsUserView.StatisticsUserView;
 
@@ -18,10 +19,13 @@ public class MainAdminView extends Composite {
 
     private ChangeUserInfoUserView changeUserInfoUserView;
     private StatisticsUserView statisticsUserView;
+    private ShowInfoAdminView showInfoAdminView;
     private DeleteTrainerView deleteTrainerView;
 
     @UiField
     DeckLayoutPanel centerPanel;
+    @UiField
+    Button showInfoBtn;
     @UiField
     Button deleteTrainerBtn;
     @UiField
@@ -39,7 +43,10 @@ public class MainAdminView extends Composite {
         centerPanel.add(changeUserInfoUserView);
 
         statisticsUserView = new StatisticsUserView();
-        centerPanel.add(statisticsUserView); // Hjælp / forstå
+        centerPanel.add(statisticsUserView);
+
+        showInfoAdminView = new ShowInfoAdminView();
+        centerPanel.add(showInfoAdminView);
 
         deleteTrainerView = new DeleteTrainerView();
         centerPanel.add(deleteTrainerView);
@@ -53,6 +60,7 @@ public class MainAdminView extends Composite {
     public void addClickHandlers(ClickHandler clickHandler) {
 
         logoutBtn.addClickHandler(clickHandler);
+        showInfoBtn.addClickHandler(clickHandler);
         deleteTrainerBtn.addClickHandler(clickHandler);
     }
 
@@ -64,13 +72,12 @@ public class MainAdminView extends Composite {
     // The following getters is for view and tables
     public ChangeUserInfoUserView getChangeUserInfoUserView() {return changeUserInfoUserView; }
     public StatisticsUserView getStatisticsUserView() {return statisticsUserView; }
+    public ShowInfoAdminView getShowInfoAdminView() {return showInfoAdminView;}
     public DeleteTrainerView getDeleteTrainerView(){return deleteTrainerView;}
 
     // The following getters is used for the menu buttons
     public Button getDeleteTrainerBtn(){return deleteTrainerBtn;}
     public Button getLogoutBtn() {return logoutBtn;}
     public Button getChangeBtn() {return changeBtn;}
-
-
-
+    public Button getShowInfoBtn() {return showInfoBtn; }
 }
