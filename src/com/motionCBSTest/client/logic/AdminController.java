@@ -2,6 +2,8 @@ package com.motionCBSTest.client.logic;
 import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.logical.shared.SelectionEvent;
+import com.google.gwt.event.logical.shared.SelectionHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.ListDataProvider;
@@ -31,9 +33,9 @@ public class AdminController {
         listProviderUsers = new ListDataProvider<>();
         mainAdminView.getTrainerStatusView().initUsersTable(listProviderUsers);
         mainAdminView.getShowInfoAdminView().initUsersTable(listProviderUsers);
-        mainAdminView.getChangeInfoAdminView().initUsersTable(listProviderUsers);
+        mainAdminView.getTabLayot().getSdeltid().initUsersTable(listProviderUsers);
+        mainAdminView.getTabLayot().getSfuldtid().initUsersTable(listProviderUsers);
     }
-
 
     public void loadUser(User currentUser) {
         this.currentUser = currentUser;
@@ -61,6 +63,7 @@ public class AdminController {
 
         mainAdminView.addClickHandlers(new MenuClickHandler());
         mainAdminView.getShowInfoAdminView().addClickHandler(new SelectInfoHandler());
+        mainAdminView.getTabLayot().addSelectionHandler(new StatisticTypeHandler());
     }
 
     class SelectInfoHandler implements ActionCell.Delegate<User> {
@@ -95,10 +98,33 @@ public class AdminController {
                     mainAdminView.changeView(mainAdminView.getTrainerStatusView());
             } else if (event.getSource() == mainAdminView.getShowInfoBtn()){
                 mainAdminView.changeView(mainAdminView.getShowInfoAdminView());
-            } else if (event.getSource() == mainAdminView.getChangeBtn()) {
-                mainAdminView.changeView(mainAdminView.getChangeInfoAdminView());
+            } else if (event.getSource() == mainAdminView.getStatisticBtn()){
+                mainAdminView.changeView(mainAdminView.getTabLayot());
             }
          }
         }
+
+    /**
+     * This is used for the TabLayoutPanel. The panel that can show either fuldtid or
+     * deltid. If this isn't used it is likely that the DataGrids will show up empty.
+     * Mark that this isn't ClickHandler but a SelectionHandler instead
+     */
+    class StatisticTypeHandler implements SelectionHandler<Integer> {
+
+        @Override
+        public void onSelection(SelectionEvent<Integer> event) {
+            switch (event.getSelectedItem()) {
+                case 0:
+                    listProviderUsers.refresh();
+                    break;
+
+                case 1:
+                    listProviderUsers.refresh();
+                    break;
+            }
+
+        }
+
+    }
 
     }

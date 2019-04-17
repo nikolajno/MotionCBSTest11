@@ -1,13 +1,13 @@
-package com.motionCBSTest.client.ui.admin.statisticsAdminView;
+package com.motionCBSTest.client.ui.admin.statisticsFuldtidAdminView;
 
 import com.google.gwt.cell.client.NumberCell;
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.dom.client.Style;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.Column;
-import com.google.gwt.user.cellview.client.ColumnSortEvent.ListHandler;
+import com.google.gwt.user.cellview.client.ColumnSortEvent;
 import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.client.ui.Composite;
@@ -17,18 +17,19 @@ import com.motionCBSTest.shared.User;
 
 import java.util.Comparator;
 
-public class StatisticsAdminView extends Composite {
-    interface StatisticsAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsAdminView> {
+public class StatisticsFuldtidAdminView extends Composite {
+    interface StatisticsFuldtidAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsFuldtidAdminView> {
     }
 
-    private static StatisticsAdminViewUiBinder ourUiBinder = GWT.create(StatisticsAdminViewUiBinder.class);
+    private static StatisticsFuldtidAdminViewUiBinder ourUiBinder = GWT.create(StatisticsFuldtidAdminViewUiBinder.class);
 
     @UiField
     DataGrid<User> dataGrid;
     @UiField
     SimplePager pager;
 
-    public StatisticsAdminView() {
+
+    public StatisticsFuldtidAdminView() {
         initWidget(ourUiBinder.createAndBindUi(this));
 
         // Setting the page size of the table
@@ -42,12 +43,14 @@ public class StatisticsAdminView extends Composite {
         // Ensures the headers doesn't get refreshed every time the data is updated
         dataGrid.setAutoHeaderRefreshDisabled(true);
         //dataGridDown.setAutoHeaderRefreshDisabled(true);
+
     }
+
     // This method is called from the logic so it is possible to load the table with data from the database
     public void initUsersTable(ListDataProvider<User> dataProvider) {
 
         // Attach a column sort handler to the ListDataProvider to sort the list
-        ListHandler<User> sortHandler = new ListHandler<User>(dataProvider.getList());
+        ColumnSortEvent.ListHandler<User> sortHandler = new ColumnSortEvent.ListHandler<User>(dataProvider.getList());
         dataGrid.addColumnSortHandler(sortHandler);
 
         // Creating all the necessary columns to the table
@@ -60,7 +63,7 @@ public class StatisticsAdminView extends Composite {
 
     // This method is creating all the columns. Each column wont be described since it is more or less the
     // same with small changes
-    private void initTableColumns(ListHandler<User> sortHandler) {
+    private void initTableColumns(ColumnSortEvent.ListHandler<User> sortHandler) {
         // In this next lines the user id column will be explained in details
 
         // The user id column is created. Remark that when it is a cell it isn't a IntegerCell but a NumberCell.
@@ -84,7 +87,7 @@ public class StatisticsAdminView extends Composite {
         dataGrid.addColumn(userIdColumn, "Trainer Id");
 
         // Setting the size of the column.
-        dataGrid.setColumnWidth(userIdColumn, 4, Unit.PX);
+        dataGrid.setColumnWidth(userIdColumn, 4, Style.Unit.PX);
 
         // Lastname will be explained in details
         Column<User, String> lnameColumn = new Column<User, String>(new TextCell()) {
@@ -107,7 +110,7 @@ public class StatisticsAdminView extends Composite {
         dataGrid.addColumn(lnameColumn, "Last Name");
 
         // Setting the size of the column
-        dataGrid.setColumnWidth(lnameColumn, 8, Unit.PX);
+        dataGrid.setColumnWidth(lnameColumn, 8, Style.Unit.PX);
 
 
         // The user id column is created. Remark that when it is a cell it isn't a IntegerCell but a NumberCell.
@@ -131,7 +134,8 @@ public class StatisticsAdminView extends Composite {
         dataGrid.addColumn(hoursColumn, "Hours pr. Week");
 
         // Setting the size of the column.
-        dataGrid.setColumnWidth(hoursColumn, 4, Unit.PX);
+        dataGrid.setColumnWidth(hoursColumn, 4, Style.Unit.PX);
     }
+
 
 }
