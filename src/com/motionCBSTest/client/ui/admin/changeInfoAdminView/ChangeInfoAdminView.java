@@ -5,6 +5,7 @@ import com.google.gwt.cell.client.NumberCell;
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.Column;
@@ -112,7 +113,7 @@ public class ChangeInfoAdminView extends Composite {
         dataGrid.addColumn(userIdColumn, "Trainer Id");
 
         // Setting the size of the column.
-        dataGrid.setColumnWidth(userIdColumn, 4, Style.Unit.PX);
+        dataGrid.setColumnWidth(userIdColumn, 5, Style.Unit.PX);
 
         // Firstname will be explained in details
         Column<User, String> fnameColumn = new Column<User, String>(new TextCell()) {
@@ -189,7 +190,7 @@ public class ChangeInfoAdminView extends Composite {
         return pager;
     }
 
-    /*// This method is adding the click handler to the change profile button
+    // This method is adding the click handler to the change profile button
     public void addClickHandlers(ClickHandler clickHandler) {
         changeProfileBtn.addClickHandler(clickHandler);
     }
@@ -250,5 +251,4 @@ public class ChangeInfoAdminView extends Composite {
 
     public RadioButton getNewSpinningBtn() {return newSpinningBtn;}
 
-    */
 }
