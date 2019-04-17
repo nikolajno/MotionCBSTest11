@@ -75,6 +75,7 @@ public class MainAdminView extends Composite {
         showInfoBtn.addClickHandler(clickHandler);
         trainerStatusBtn.addClickHandler(clickHandler);
         statisticBtn.addClickHandler(clickHandler);
+        changeBtn.addClickHandler(clickHandler);
     }
 
     // This method is used to change the centerView

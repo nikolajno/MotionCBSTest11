@@ -63,7 +63,7 @@ public class ChangeInfoAdminView extends Composite {
         initWidget(ourUiBinder.createAndBindUi(this));
 
         // Setting the page size of the table
-        dataGrid.setPageSize(15);
+        dataGrid.setPageSize(20);
 
         // Adding the pager to the datagrid
         pager.setDisplay(dataGrid);

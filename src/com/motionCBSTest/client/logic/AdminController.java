@@ -35,6 +35,7 @@ public class AdminController {
         mainAdminView.getShowInfoAdminView().initUsersTable(listProviderUsers);
         mainAdminView.getTabLayot().getSdeltid().initUsersTable(listProviderUsers);
         mainAdminView.getTabLayot().getSfuldtid().initUsersTable(listProviderUsers);
+        mainAdminView.getChangeInfoAdminView().initUsersTable(listProviderUsers);
     }
 
     public void loadUser(User currentUser) {
@@ -64,6 +65,8 @@ public class AdminController {
         mainAdminView.addClickHandlers(new MenuClickHandler());
         mainAdminView.getShowInfoAdminView().addClickHandler(new SelectInfoHandler());
         mainAdminView.getTabLayot().addSelectionHandler(new StatisticTypeHandler());
+        mainAdminView.getChangeInfoAdminView().addClickHandler(new GetInfoHandler());
+        mainAdminView.getChangeInfoAdminView().addClickHandlers(new ChangeInfoHanlder());
     }
 
     class SelectInfoHandler implements ActionCell.Delegate<User> {
@@ -96,10 +99,15 @@ public class AdminController {
                 currentUser = null;
             } else if (event.getSource() == mainAdminView.getTrainerStatusBtn()) {
                 mainAdminView.changeView(mainAdminView.getTrainerStatusView());
+                listProviderUsers.refresh();
             } else if (event.getSource() == mainAdminView.getShowInfoBtn()) {
                 mainAdminView.changeView(mainAdminView.getShowInfoAdminView());
+                listProviderUsers.refresh();
             } else if (event.getSource() == mainAdminView.getStatisticBtn()) {
                 mainAdminView.changeView(mainAdminView.getTabLayot());
+            } else if (event.getSource() == mainAdminView.getChangeBtn()) {
+                mainAdminView.changeView(mainAdminView.getChangeInfoAdminView());
+                listProviderUsers.refresh();
             }
         }
     }
@@ -125,5 +133,80 @@ public class AdminController {
 
         }
 
+    }
+
+    private User chosenUser;
+    class GetInfoHandler implements ActionCell.Delegate<User> {
+
+        @Override
+        public void execute(User user) {
+            chosenUser = user;
+            mainAdminView.getChangeInfoAdminView().setProfileChanges(user);
+        }
+    }
+
+    class ChangeInfoHanlder implements ClickHandler {
+
+        @Override
+        public void onClick(ClickEvent clickEvent) {
+            /*
+             * It firsts sets(change) all the user info with the info from
+             * the text fields and radio button in the settings view
+             */
+
+            chosenUser.setFname(mainAdminView.getChangeInfoAdminView().getTxtFname().getText());
+            chosenUser.setLname(mainAdminView.getChangeInfoAdminView().getTxtLname().getText());
+            chosenUser.setEmail(mainAdminView.getChangeInfoAdminView().getTxtEmail().getText());
+            chosenUser.setAddress(mainAdminView.getChangeInfoAdminView().getTxtAddress().getText());
+            chosenUser.setMobilenr(mainAdminView.getChangeInfoAdminView().getTxtMobileNo().getText());
+            chosenUser.setEducation(mainAdminView.getChangeInfoAdminView().getTxtEducation().getText());
+            chosenUser.setExperience(mainAdminView.getChangeInfoAdminView().getTxtExperience().getText());
+            chosenUser.setHoursPrWeek(mainAdminView.getChangeInfoAdminView().getTxtHoursPrWeek().getTabIndex());
+            chosenUser.setPassword(mainAdminView.getChangeInfoAdminView().getTxtPassword().getText());
+
+            int teamtype_teamID = 0;
+
+            if (mainAdminView.getChangeInfoAdminView().getNewCrossfitBtn().isEnabled() == true) {
+                teamtype_teamID = 1;
+            }
+            if (mainAdminView.getChangeInfoAdminView().getNewSpinningBtn().isEnabled() == true) {
+                teamtype_teamID = 3;
+            }
+            if (mainAdminView.getChangeInfoAdminView().getNewHitBtn().isEnabled() == true) {
+                teamtype_teamID = 2;
+            }
+            if (mainAdminView.getChangeInfoAdminView().getNewStramopBtn().isEnabled() == true) {
+                teamtype_teamID = 4;
+            }
+
+            chosenUser.setTeamtype_teamID(teamtype_teamID);
+
+
+            // The RPC call which through the server updates the user info in the users table in the database
+            motionCBSTestServiceAsync.changeUserInfo(chosenUser, new AsyncCallback<Boolean>() {
+
+                @Override
+                public void onFailure(Throwable caught) {
+                    // TODO Auto-generated method stub
+                }
+
+                /*
+                 * Confirmation if the info was updated
+                 */
+                @Override
+                public void onSuccess(Boolean updated) {
+                    if (updated) {
+                        Window.alert("Change succes");
+                        listProviderUsers.getList().clear();
+                        loadTables();
+
+                    } else {
+                        Window.alert("Could not make changes");
+                    }
+
+                }
+            });
+
+        }
     }
 }
