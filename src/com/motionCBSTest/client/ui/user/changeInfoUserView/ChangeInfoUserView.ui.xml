@@ -31,15 +31,6 @@
             margin-left: 10px;
         }
 
-        .textArea {
-            font-size: 12px;
-            width: 550px;
-            height: 255px;
-            border-radius: 2px;
-            margin-bottom: 10px;
-            resize: none;
-        }
-
         .textInput {
             font-size: 14px;
             height: 32px;
@@ -64,6 +55,12 @@
         .btn:hover {
             background-color: #fff;
             color: #333;
+        }
+
+        .radioButtons {
+            color: black;
+            padding: 5px;
+
         }
 
     </ui:style>
@@ -108,7 +105,7 @@
 
             <g:FlowPanel styleName="{style.changeInfoContainer}">
                 <g:Label styleName="{style.title}" text="Timer om ugen:"></g:Label>
-                <g:TextBox ui:field="txtHoursPrWeek" styleName="{style.textInput} {style.input}"></g:TextBox>
+                <g:IntegerBox ui:field="txtHoursPrWeek" styleName="{style.textInput} {style.input}"></g:IntegerBox>
             </g:FlowPanel>
 
             <g:FlowPanel styleName="{style.changeInfoContainer}">
@@ -116,10 +113,13 @@
                 <g:TextBox ui:field="txtPassword" styleName="{style.textInput}"></g:TextBox>
             </g:FlowPanel>
 
-            <g:FlowPanel styleName="{style.changeInfoContainer}">
-                <g:Label styleName="{style.title}" text="Holdtype:"></g:Label>
-                <g:TextBox ui:field="txtTeamtype" styleName="{style.textInput} {style.input}"></g:TextBox>
-            </g:FlowPanel>
+                <g:HorizontalPanel styleName="{style.changeInfoContainer}">
+                    <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newCrossfitBtn" text="Crossfit"/>
+                    <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newSpinningBtn" text="Spinning"/>
+                    <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newHitBtn" text="H.I.T."/>
+                    <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newStramopBtn" text="Stram-Op"/>
+                </g:HorizontalPanel>
+
 
             <g:Button styleName="{style.btn}" ui:field="changeProfileBtn" text="Ændre oplysninger"/>
 

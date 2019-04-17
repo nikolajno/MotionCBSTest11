@@ -79,7 +79,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
                 user.setEducation(resultSet.getString("education"));
                 user.setExperience(resultSet.getString("experience"));
                 user.setHoursPrWeek(resultSet.getInt("hoursPrWeek"));
-                user.setTeamtype(resultSet.getString("teamtype_teamID"));
+                user.setTeamtype_teamID(resultSet.getInt("teamtype_teamID"));
                 user.setType(resultSet.getInt("type"));
                 user.setId(resultSet.getInt("TrainerID"));
                 user.setIsApproved(resultSet.getBoolean("isApproved"));
@@ -101,9 +101,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
     public boolean changeUserInfo(User user) throws IllegalArgumentException {
         try {
             // Look at the previous method
-            PreparedStatement updateUser = connection.prepareStatement("UPDATE users SET " + "firstname = ?, "
-                    + "lastname = ?, " + "email = ?, " + "address = ?, " + "mobileNr = ?, "+ "education = ?," + "experience = ?," +
-                    "hoursPrWeek = ?," + "password = ?," + "teamtype_teamID = ?" + "WHERE trainerID = ?");
+            PreparedStatement updateUser = connection.prepareStatement("UPDATE users SET firstname = ?, lastname = ?, email = ?, address = ?, mobileNr = ?, education = ?, experience = ?, hoursPrWeek = ?,  password = ?, teamtype_teamID = ? WHERE trainerID = ?;");
 
             updateUser.setString(1, user.getFname());
             updateUser.setString(2, user.getLname());
@@ -114,7 +112,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             updateUser.setString(7, user.getExperience());
             updateUser.setInt(8, user.getHoursPrWeek());
             updateUser.setString(9, user.getPassword());
-            updateUser.setString(10, user.getTeamtype());
+            updateUser.setInt(10, user.getTeamtype_teamID());
             updateUser.setInt(11, user.getId());
 
             int rowsAffected = updateUser.executeUpdate();
@@ -193,10 +191,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             createUser.setString(9, user.getPassword());
             createUser.setBoolean(10, user.getIsApproved());
             createUser.setInt(11, user.getType());
-
-            System.out.println(user.getTeamtype_teamID());
             createUser.setInt(12, user.getTeamtype_teamID());
-            System.out.println(user.getTeamtype_teamID());
             //
             int rowsAffected = createUser.executeUpdate();
             if (rowsAffected == 1) {

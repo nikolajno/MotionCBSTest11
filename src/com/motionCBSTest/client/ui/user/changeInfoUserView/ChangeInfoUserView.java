@@ -26,17 +26,25 @@ public class ChangeInfoUserView extends Composite {
     @UiField
     TextBox txtExperience;
     @UiField
-    TextBox txtHoursPrWeek;
+    IntegerBox txtHoursPrWeek;
     @UiField
     TextBox txtPassword;
     @UiField
-    TextBox txtTeamtype;
+    RadioButton newCrossfitBtn;
+    @UiField
+    RadioButton newHitBtn;
+    @UiField
+    RadioButton newStramopBtn;
+    @UiField
+    RadioButton newSpinningBtn;
     @UiField
     Button changeProfileBtn;
 
     interface ChangeUserInfoUserViewUiBinder extends UiBinder<HTMLPanel, ChangeInfoUserView> {}
 
-    public ChangeInfoUserView() {initWidget(ourUiBinder.createAndBindUi(this));}
+    public ChangeInfoUserView() {
+        initWidget(ourUiBinder.createAndBindUi(this));
+    }
 
 
     // This method is adding the click handler to the change profile button
@@ -54,9 +62,23 @@ public class ChangeInfoUserView extends Composite {
         txtMobileNo.setText(user.getMobilenr());
         txtEducation.setText(user.getEducation());
         txtExperience.setText(user.getExperience());
-        txtHoursPrWeek.setTabIndex(user.getHoursPrWeek()); // Måske forkert??
+        txtHoursPrWeek.setValue(user.getHoursPrWeek());
         txtPassword.setText(user.getPassword());
-        txtTeamtype.setText(user.getTeamtype());
+
+        if (user.getTeamtype_teamID() == 1) {
+            newCrossfitBtn.setValue(true);
+            newCrossfitBtn.setEnabled(true);
+        } else if (user.getTeamtype_teamID() == 3) {
+            newSpinningBtn.setValue(true);
+            newSpinningBtn.setEnabled(true);
+        } else if (user.getTeamtype_teamID() == 2) {
+            newHitBtn.setValue(true);
+            newHitBtn.setEnabled(true);
+        } else if (user.getTeamtype_teamID() == 4) {
+            newStramopBtn.setValue(true);
+            newStramopBtn.setEnabled(true);
+        }
+
     }
 
     // Getters
@@ -74,9 +96,15 @@ public class ChangeInfoUserView extends Composite {
 
     public TextBox getTxtExperience() { return txtExperience; }
 
-    public TextBox getTxtHoursPrWeek() { return txtHoursPrWeek; }
+    public IntegerBox getTxtHoursPrWeek() { return txtHoursPrWeek; }
 
     public TextBox getTxtPassword() { return txtPassword; }
 
-    public TextBox getTxtTeamtype() { return txtTeamtype; }
+    public RadioButton getNewCrossfitBtn() {return newCrossfitBtn;}
+
+    public RadioButton getNewHitBtn() {return newHitBtn;}
+
+    public RadioButton getNewStramopBtn() {return newStramopBtn;}
+
+    public RadioButton getNewSpinningBtn() {return newSpinningBtn;}
 }

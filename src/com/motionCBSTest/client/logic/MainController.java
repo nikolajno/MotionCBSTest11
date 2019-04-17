@@ -155,8 +155,6 @@ public class MainController {
                     user.setIsApproved(false);
                     user.setTeamtype(teamtype);
                     user.setTeamtype_teamID(teamtype_teamID);
-                    System.out.println(teamtype_teamID + "Det her er dit teamtypeid");
-
 
                     // RPC authenticating user method
                     motionCBSTestService.createUser(user, new AsyncCallback<Boolean>() {

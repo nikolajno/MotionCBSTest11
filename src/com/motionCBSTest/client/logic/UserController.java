@@ -107,14 +107,24 @@ public class UserController {
             currentUser.setExperience(mainUserView.getChangeInfoUserView().getTxtExperience().getText());
             currentUser.setHoursPrWeek(mainUserView.getChangeInfoUserView().getTxtHoursPrWeek().getTabIndex());
             currentUser.setPassword(mainUserView.getChangeInfoUserView().getTxtPassword().getText());
-            currentUser.setTeamtype(mainUserView.getChangeInfoUserView().getTxtTeamtype().getText());
 
-            //Sådan skal det gøres hvis vi bruger radio buttons
-            /*if (mainUserView.getChangeInfoUserView().getGenderMaleRBtn().getValue() == true) {
-                currentUser.setGender('m');
-            } else if (mainUserView.getChangeInfoUserView().getGenderFemaleRBtn().getValue() == true) {
-                currentUser.setGender('f');
-            }*/
+            int teamtype_teamID = 0;
+
+                if (content.getMainAdminView().getChangeInfoUserView().getNewCrossfitBtn().isEnabled() == true) {
+                    teamtype_teamID = 1;
+                }
+                if (content.getMainAdminView().getChangeInfoUserView().getNewSpinningBtn().isEnabled() == true) {
+                    teamtype_teamID = 3;
+                }
+                if (content.getMainAdminView().getChangeInfoUserView().getNewHitBtn().isEnabled() == true) {
+                    teamtype_teamID = 2;
+                }
+                if (content.getMainAdminView().getChangeInfoUserView().getNewStramopBtn().isEnabled() == true) {
+                    teamtype_teamID = 4;
+                }
+
+            currentUser.setTeamtype_teamID(teamtype_teamID);
+
 
             // The RPC call which through the server updates the user info in the users table in the database
             motionCBSTestServiceAsync.changeUserInfo(currentUser, new AsyncCallback<Boolean>() {
