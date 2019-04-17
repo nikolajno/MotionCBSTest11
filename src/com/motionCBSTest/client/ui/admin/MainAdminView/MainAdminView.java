@@ -7,8 +7,8 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
 import com.motionCBSTest.client.ui.admin.changeInfoAdminView.ChangeInfoAdminView;
 import com.motionCBSTest.client.ui.admin.showInfoAdminView.ShowInfoAdminView;
-import com.motionCBSTest.client.ui.admin.statisticsDeltidAdminView.TabLayot;
-import com.motionCBSTest.client.ui.admin.statisticsFuldtidAdminView.StatisticsFuldtidAdminView;
+import com.motionCBSTest.client.ui.admin.statisticsPartTimeAdminView.TabLayot;
+import com.motionCBSTest.client.ui.admin.statisticsFullTimeAdminView.StatisticsFullTimeAdminView;
 import com.motionCBSTest.client.ui.admin.trainerStatusView.TrainerStatusView;
 import com.motionCBSTest.client.ui.user.trainersTableUserView.TrainersTableUserView;
 
@@ -24,7 +24,7 @@ public class MainAdminView extends Composite {
     private ShowInfoAdminView showInfoAdminView;
     private TrainerStatusView trainerStatusView;
     private TabLayot tabLayot;
-    private StatisticsFuldtidAdminView statisticsFuldtidAdminView;
+    private StatisticsFullTimeAdminView statisticsFullTimeAdminView;
 
     @UiField
     DeckLayoutPanel centerPanel;
@@ -60,8 +60,8 @@ public class MainAdminView extends Composite {
         tabLayot = new TabLayot();
         centerPanel.add(tabLayot);
 
-        statisticsFuldtidAdminView = new StatisticsFuldtidAdminView();
-        centerPanel.add(statisticsFuldtidAdminView);
+        statisticsFullTimeAdminView = new StatisticsFullTimeAdminView();
+        centerPanel.add(statisticsFullTimeAdminView);
 
         // The panel that is shown when the application start
         centerPanel.showWidget(trainerStatusView);
@@ -89,7 +89,7 @@ public class MainAdminView extends Composite {
     public ShowInfoAdminView getShowInfoAdminView() {return showInfoAdminView;}
     public TrainerStatusView getTrainerStatusView(){return trainerStatusView;}
     public TabLayot getTabLayot() {return tabLayot;}
-    public StatisticsFuldtidAdminView getStatisticsFuldtidAdminView() {return statisticsFuldtidAdminView;}
+    public StatisticsFullTimeAdminView getStatisticsFullTimeAdminView() {return statisticsFullTimeAdminView;}
 
     // The following getters is used for the menu buttons
     public Button getTrainerStatusBtn(){return trainerStatusBtn;}

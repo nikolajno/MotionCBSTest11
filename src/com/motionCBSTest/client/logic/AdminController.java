@@ -58,6 +58,7 @@ public class AdminController {
                 listProviderUsers.getList().addAll(users);
             }
         });
+
     }
 
     private void bindHandlers() {
@@ -67,6 +68,8 @@ public class AdminController {
         mainAdminView.getTabLayot().addSelectionHandler(new StatisticTypeHandler());
         mainAdminView.getChangeInfoAdminView().addClickHandler(new GetInfoHandler());
         mainAdminView.getChangeInfoAdminView().addClickHandlers(new ChangeInfoHanlder());
+
+
     }
 
     class SelectInfoHandler implements ActionCell.Delegate<User> {
@@ -99,14 +102,20 @@ public class AdminController {
                 currentUser = null;
             } else if (event.getSource() == mainAdminView.getTrainerStatusBtn()) {
                 mainAdminView.changeView(mainAdminView.getTrainerStatusView());
+                listProviderUsers.getList().clear();
+                loadTables();
                 listProviderUsers.refresh();
             } else if (event.getSource() == mainAdminView.getShowInfoBtn()) {
                 mainAdminView.changeView(mainAdminView.getShowInfoAdminView());
+                listProviderUsers.getList().clear();
+                loadTables();
                 listProviderUsers.refresh();
             } else if (event.getSource() == mainAdminView.getStatisticBtn()) {
                 mainAdminView.changeView(mainAdminView.getTabLayot());
             } else if (event.getSource() == mainAdminView.getChangeBtn()) {
                 mainAdminView.changeView(mainAdminView.getChangeInfoAdminView());
+                listProviderUsers.getList().clear();
+                loadTables();
                 listProviderUsers.refresh();
             }
         }
@@ -123,11 +132,40 @@ public class AdminController {
         public void onSelection(SelectionEvent<Integer> event) {
             switch (event.getSelectedItem()) {
                 case 0:
-                    listProviderUsers.refresh();
+                    listProviderUsers.getList().clear();
+                    motionCBSTestServiceAsync.getUsersPartTime(currentUser.getId(), new AsyncCallback<ArrayList<User>>() {
+
+                        @Override
+                        public void onFailure(Throwable caught) {
+                            Window.alert("Could not load users");
+                        }
+
+                        @Override
+                        public void onSuccess(ArrayList<User> users) {
+                            // Adding all the users to the DataProvider (ArrayList)
+                            listProviderUsers.getList().addAll(users);
+                            listProviderUsers.refresh();
+
+                        }
+                    });
                     break;
 
                 case 1:
-                    listProviderUsers.refresh();
+                    listProviderUsers.getList().clear();
+                    motionCBSTestServiceAsync.getUsersFullTime(currentUser.getId(), new AsyncCallback<ArrayList<User>>() {
+
+                        @Override
+                        public void onFailure(Throwable caught) {
+                            Window.alert("Could not load users");
+                        }
+
+                        @Override
+                        public void onSuccess(ArrayList<User> users) {
+                            // Adding all the users to the DataProvider (ArrayList)
+                            listProviderUsers.getList().addAll(users);
+                            listProviderUsers.refresh();
+                        }
+                    });
                     break;
             }
 
@@ -161,7 +199,7 @@ public class AdminController {
             chosenUser.setMobilenr(mainAdminView.getChangeInfoAdminView().getTxtMobileNo().getText());
             chosenUser.setEducation(mainAdminView.getChangeInfoAdminView().getTxtEducation().getText());
             chosenUser.setExperience(mainAdminView.getChangeInfoAdminView().getTxtExperience().getText());
-            chosenUser.setHoursPrWeek(mainAdminView.getChangeInfoAdminView().getTxtHoursPrWeek().getTabIndex());
+            chosenUser.setHoursPrWeek(Integer.valueOf(mainAdminView.getChangeInfoAdminView().getTxtHoursPrWeek().getText()));
             chosenUser.setPassword(mainAdminView.getChangeInfoAdminView().getTxtPassword().getText());
 
             int teamtype_teamID = 0;

@@ -1,4 +1,4 @@
-package com.motionCBSTest.client.ui.admin.statisticsFuldtidAdminView;
+package com.motionCBSTest.client.ui.admin.statisticsFullTimeAdminView;
 
 import com.google.gwt.cell.client.NumberCell;
 import com.google.gwt.cell.client.TextCell;
@@ -17,8 +17,8 @@ import com.motionCBSTest.shared.User;
 
 import java.util.Comparator;
 
-public class StatisticsFuldtidAdminView extends Composite {
-    interface StatisticsFuldtidAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsFuldtidAdminView> {
+public class StatisticsFullTimeAdminView extends Composite {
+    interface StatisticsFuldtidAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsFullTimeAdminView> {
     }
 
     private static StatisticsFuldtidAdminViewUiBinder ourUiBinder = GWT.create(StatisticsFuldtidAdminViewUiBinder.class);
@@ -29,7 +29,7 @@ public class StatisticsFuldtidAdminView extends Composite {
     SimplePager pager;
 
 
-    public StatisticsFuldtidAdminView() {
+    public StatisticsFullTimeAdminView() {
         initWidget(ourUiBinder.createAndBindUi(this));
 
         // Setting the page size of the table
@@ -88,6 +88,28 @@ public class StatisticsFuldtidAdminView extends Composite {
 
         // Setting the size of the column.
         dataGrid.setColumnWidth(userIdColumn, 4, Style.Unit.PX);
+
+
+        // Firstname will be explained in details
+        Column<User, String> fnameColumn = new Column<User, String>(new TextCell()) {
+            @Override
+            public String getValue(User user) { return user.getFname(); }
+        };
+
+        //Setting the firstname column to sortable
+        fnameColumn.setSortable(true);
+        sortHandler.setComparator(fnameColumn, new Comparator<User>() {
+            @Override
+            public int compare(User u1, User u2) {
+                return u1.getFname().compareTo(u2.getFname());
+            }
+        });
+
+        // Adding the column to the table. The "First name" is the title of the column
+        dataGrid.addColumn(fnameColumn, "First Name");
+
+        // Setting the size of the column
+        dataGrid.setColumnWidth(fnameColumn, 8, Style.Unit.PX);
 
         // Lastname will be explained in details
         Column<User, String> lnameColumn = new Column<User, String>(new TextCell()) {

@@ -19,6 +19,10 @@ public interface MotionCBSTestService extends RemoteService {
 
     boolean changeUserInfo(User user) throws IllegalArgumentException;
 
+    ArrayList<User> getUsersFullTime(int trainerID) throws Exception;
+
+    ArrayList<User> getUsersPartTime(int trainerID) throws Exception;
+
 
     /**
      * Utility/Convenience class.

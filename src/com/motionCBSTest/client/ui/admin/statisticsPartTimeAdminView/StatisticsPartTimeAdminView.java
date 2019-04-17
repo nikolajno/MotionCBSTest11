@@ -1,4 +1,4 @@
-package com.motionCBSTest.client.ui.admin.statisticsDeltidAdminView;
+package com.motionCBSTest.client.ui.admin.statisticsPartTimeAdminView;
 
         import com.google.gwt.cell.client.NumberCell;
         import com.google.gwt.cell.client.TextCell;
@@ -15,8 +15,8 @@ package com.motionCBSTest.client.ui.admin.statisticsDeltidAdminView;
         import com.motionCBSTest.shared.User;
         import java.util.Comparator;
 
-public class StatisticsDeltidAdminView extends Composite {
-    interface StatisticsAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsDeltidAdminView> {
+public class StatisticsPartTimeAdminView extends Composite {
+    interface StatisticsAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsPartTimeAdminView> {
     }
 
     private static StatisticsAdminViewUiBinder ourUiBinder = GWT.create(StatisticsAdminViewUiBinder.class);
@@ -27,20 +27,20 @@ public class StatisticsDeltidAdminView extends Composite {
     SimplePager pager;
 
 
-    public StatisticsDeltidAdminView() {
+    public StatisticsPartTimeAdminView() {
         initWidget(ourUiBinder.createAndBindUi(this));
 
         // Setting the page size of the table
         dataGrid.setPageSize(10);
-        //dataGridDown.setPageSize(10);
+
 
         // Adding the pager to the datagrid
         pager.setDisplay(dataGrid);
-        //pagerDown.setDisplay(dataGridDown);
+
 
         // Ensures the headers doesn't get refreshed every time the data is updated
         dataGrid.setAutoHeaderRefreshDisabled(true);
-        //dataGridDown.setAutoHeaderRefreshDisabled(true);
+
 
     }
 
@@ -86,6 +86,29 @@ public class StatisticsDeltidAdminView extends Composite {
 
         // Setting the size of the column.
         dataGrid.setColumnWidth(userIdColumn, 4, Unit.PX);
+
+
+        // Firstname will be explained in details
+        Column<User, String> fnameColumn = new Column<User, String>(new TextCell()) {
+            @Override
+            public String getValue(User user) { return user.getFname(); }
+        };
+
+        //Setting the firstname column to sortable
+        fnameColumn.setSortable(true);
+        sortHandler.setComparator(fnameColumn, new Comparator<User>() {
+            @Override
+            public int compare(User u1, User u2) {
+                return u1.getFname().compareTo(u2.getFname());
+            }
+        });
+
+        // Adding the column to the table. The "First name" is the title of the column
+        dataGrid.addColumn(fnameColumn, "First Name");
+
+        // Setting the size of the column
+        dataGrid.setColumnWidth(fnameColumn, 8, Unit.PX);
+
 
         // Lastname will be explained in details
         Column<User, String> lnameColumn = new Column<User, String>(new TextCell()) {
