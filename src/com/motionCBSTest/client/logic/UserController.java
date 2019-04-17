@@ -110,16 +110,16 @@ public class UserController {
 
             int teamtype_teamID = 0;
 
-                if (content.getMainUserView().getChangeInfoUserView().getNewCrossfitBtn().isEnabled() == true) {
+                if (content.getMainUserView().getChangeInfoUserView().getNewCrossfitBtn().isChecked()) {
                     teamtype_teamID = 1;
                 }
-                if (content.getMainUserView().getChangeInfoUserView().getNewSpinningBtn().isEnabled() == true) {
+                if (content.getMainUserView().getChangeInfoUserView().getNewSpinningBtn().isChecked()) {
                     teamtype_teamID = 3;
                 }
-                if (content.getMainUserView().getChangeInfoUserView().getNewHitBtn().isEnabled() == true) {
+                if (content.getMainUserView().getChangeInfoUserView().getNewHitBtn().isChecked()) {
                     teamtype_teamID = 2;
                 }
-                if (content.getMainUserView().getChangeInfoUserView().getNewStramopBtn().isEnabled() == true) {
+                if (content.getMainUserView().getChangeInfoUserView().getNewStramopBtn().isChecked()) {
                     teamtype_teamID = 4;
                 }
 

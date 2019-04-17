@@ -204,19 +204,20 @@ public class AdminController {
 
             int teamtype_teamID = 0;
 
-            if (mainAdminView.getChangeInfoAdminView().getNewCrossfitBtn().isEnabled() == true) {
+            if (mainAdminView.getChangeInfoAdminView().getNewCrossfitBtn().isChecked()) {
                 teamtype_teamID = 1;
             }
-            if (mainAdminView.getChangeInfoAdminView().getNewSpinningBtn().isEnabled() == true) {
+            if (mainAdminView.getChangeInfoAdminView().getNewSpinningBtn().isChecked()) {
                 teamtype_teamID = 3;
             }
-            if (mainAdminView.getChangeInfoAdminView().getNewHitBtn().isEnabled() == true) {
+            if (mainAdminView.getChangeInfoAdminView().getNewHitBtn().isChecked()) {
                 teamtype_teamID = 2;
             }
-            if (mainAdminView.getChangeInfoAdminView().getNewStramopBtn().isEnabled() == true) {
+            if (mainAdminView.getChangeInfoAdminView().getNewStramopBtn().isChecked()) {
                 teamtype_teamID = 4;
             }
 
+            Window.alert(""+teamtype_teamID);
             chosenUser.setTeamtype_teamID(teamtype_teamID);
 
 
