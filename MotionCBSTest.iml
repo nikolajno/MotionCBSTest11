@@ -36,5 +36,7 @@
     <orderEntry type="library" name="gwt-user (4)" level="project" />
     <orderEntry type="library" name="gwt-user (5)" level="project" />
     <orderEntry type="library" name="gwt-user (6)" level="project" />
+    <orderEntry type="library" name="gwt-charts-0.9.9 (2)" level="project" />
+    <orderEntry type="library" name="gwt-servlet (3)" level="project" />
   </component>
 </module>
