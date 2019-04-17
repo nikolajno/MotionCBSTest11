@@ -9,3 +9,21 @@ h1 {
 body, td, a, div, .p {
     font-family: arial, sans-serif
 }
+
+.gwt-TabPanel {
+    background: #ccc;
+    padding-top: 6px;
+}
+
+.gwt-TabBar {
+    background: #ccc;
+    padding-top: 6px;
+}
+
+.gwt-TabPanelBottom {
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 0px 1px 1px;
+    overflow: hidden;
+    padding: 6px;
+}

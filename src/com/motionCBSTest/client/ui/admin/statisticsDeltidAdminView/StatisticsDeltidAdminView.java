@@ -16,10 +16,11 @@ package com.motionCBSTest.client.ui.admin.statisticsDeltidAdminView;
         import java.util.Comparator;
 
 public class StatisticsDeltidAdminView extends Composite {
-    interface StatisticsAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsDeltidAdminView> {
+
+    interface StatisticsDeltidAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsDeltidAdminView> {
     }
 
-    private static StatisticsAdminViewUiBinder ourUiBinder = GWT.create(StatisticsAdminViewUiBinder.class);
+    private static StatisticsDeltidAdminViewUiBinder ourUiBinder = GWT.create(StatisticsDeltidAdminViewUiBinder.class);
 
     @UiField
     DataGrid<User> dataGrid;

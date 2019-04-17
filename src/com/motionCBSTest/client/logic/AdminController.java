@@ -30,7 +30,7 @@ public class AdminController {
 
         bindHandlers();
 
-        listProviderUsers = new ListDataProvider<>();
+        listProviderUsers = new ListDataProvider<User>();
         mainAdminView.getTrainerStatusView().initUsersTable(listProviderUsers);
         mainAdminView.getShowInfoAdminView().initUsersTable(listProviderUsers);
         mainAdminView.getTabLayot().getSdeltid().initUsersTable(listProviderUsers);

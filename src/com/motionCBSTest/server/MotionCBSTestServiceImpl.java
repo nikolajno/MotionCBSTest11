@@ -15,8 +15,8 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
      */
     //private static final String JDBC_DRIVER = "com.mysql.jdcb.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/motioncbs?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    private static final String USERNAME = "motioncbs";
-    private static final String PASSWORD = "motioncbs";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "Esv23cfi";
 
     private static Connection connection = null;
 
