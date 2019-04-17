@@ -1,0 +1,157 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:c="urn:import:com.google.gwt.user.cellview.client">
+
+    <ui:style>
+
+        .pagerstyler {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .changeInfoContainer {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .vpanel{
+
+        }
+
+        .title {
+            font-size: 14px;
+            font-weight: bold;
+            color: black;
+            width: 125px;
+        }
+
+        .input {
+            font-size: 12px;
+            height: 28px;
+            border: thin solid #000000;
+            width: 250px;
+            margin-left: 10px;
+        }
+
+        .textInput {
+            font-size: 14px;
+            height: 32px;
+            border-radius: 2px;
+            width: 100%;
+            color: #333;
+            border: none;
+            background-color: lightgray;
+        }
+
+        .btn {
+            height: 32px;
+            width: 100%;
+            border: none;
+            border-radius: 2px;
+            font-size: 18px;
+            background-color: #333;
+            cursor: pointer;
+            cursor: hand;
+            color: #fff;
+        }
+
+        .btn:hover {
+            background-color: teal;
+            color: #333;
+        }
+
+        .radioButtons {
+            color: black;
+            padding: 5px;
+
+        }
+
+    </ui:style>
+
+    <g:HTMLPanel>
+
+        <g:DockLayoutPanel unit="EM" width="100%" height="90%">
+            <!-- DataGrid. -->
+            <g:center>
+                <g:DockLayoutPanel>
+                    <g:center>
+                        <c:DataGrid ui:field='dataGrid' visible="true" />
+                    </g:center>
+                    <g:south size="15">
+                        <c:SimplePager ui:field='pager' styleName="{style.pagerstyler}" location="CENTER" />
+                    </g:south>
+                </g:DockLayoutPanel>
+            </g:center>
+
+
+            <!-- Pager.
+            <g:south size="2">
+            </g:south>
+            -->
+
+            <g:east size="38.5">
+                <g:VerticalPanel spacing="15" styleName="{style.vpanel}">
+
+                    <g:FlowPanel styleName="{style.changeInfoContainer}">
+                        <g:Label styleName="{style.title}" text="Fornavn:"></g:Label>
+                        <g:TextBox ui:field="txtFname" styleName="{style.textInput} {style.input}"></g:TextBox>
+                    </g:FlowPanel>
+
+                    <g:FlowPanel styleName="{style.changeInfoContainer}">
+                        <g:Label styleName="{style.title}" text="Efternavn:"></g:Label>
+                        <g:TextBox ui:field="txtLname" styleName="{style.textInput} {style.input}"></g:TextBox>
+                    </g:FlowPanel>
+
+                    <g:FlowPanel styleName="{style.changeInfoContainer}">
+                        <g:Label styleName="{style.title}" text="Email:"></g:Label>
+                        <g:TextBox ui:field="txtEmail" styleName="{style.textInput} {style.input}"></g:TextBox>
+                    </g:FlowPanel>
+
+                    <g:FlowPanel styleName="{style.changeInfoContainer}">
+                        <g:Label styleName="{style.title}" text="Addresse:"></g:Label>
+                        <g:TextBox ui:field="txtAddress" styleName="{style.textInput} {style.input}"></g:TextBox>
+                    </g:FlowPanel>
+
+                    <g:FlowPanel styleName="{style.changeInfoContainer}">
+                        <g:Label styleName="{style.title}" text="Mobil nr.:"></g:Label>
+                        <g:TextBox ui:field="txtMobileNo" styleName="{style.textInput} {style.input}"></g:TextBox>
+                    </g:FlowPanel>
+
+                    <g:FlowPanel styleName="{style.changeInfoContainer}">
+                        <g:Label styleName="{style.title}" text="Uddannelse:"></g:Label>
+                        <g:TextBox ui:field="txtEducation" styleName="{style.textInput} {style.input}"></g:TextBox>
+                    </g:FlowPanel>
+
+                    <g:FlowPanel styleName="{style.changeInfoContainer}">
+                        <g:Label styleName="{style.title}" text="Års erfaring:"></g:Label>
+                        <g:TextBox ui:field="txtExperience" styleName="{style.textInput} {style.input}"></g:TextBox>
+                    </g:FlowPanel>
+
+                    <g:FlowPanel styleName="{style.changeInfoContainer}">
+                        <g:Label styleName="{style.title}" text="Timer om ugen:"></g:Label>
+                        <g:IntegerBox ui:field="txtHoursPrWeek" styleName="{style.textInput} {style.input}"></g:IntegerBox>
+                    </g:FlowPanel>
+
+                    <g:FlowPanel styleName="{style.changeInfoContainer}">
+                        <g:Label styleName="{style.title}" text="Pinkode:"></g:Label>
+                        <g:TextBox ui:field="txtPassword" styleName="{style.textInput}"></g:TextBox>
+                    </g:FlowPanel>
+
+                    <g:HorizontalPanel styleName="{style.changeInfoContainer}">
+                        <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newCrossfitBtn" text="Crossfit"/>
+                        <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newSpinningBtn" text="Spinning"/>
+                        <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newHitBtn" text="H.I.T."/>
+                        <g:RadioButton styleName="{style.radioButtons}" name="Teamtype" ui:field="newStramopBtn" text="Stram-Op"/>
+                    </g:HorizontalPanel>
+
+
+                    <g:Button styleName="{style.btn}" ui:field="changeProfileBtn" text="Ændre oplysninger"/>
+
+                </g:VerticalPanel>
+            </g:east>
+
+
+        </g:DockLayoutPanel>
+    </g:HTMLPanel>
+</ui:UiBinder>

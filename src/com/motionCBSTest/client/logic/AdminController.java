@@ -31,7 +31,7 @@ public class AdminController {
         listProviderUsers = new ListDataProvider<>();
         mainAdminView.getTrainerStatusView().initUsersTable(listProviderUsers);
         mainAdminView.getShowInfoAdminView().initUsersTable(listProviderUsers);
-        mainAdminView.getStatisticAdminView().initUsersTable(listProviderUsers);
+        mainAdminView.getChangeInfoAdminView().initUsersTable(listProviderUsers);
     }
 
 
@@ -95,8 +95,8 @@ public class AdminController {
                     mainAdminView.changeView(mainAdminView.getTrainerStatusView());
             } else if (event.getSource() == mainAdminView.getShowInfoBtn()){
                 mainAdminView.changeView(mainAdminView.getShowInfoAdminView());
-            } else if (event.getSource() == mainAdminView.getStatisticAdminView()){
-                mainAdminView.changeView(mainAdminView.getStatisticBtn());
+            } else if (event.getSource() == mainAdminView.getChangeBtn()) {
+                mainAdminView.changeView(mainAdminView.getChangeInfoAdminView());
             }
          }
         }

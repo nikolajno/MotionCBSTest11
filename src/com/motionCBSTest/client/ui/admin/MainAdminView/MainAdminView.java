@@ -5,11 +5,9 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
+import com.motionCBSTest.client.ui.admin.changeInfoAdminView.ChangeInfoAdminView;
 import com.motionCBSTest.client.ui.admin.showInfoAdminView.ShowInfoAdminView;
-import com.motionCBSTest.client.ui.admin.statisticsAdminView.StatisticsAdminView;
 import com.motionCBSTest.client.ui.admin.trainerStatusView.TrainerStatusView;
-import com.motionCBSTest.client.ui.user.changeInfoUserView.ChangeInfoUserView;
-import com.motionCBSTest.client.ui.user.trainersTableUserView.TrainersTableUserView;
 
 // We use DockLayoutPanel which contains option to place panels/widgets in North, east, west, south
 // and center of the screen. We use DeckLayoutPanel in the center.
@@ -18,18 +16,14 @@ public class MainAdminView extends Composite {
 
     private static MainAdminViewUiBinder UiBinder = GWT.create(MainAdminViewUiBinder.class);
 
-    private ChangeInfoUserView changeInfoUserView;
-    private TrainersTableUserView trainersTableUserView;
+    private ChangeInfoAdminView changeInfoAdminView;
     private ShowInfoAdminView showInfoAdminView;
     private TrainerStatusView trainerStatusView;
-    private StatisticsAdminView statisticsAdminView;
 
     @UiField
     DeckLayoutPanel centerPanel;
     @UiField
     Button showInfoBtn;
-    @UiField
-    Button statisticBtn;
     @UiField
     Button trainerStatusBtn;
     @UiField
@@ -43,11 +37,8 @@ public class MainAdminView extends Composite {
     public MainAdminView() {
         initWidget(UiBinder.createAndBindUi(this));
 
-        changeInfoUserView = new ChangeInfoUserView();
-        centerPanel.add(changeInfoUserView);
-
-        trainersTableUserView = new TrainersTableUserView();
-        centerPanel.add(trainersTableUserView);
+        changeInfoAdminView = new ChangeInfoAdminView();
+        centerPanel.add(changeInfoAdminView);
 
         showInfoAdminView = new ShowInfoAdminView();
         centerPanel.add(showInfoAdminView);
@@ -55,11 +46,8 @@ public class MainAdminView extends Composite {
         trainerStatusView = new TrainerStatusView();
         centerPanel.add(trainerStatusView);
 
-        statisticsAdminView = new StatisticsAdminView();
-        centerPanel.add(statisticsAdminView);
-
         // The panel that is shown when the application start
-        centerPanel.showWidget(changeInfoUserView);
+        centerPanel.showWidget(trainerStatusView);
     }
 
 
@@ -69,7 +57,7 @@ public class MainAdminView extends Composite {
         logoutBtn.addClickHandler(clickHandler);
         showInfoBtn.addClickHandler(clickHandler);
         trainerStatusBtn.addClickHandler(clickHandler);
-        statisticBtn.addClickHandler(clickHandler);
+        changeBtn.addClickHandler(clickHandler);
     }
 
     // This method is used to change the centerView
@@ -78,16 +66,13 @@ public class MainAdminView extends Composite {
     }
 
     // The following getters is for view and tables
-    public ChangeInfoUserView getChangeInfoUserView() {return changeInfoUserView; }
-    public TrainersTableUserView getTrainersTableUserView() {return trainersTableUserView; }
+    public ChangeInfoAdminView getChangeInfoAdminView() {return changeInfoAdminView; }
     public ShowInfoAdminView getShowInfoAdminView() {return showInfoAdminView;}
     public TrainerStatusView getTrainerStatusView(){return trainerStatusView;}
-    public StatisticsAdminView getStatisticAdminView() {return statisticsAdminView;}
 
     // The following getters is used for the menu buttons
     public Button getTrainerStatusBtn(){return trainerStatusBtn;}
     public Button getLogoutBtn() {return logoutBtn;}
     public Button getChangeBtn() {return changeBtn;}
     public Button getShowInfoBtn() {return showInfoBtn; }
-    public Button getStatisticBtn() { return statisticBtn; }
 }
