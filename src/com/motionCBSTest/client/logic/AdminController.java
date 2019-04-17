@@ -91,18 +91,18 @@ public class AdminController {
         @Override
         public void onClick(ClickEvent event) {
             if (event.getSource() == mainAdminView.getLogoutBtn()) {
-                    content.changeView(content.getLoginView());
-                    listProviderUsers.getList().clear();
-                    currentUser = null;
-            } else if (event.getSource() == mainAdminView.getTrainerStatusBtn()){
-                    mainAdminView.changeView(mainAdminView.getTrainerStatusView());
-            } else if (event.getSource() == mainAdminView.getShowInfoBtn()){
+                content.changeView(content.getLoginView());
+                listProviderUsers.getList().clear();
+                currentUser = null;
+            } else if (event.getSource() == mainAdminView.getTrainerStatusBtn()) {
+                mainAdminView.changeView(mainAdminView.getTrainerStatusView());
+            } else if (event.getSource() == mainAdminView.getShowInfoBtn()) {
                 mainAdminView.changeView(mainAdminView.getShowInfoAdminView());
-            } else if (event.getSource() == mainAdminView.getStatisticBtn()){
+            } else if (event.getSource() == mainAdminView.getStatisticBtn()) {
                 mainAdminView.changeView(mainAdminView.getTabLayot());
             }
-         }
         }
+    }
 
     /**
      * This is used for the TabLayoutPanel. The panel that can show either fuldtid or
@@ -126,5 +126,4 @@ public class AdminController {
         }
 
     }
-
-    }
+}

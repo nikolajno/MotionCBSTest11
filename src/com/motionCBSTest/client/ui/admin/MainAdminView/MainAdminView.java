@@ -5,11 +5,11 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
+import com.motionCBSTest.client.ui.admin.changeInfoAdminView.ChangeInfoAdminView;
 import com.motionCBSTest.client.ui.admin.showInfoAdminView.ShowInfoAdminView;
 import com.motionCBSTest.client.ui.admin.statisticsDeltidAdminView.TabLayot;
 import com.motionCBSTest.client.ui.admin.statisticsFuldtidAdminView.StatisticsFuldtidAdminView;
 import com.motionCBSTest.client.ui.admin.trainerStatusView.TrainerStatusView;
-import com.motionCBSTest.client.ui.user.changeInfoUserView.ChangeInfoUserView;
 import com.motionCBSTest.client.ui.user.trainersTableUserView.TrainersTableUserView;
 
 // We use DockLayoutPanel which contains option to place panels/widgets in North, east, west, south
@@ -19,7 +19,7 @@ public class MainAdminView extends Composite {
 
     private static MainAdminViewUiBinder UiBinder = GWT.create(MainAdminViewUiBinder.class);
 
-    private ChangeInfoUserView changeInfoUserView;
+    private ChangeInfoAdminView changeInfoAdminView;
     private TrainersTableUserView trainersTableUserView;
     private ShowInfoAdminView showInfoAdminView;
     private TrainerStatusView trainerStatusView;
@@ -45,8 +45,8 @@ public class MainAdminView extends Composite {
     public MainAdminView() {
         initWidget(UiBinder.createAndBindUi(this));
 
-        changeInfoUserView = new ChangeInfoUserView();
-        centerPanel.add(changeInfoUserView);
+        changeInfoAdminView = new ChangeInfoAdminView();
+        centerPanel.add(changeInfoAdminView);
 
         trainersTableUserView = new TrainersTableUserView();
         centerPanel.add(trainersTableUserView);
@@ -64,7 +64,7 @@ public class MainAdminView extends Composite {
         centerPanel.add(statisticsFuldtidAdminView);
 
         // The panel that is shown when the application start
-        centerPanel.showWidget(changeInfoUserView);
+        centerPanel.showWidget(trainerStatusView);
     }
 
 
@@ -83,7 +83,7 @@ public class MainAdminView extends Composite {
     }
 
     // The following getters is for view and tables
-    public ChangeInfoUserView getChangeInfoUserView() {return changeInfoUserView; }
+    public ChangeInfoAdminView getChangeInfoAdminView() {return changeInfoAdminView;}
     public TrainersTableUserView getTrainersTableUserView() {return trainersTableUserView; }
     public ShowInfoAdminView getShowInfoAdminView() {return showInfoAdminView;}
     public TrainerStatusView getTrainerStatusView(){return trainerStatusView;}
