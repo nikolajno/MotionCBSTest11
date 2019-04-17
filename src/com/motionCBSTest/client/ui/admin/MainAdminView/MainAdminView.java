@@ -6,6 +6,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
 import com.motionCBSTest.client.ui.admin.showInfoAdminView.ShowInfoAdminView;
+import com.motionCBSTest.client.ui.admin.statisticsAdminView.StatisticsAdminView;
 import com.motionCBSTest.client.ui.admin.trainerStatusView.TrainerStatusView;
 import com.motionCBSTest.client.ui.user.changeInfoUserView.ChangeInfoUserView;
 import com.motionCBSTest.client.ui.user.trainersTableUserView.TrainersTableUserView;
@@ -21,11 +22,14 @@ public class MainAdminView extends Composite {
     private TrainersTableUserView trainersTableUserView;
     private ShowInfoAdminView showInfoAdminView;
     private TrainerStatusView trainerStatusView;
+    private StatisticsAdminView statisticsAdminView;
 
     @UiField
     DeckLayoutPanel centerPanel;
     @UiField
     Button showInfoBtn;
+    @UiField
+    Button statisticBtn;
     @UiField
     Button trainerStatusBtn;
     @UiField
@@ -51,6 +55,9 @@ public class MainAdminView extends Composite {
         trainerStatusView = new TrainerStatusView();
         centerPanel.add(trainerStatusView);
 
+        statisticsAdminView = new StatisticsAdminView();
+        centerPanel.add(statisticsAdminView);
+
         // The panel that is shown when the application start
         centerPanel.showWidget(changeInfoUserView);
     }
@@ -62,6 +69,7 @@ public class MainAdminView extends Composite {
         logoutBtn.addClickHandler(clickHandler);
         showInfoBtn.addClickHandler(clickHandler);
         trainerStatusBtn.addClickHandler(clickHandler);
+        statisticBtn.addClickHandler(clickHandler);
     }
 
     // This method is used to change the centerView
@@ -74,10 +82,12 @@ public class MainAdminView extends Composite {
     public TrainersTableUserView getTrainersTableUserView() {return trainersTableUserView; }
     public ShowInfoAdminView getShowInfoAdminView() {return showInfoAdminView;}
     public TrainerStatusView getTrainerStatusView(){return trainerStatusView;}
+    public StatisticsAdminView getStatisticAdminView() {return statisticsAdminView;}
 
     // The following getters is used for the menu buttons
     public Button getTrainerStatusBtn(){return trainerStatusBtn;}
     public Button getLogoutBtn() {return logoutBtn;}
     public Button getChangeBtn() {return changeBtn;}
     public Button getShowInfoBtn() {return showInfoBtn; }
+    public Button getStatisticBtn() { return statisticBtn; }
 }

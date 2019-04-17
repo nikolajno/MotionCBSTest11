@@ -15,12 +15,12 @@
         <g:DockLayoutPanel unit="EM" width="100%" height="90%">
             <!-- DataGrid. -->
             <g:center>
-                <c:DataGrid ui:field='dataGridUp' visible="true" />
+                <c:DataGrid ui:field='dataGrid' visible="true" />
             </g:center>
 
             <!-- Pager. -->
             <g:south size="2">
-                <c:SimplePager ui:field='pagerUp' styleName="{style.pagerstyler}" location="CENTER" />
+                <c:SimplePager ui:field='pager' styleName="{style.pagerstyler}" location="CENTER" />
             </g:south>
 
         </g:DockLayoutPanel>

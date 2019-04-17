@@ -3,11 +3,11 @@ package com.motionCBSTest.client.ui.admin.statisticsAdminView;
 import com.google.gwt.cell.client.NumberCell;
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.Style;
+import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.Column;
-import com.google.gwt.user.cellview.client.ColumnSortEvent;
+import com.google.gwt.user.cellview.client.ColumnSortEvent.ListHandler;
 import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.client.ui.Composite;
@@ -24,43 +24,43 @@ public class StatisticsAdminView extends Composite {
     private static StatisticsAdminViewUiBinder ourUiBinder = GWT.create(StatisticsAdminViewUiBinder.class);
 
     @UiField
-    DataGrid<User> dataGridUp;
+    DataGrid<User> dataGrid;
     @UiField
-    SimplePager pagerUp;
+    SimplePager pager;
 
     public StatisticsAdminView() {
         initWidget(ourUiBinder.createAndBindUi(this));
 
         // Setting the page size of the table
-        dataGridUp.setPageSize(10);
+        dataGrid.setPageSize(10);
         //dataGridDown.setPageSize(10);
 
         // Adding the pager to the datagrid
-        pagerUp.setDisplay(dataGridUp);
+        pager.setDisplay(dataGrid);
         //pagerDown.setDisplay(dataGridDown);
 
         // Ensures the headers doesn't get refreshed every time the data is updated
-        dataGridUp.setAutoHeaderRefreshDisabled(true);
+        dataGrid.setAutoHeaderRefreshDisabled(true);
         //dataGridDown.setAutoHeaderRefreshDisabled(true);
     }
     // This method is called from the logic so it is possible to load the table with data from the database
     public void initUsersTable(ListDataProvider<User> dataProvider) {
 
         // Attach a column sort handler to the ListDataProvider to sort the list
-        ColumnSortEvent.ListHandler<User> sortHandler = new ColumnSortEvent.ListHandler<User>(dataProvider.getList());
-        dataGridUp.addColumnSortHandler(sortHandler);
+        ListHandler<User> sortHandler = new ListHandler<User>(dataProvider.getList());
+        dataGrid.addColumnSortHandler(sortHandler);
 
         // Creating all the necessary columns to the table
         initTableColumns(sortHandler);
 
         // Adding the data grid to the DataProvider. The DataProvider is containing a List with all the data
-        dataProvider.addDataDisplay(dataGridUp);
+        dataProvider.addDataDisplay(dataGrid);
 
     }
 
     // This method is creating all the columns. Each column wont be described since it is more or less the
     // same with small changes
-    private void initTableColumns(ColumnSortEvent.ListHandler<User> sortHandler) {
+    private void initTableColumns(ListHandler<User> sortHandler) {
         // In this next lines the user id column will be explained in details
 
         // The user id column is created. Remark that when it is a cell it isn't a IntegerCell but a NumberCell.
@@ -81,10 +81,10 @@ public class StatisticsAdminView extends Composite {
         });
 
         // Adding the column to the table. The "Træner id" is the title of the column
-        dataGridUp.addColumn(userIdColumn, "Trainer Id");
+        dataGrid.addColumn(userIdColumn, "Trainer Id");
 
         // Setting the size of the column.
-        dataGridUp.setColumnWidth(userIdColumn, 4, Style.Unit.PX);
+        dataGrid.setColumnWidth(userIdColumn, 4, Unit.PX);
 
         // Lastname will be explained in details
         Column<User, String> lnameColumn = new Column<User, String>(new TextCell()) {
@@ -104,10 +104,10 @@ public class StatisticsAdminView extends Composite {
         });
 
         // Adding the column to the table. The "Efternavn" is the title of the column
-        dataGridUp.addColumn(lnameColumn, "Last Name");
+        dataGrid.addColumn(lnameColumn, "Last Name");
 
         // Setting the size of the column
-        dataGridUp.setColumnWidth(lnameColumn, 8, Style.Unit.PX);
+        dataGrid.setColumnWidth(lnameColumn, 8, Unit.PX);
 
 
         // The user id column is created. Remark that when it is a cell it isn't a IntegerCell but a NumberCell.
@@ -128,9 +128,10 @@ public class StatisticsAdminView extends Composite {
         });
 
         // Adding the column to the table. The "Trainer id" is the title of the column
-        dataGridUp.addColumn(hoursColumn, "Hours pr. Week");
+        dataGrid.addColumn(hoursColumn, "Hours pr. Week");
 
         // Setting the size of the column.
-        dataGridUp.setColumnWidth(hoursColumn, 4, Style.Unit.PX);
+        dataGrid.setColumnWidth(hoursColumn, 4, Unit.PX);
     }
+
 }

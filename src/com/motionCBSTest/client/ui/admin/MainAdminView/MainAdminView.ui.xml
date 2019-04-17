@@ -45,7 +45,7 @@
                     <g:Button text="Ændr træner oplysninger" styleName="{style.btn}" ui:field="changeBtn"/>
                     <g:Button text="Godkend/Slet trænere" styleName="{style.btn}" ui:field="trainerStatusBtn"/>
                     <g:Button text="Vis oplysninger om trænere" styleName="{style.btn}" ui:field="showInfoBtn"/>
-                    <g:Button text="Statistik" styleName="{style.btn}"/>
+                    <g:Button text="Statistik" styleName="{style.btn}" ui:field="statisticBtn"/>
                     <g:Button text="Log ud" styleName="{style.btn}" ui:field="logoutBtn"/>
                 </g:FlowPanel>
             </g:west>

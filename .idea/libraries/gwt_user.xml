@@ -1,7 +1,11 @@
 <component name="libraryTable">
   <library name="gwt-user">
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Programmering/gwt-2.8.2/gwt-user.jar!/" />
+    </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../Programmering/gwt-2.8.2/gwt-user.jar!/" />
+    </SOURCES>
   </library>
 </component>
