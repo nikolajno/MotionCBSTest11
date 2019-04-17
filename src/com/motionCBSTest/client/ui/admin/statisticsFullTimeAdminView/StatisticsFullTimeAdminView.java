@@ -144,7 +144,7 @@ public class StatisticsFullTimeAdminView extends Composite {
         };
 
         // Setting the user id column to sortable
-        userIdColumn.setSortable(true);
+        hoursColumn.setSortable(true);
         sortHandler.setComparator(hoursColumn, new Comparator<User>() {
             @Override
             public int compare(User u1, User u2) {

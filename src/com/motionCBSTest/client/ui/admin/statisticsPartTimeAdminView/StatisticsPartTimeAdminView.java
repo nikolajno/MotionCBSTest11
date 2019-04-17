@@ -134,7 +134,7 @@ public class StatisticsPartTimeAdminView extends Composite {
         dataGrid.setColumnWidth(lnameColumn, 8, Unit.PX);
 
 
-        // The user id column is created. Remark that when it is a cell it isn't a IntegerCell but a NumberCell.
+        // The hours pr week column is created. Remark that when it is a cell it isn't a IntegerCell but a NumberCell.
         Column<User, Number> hoursColumn = new Column<User, Number>(new NumberCell()) {
             @Override
             public Number getValue(User object) {
@@ -142,8 +142,8 @@ public class StatisticsPartTimeAdminView extends Composite {
             }
         };
 
-        // Setting the user id column to sortable
-        userIdColumn.setSortable(true);
+        // Setting the hours pr week column to sortable
+        hoursColumn.setSortable(true);
         sortHandler.setComparator(hoursColumn, new Comparator<User>() {
             @Override
             public int compare(User u1, User u2) {
@@ -151,7 +151,7 @@ public class StatisticsPartTimeAdminView extends Composite {
             }
         });
 
-        // Adding the column to the table. The "Trainer id" is the title of the column
+        // Adding the column to the table. The "Hours pr. Week" is the title of the column
         dataGrid.addColumn(hoursColumn, "Hours pr. Week");
 
         // Setting the size of the column.
