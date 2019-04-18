@@ -1,17 +1,17 @@
-package com.motionCBSTest.client.ui.admin.statisticsDeltidAdminView;
+package com.motionCBSTest.client.ui.admin.statisticsPartTimeAdminView;
 
 
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.event.logical.shared.SelectionHandler;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
-import com.motionCBSTest.client.ui.admin.statisticsFuldtidAdminView.StatisticsFuldtidAdminView;
+import com.motionCBSTest.client.ui.admin.statisticsFullTimeAdminView.StatisticsFullTimeAdminView;
 
 public class TabLayot extends Composite {
 
     private TabLayoutPanel tp;
-    private StatisticsDeltidAdminView sdeltid;
-    private StatisticsFuldtidAdminView sfuldtid;
+    private StatisticsPartTimeAdminView sdeltid;
+    private StatisticsFullTimeAdminView sfuldtid;
 
     public TabLayot() {
         tp = new TabLayoutPanel(2.5, Style.Unit.EM);
@@ -21,10 +21,10 @@ public class TabLayot extends Composite {
 
         // Here we are creating two different objects of statisticTable which is added to the TabLayoutPanel.
         // "Deltid" and "Fuldtid" is the title of the tab
-        sdeltid = new StatisticsDeltidAdminView();
+        sdeltid = new StatisticsPartTimeAdminView();
         tp.add(sdeltid,"Deltid");
 
-        sfuldtid = new StatisticsFuldtidAdminView();
+        sfuldtid = new StatisticsFullTimeAdminView();
         tp.add(sfuldtid,"Fuldtid");
 
         tp.selectTab(sdeltid);
@@ -38,6 +38,6 @@ public class TabLayot extends Composite {
     }
 
     // Getters
-    public StatisticsDeltidAdminView getSdeltid() {return sdeltid;}
-    public StatisticsFuldtidAdminView getSfuldtid() {return sfuldtid;}
+    public StatisticsPartTimeAdminView getSdeltid() {return sdeltid;}
+    public StatisticsFullTimeAdminView getSfuldtid() {return sfuldtid;}
 }

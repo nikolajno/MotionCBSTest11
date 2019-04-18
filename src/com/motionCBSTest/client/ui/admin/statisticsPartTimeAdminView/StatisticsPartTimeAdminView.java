@@ -1,4 +1,4 @@
-package com.motionCBSTest.client.ui.admin.statisticsDeltidAdminView;
+package com.motionCBSTest.client.ui.admin.statisticsPartTimeAdminView;
 
         import com.google.gwt.cell.client.NumberCell;
         import com.google.gwt.cell.client.TextCell;
@@ -15,12 +15,11 @@ package com.motionCBSTest.client.ui.admin.statisticsDeltidAdminView;
         import com.motionCBSTest.shared.User;
         import java.util.Comparator;
 
-public class StatisticsDeltidAdminView extends Composite {
-
-    interface StatisticsDeltidAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsDeltidAdminView> {
+public class StatisticsPartTimeAdminView extends Composite {
+    interface StatisticsAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsPartTimeAdminView> {
     }
 
-    private static StatisticsDeltidAdminViewUiBinder ourUiBinder = GWT.create(StatisticsDeltidAdminViewUiBinder.class);
+    private static StatisticsAdminViewUiBinder ourUiBinder = GWT.create(StatisticsAdminViewUiBinder.class);
 
     @UiField
     DataGrid<User> dataGrid;
@@ -28,20 +27,20 @@ public class StatisticsDeltidAdminView extends Composite {
     SimplePager pager;
 
 
-    public StatisticsDeltidAdminView() {
+    public StatisticsPartTimeAdminView() {
         initWidget(ourUiBinder.createAndBindUi(this));
 
         // Setting the page size of the table
         dataGrid.setPageSize(10);
-        //dataGridDown.setPageSize(10);
+
 
         // Adding the pager to the datagrid
         pager.setDisplay(dataGrid);
-        //pagerDown.setDisplay(dataGridDown);
+
 
         // Ensures the headers doesn't get refreshed every time the data is updated
         dataGrid.setAutoHeaderRefreshDisabled(true);
-        //dataGridDown.setAutoHeaderRefreshDisabled(true);
+
 
     }
 
@@ -88,6 +87,29 @@ public class StatisticsDeltidAdminView extends Composite {
         // Setting the size of the column.
         dataGrid.setColumnWidth(userIdColumn, 4, Unit.PX);
 
+
+        // Firstname will be explained in details
+        Column<User, String> fnameColumn = new Column<User, String>(new TextCell()) {
+            @Override
+            public String getValue(User user) { return user.getFname(); }
+        };
+
+        //Setting the firstname column to sortable
+        fnameColumn.setSortable(true);
+        sortHandler.setComparator(fnameColumn, new Comparator<User>() {
+            @Override
+            public int compare(User u1, User u2) {
+                return u1.getFname().compareTo(u2.getFname());
+            }
+        });
+
+        // Adding the column to the table. The "First name" is the title of the column
+        dataGrid.addColumn(fnameColumn, "First Name");
+
+        // Setting the size of the column
+        dataGrid.setColumnWidth(fnameColumn, 8, Unit.PX);
+
+
         // Lastname will be explained in details
         Column<User, String> lnameColumn = new Column<User, String>(new TextCell()) {
             @Override
@@ -112,7 +134,7 @@ public class StatisticsDeltidAdminView extends Composite {
         dataGrid.setColumnWidth(lnameColumn, 8, Unit.PX);
 
 
-        // The user id column is created. Remark that when it is a cell it isn't a IntegerCell but a NumberCell.
+        // The hours pr week column is created. Remark that when it is a cell it isn't a IntegerCell but a NumberCell.
         Column<User, Number> hoursColumn = new Column<User, Number>(new NumberCell()) {
             @Override
             public Number getValue(User object) {
@@ -120,8 +142,8 @@ public class StatisticsDeltidAdminView extends Composite {
             }
         };
 
-        // Setting the user id column to sortable
-        userIdColumn.setSortable(true);
+        // Setting the hours pr week column to sortable
+        hoursColumn.setSortable(true);
         sortHandler.setComparator(hoursColumn, new Comparator<User>() {
             @Override
             public int compare(User u1, User u2) {
@@ -129,7 +151,7 @@ public class StatisticsDeltidAdminView extends Composite {
             }
         });
 
-        // Adding the column to the table. The "Trainer id" is the title of the column
+        // Adding the column to the table. The "Hours pr. Week" is the title of the column
         dataGrid.addColumn(hoursColumn, "Hours pr. Week");
 
         // Setting the size of the column.

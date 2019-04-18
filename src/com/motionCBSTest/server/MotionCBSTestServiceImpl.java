@@ -25,7 +25,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
      */
     public MotionCBSTestServiceImpl() {
         try {
-           // Class.forName("com.mysql.jdcb.Driver");
+            // Class.forName("com.mysql.jdcb.Driver");
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
@@ -95,8 +95,10 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
                 ex.printStackTrace();
                 close();
             }
-        } return user;
+        }
+        return user;
     }
+
     @Override
     public boolean changeUserInfo(User user) throws IllegalArgumentException {
         try {
@@ -125,6 +127,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         }
         return false;
     }
+
     @Override
     public ArrayList<User> getUsers(int id) throws IllegalArgumentException {
         ResultSet resultSet = null;
@@ -177,9 +180,9 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         try {
             // Same concept as createMessage method
             PreparedStatement createUser = connection
-                  .prepareStatement("INSERT INTO users (firstname, lastname, email, address, mobilenr, education," +
+                    .prepareStatement("INSERT INTO users (firstname, lastname, email, address, mobilenr, education," +
                             "experience, hoursprweek, password, isapproved, type, teamtype_teamID) " +
-                          "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+                            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
 
             createUser.setString(1, user.getFname());
             createUser.setString(2, user.getLname());
@@ -203,5 +206,82 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             e.printStackTrace();
         }
         return false;
+    }
+
+    @Override
+    public ArrayList<User> getUsersFullTime(int id) throws IllegalArgumentException {
+        ResultSet resultSet = null;
+        ArrayList<User> users = new ArrayList<>();
+
+        try {
+            // Same concept as getMessages method except there is no join in this statement
+            PreparedStatement getUsers = connection.prepareStatement("SELECT trainerID, firstname, lastname, " +
+                    "hoursPrWeek, teamname " +
+                    "FROM users INNER JOIN teamtype on teamtype_teamID = teamID WHERE type != 1 AND hoursPrWeek > 30;");
+
+            //getUsers.setInt(1, userId);
+            resultSet = getUsers.executeQuery();
+
+            while (resultSet.next()) {
+                User user = new User();
+                user.setId(resultSet.getInt("trainerID"));
+                user.setFname(resultSet.getString("firstname"));
+                user.setLname(resultSet.getString("lastname"));
+                user.setHoursPrWeek(resultSet.getInt("hoursPrWeek"));
+                user.setTeamName(resultSet.getString("teamName"));
+
+                users.add(user);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                close();
+            }
+        }
+        return users;
+
+    }
+
+    @Override
+    public ArrayList<User> getUsersPartTime(int id) throws IllegalArgumentException {
+        ResultSet resultSet = null;
+        ArrayList<User> users = new ArrayList<>();
+
+        try {
+            // Same concept as getMessages method except there is no join in this statement
+            PreparedStatement getUsers = connection.prepareStatement("SELECT trainerID, firstname, lastname, " +
+                    "hoursPrWeek, teamname " +
+                    "FROM users INNER JOIN teamtype on teamtype_teamID = teamID WHERE type != 1 AND hoursPrWeek <= 30;");
+
+            //getUsers.setInt(1, userId);
+            resultSet = getUsers.executeQuery();
+
+            while (resultSet.next()) {
+                User user = new User();
+                user.setId(resultSet.getInt("trainerID"));
+                user.setFname(resultSet.getString("firstname"));
+                user.setLname(resultSet.getString("lastname"));
+                user.setHoursPrWeek(resultSet.getInt("hoursPrWeek"));
+                user.setTeamName(resultSet.getString("teamName"));
+
+                users.add(user);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                close();
+            }
+        }
+        return users;
     }
 }
