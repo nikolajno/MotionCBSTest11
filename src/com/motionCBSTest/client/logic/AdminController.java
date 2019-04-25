@@ -68,7 +68,7 @@ public class AdminController {
         mainAdminView.getTabLayot().addSelectionHandler(new StatisticTypeHandler());
         mainAdminView.getChangeInfoAdminView().addClickHandler(new GetInfoHandler());
         mainAdminView.getChangeInfoAdminView().addClickHandlers(new ChangeInfoHanlder());
-
+        mainAdminView.getTrainerStatusView().addClickHandler(new DeleteUserHandler());
 
     }
 
@@ -120,6 +120,9 @@ public class AdminController {
             }
         }
     }
+
+
+
 
     /**
      * This is used for the TabLayoutPanel. The panel that can show either fuldtid or
@@ -248,4 +251,44 @@ public class AdminController {
 
         }
     }
+
+
+    class DeleteUserHandler implements ActionCell.Delegate<User> {
+
+        @Override
+        public void execute(final User user) {
+
+            //First that is executed is a confirmation window to delete the user
+            boolean deleteUserConfirmed = Window.confirm("Are you sure you want to delete:\n" + user.getFname() + " " + user.getLname());
+            //If its confirmed a RPC call will be made so the user is deleted in the database
+            if (deleteUserConfirmed)
+                motionCBSTestServiceAsync.deleteUser(user.getId(), new AsyncCallback<Boolean>() {
+
+                    /*
+                     * Handles error from callback function
+                     */
+                    @Override
+                    public void onFailure(Throwable caught) {
+                        Window.alert("Something went wrong");
+                    }
+
+                    /*
+                     * Handles success response from callback
+                     * The callback returns either true or false depending if the user
+                     * were deleted or not
+                     */
+                    @Override
+                    public void onSuccess(Boolean isDeleted) {
+                        if (!isDeleted) {
+                            Window.alert("Could not delete user");
+                        } else {
+                            // If the user is deleted the user will be removed from the list of users
+                            listProviderUsers.getList().remove(user);
+                        }
+
+                    }
+                });
+        }
+    }
+
 }
