@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="javaee-facet-classes" facet="MotionCBSTest/web/Web" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql-connector-java-8.0.15" />
+          <element id="library" level="project" name="gwt-servlet" />
+        </element>
       </element>
     </root>
   </artifact>

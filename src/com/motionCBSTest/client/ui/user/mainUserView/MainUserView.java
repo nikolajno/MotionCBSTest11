@@ -6,7 +6,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
 import com.motionCBSTest.client.ui.user.changeInfoUserView.ChangeInfoUserView;
-import com.motionCBSTest.client.ui.user.trainersTableUserView.TrainersTableUserView;
+import com.motionCBSTest.client.ui.user.tableUserView.TableUserView;
 
 // We use DockLayoutPanel which contains option to place panels/widgets in North, east, west, south
 // and center of the screen. We use DeckLayoutPanel in the center.
@@ -16,7 +16,7 @@ public class MainUserView extends Composite {
     private static MainUserViewUiBinder UiBinder = GWT.create(MainUserViewUiBinder.class);
 
     private ChangeInfoUserView changeInfoUserView;
-    private TrainersTableUserView trainersTableUserView;
+    private TableUserView tableUserView;
 
     @UiField
     DeckLayoutPanel centerPanel;
@@ -36,8 +36,8 @@ public class MainUserView extends Composite {
         changeInfoUserView = new ChangeInfoUserView();
         centerPanel.add(changeInfoUserView);
 
-        trainersTableUserView = new TrainersTableUserView();
-        centerPanel.add( trainersTableUserView); // Hjælp / forstå
+        tableUserView = new TableUserView();
+        centerPanel.add(tableUserView);
 
         // The panel that is shown when the application start
         centerPanel.showWidget(changeInfoUserView);
@@ -58,7 +58,7 @@ public class MainUserView extends Composite {
 
     // The following getters is for view and tables
     public ChangeInfoUserView getChangeInfoUserView() {return changeInfoUserView; }
-    public TrainersTableUserView getTrainersTableUserView() {return trainersTableUserView; }
+    public TableUserView getTableUserView() {return tableUserView; }
 
     // The following getters is used for the menu buttons
     public Button getChangeBtn() {return changeBtn; }

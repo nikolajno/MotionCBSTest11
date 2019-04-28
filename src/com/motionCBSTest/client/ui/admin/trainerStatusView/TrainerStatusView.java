@@ -142,6 +142,15 @@ public class TrainerStatusView extends Composite {
 
 
         //Here we create a row with a containing actionButton to approve trainers
+            ActionCell<User> approveUserCell = new ActionCell<User>("Approve", actionCell);
+            Column<User, User> approveColumn = new Column<User, User>(approveUserCell) {
+                @Override
+                public User getValue(User user) {
+                    return user;
+                }
+            };
+            dataGrid.addColumn(approveColumn, "Status");
+            dataGrid.setColumnWidth(approveColumn, 5, Style.Unit.PX);
 
 
 
@@ -167,9 +176,6 @@ public class TrainerStatusView extends Composite {
     public void addClickHandler(ActionCell.Delegate<User> actionCell) {
         this.actionCell = actionCell;
     }
-
-
-
 
 }
 

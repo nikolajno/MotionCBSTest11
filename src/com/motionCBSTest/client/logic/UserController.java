@@ -28,8 +28,8 @@ public class UserController {
 
         bindHandlers();
 
-        listProviderUsers = new ListDataProvider<User>();
-        mainUserView.getTrainersTableUserView().initUsersTable(listProviderUsers);
+        listProviderUsers = new ListDataProvider<>();
+        mainUserView.getTableUserView().initUsersTable(listProviderUsers);
     }
 
 
@@ -49,7 +49,7 @@ public class UserController {
         @Override
         public void onClick(ClickEvent event) {
             if (event.getSource() == mainUserView.getTrainersTable()) {
-                mainUserView.changeView(mainUserView.getTrainersTableUserView());
+                mainUserView.changeView(mainUserView.getTableUserView());
                 listProviderUsers.refresh();
             } else if (event.getSource() == mainUserView.getChangeBtn()) {
                 mainUserView.getChangeInfoUserView().setProfileChanges(currentUser);

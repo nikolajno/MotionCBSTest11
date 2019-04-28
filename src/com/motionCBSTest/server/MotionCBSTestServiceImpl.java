@@ -20,6 +20,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
 
     private static Connection connection = null;
 
+
     /**
      * The constructor which is creating the connection the the database
      */
@@ -46,6 +47,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         // By making a SELECT/executeQuery to the database the data will presented/saved in a ResultSet
         ResultSet resultSet = null;
         User user = null;
+
 
         // Using a catch since a query to the database can fail
         try {
@@ -96,7 +98,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
                 close();
             }
         }
-        return user;
+            return user;
     }
 
     @Override
@@ -177,36 +179,37 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
     // Her oprettes createUser
     @Override
     public boolean createUser(User user) throws IllegalArgumentException {
-        try {
-            // Same concept as createMessage method
-            PreparedStatement createUser = connection
-                    .prepareStatement("INSERT INTO users (firstname, lastname, email, address, mobilenr, education," +
-                            "experience, hoursprweek, password, isapproved, type, teamtype_teamID) " +
-                            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
 
-            createUser.setString(1, user.getFname());
-            createUser.setString(2, user.getLname());
-            createUser.setString(3, user.getEmail());
-            createUser.setString(4, user.getAddress());
-            createUser.setString(5, user.getMobilenr());
-            createUser.setString(6, user.getEducation());
-            createUser.setString(7, user.getExperience());
-            createUser.setInt(8, user.getHoursPrWeek());
-            createUser.setString(9, user.getPassword());
-            createUser.setBoolean(10, user.getIsApproved());
-            createUser.setInt(11, user.getType());
-            createUser.setInt(12, user.getTeamtype_teamID());
-            //
-            int rowsAffected = createUser.executeUpdate();
-            if (rowsAffected == 1) {
-                return true;
+            try {
+                // Same concept as createMessage method
+                PreparedStatement createUser = connection
+                        .prepareStatement("INSERT INTO users (firstname, lastname, email, address, mobilenr, education," +
+                                "experience, hoursprweek, password, isapproved, type, teamtype_teamID) " +
+                                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+
+                createUser.setString(1, user.getFname());
+                createUser.setString(2, user.getLname());
+                createUser.setString(3, user.getEmail());
+                createUser.setString(4, user.getAddress());
+                createUser.setString(5, user.getMobilenr());
+                createUser.setString(6, user.getEducation());
+                createUser.setString(7, user.getExperience());
+                createUser.setInt(8, user.getHoursPrWeek());
+                createUser.setString(9, user.getPassword());
+                createUser.setBoolean(10, user.getIsApproved());
+                createUser.setInt(11, user.getType());
+                createUser.setInt(12, user.getTeamtype_teamID());
+                //
+                int rowsAffected = createUser.executeUpdate();
+                if (rowsAffected == 1) {
+                    return true;
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
+            return false;
         }
-        return false;
-    }
 
     @Override
     public ArrayList<User> getUsersFullTime(int id) throws IllegalArgumentException {

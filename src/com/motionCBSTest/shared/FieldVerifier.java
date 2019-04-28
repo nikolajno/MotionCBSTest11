@@ -38,12 +38,15 @@ public class FieldVerifier {
             return false;
         }
         // check if email contains '@' and '.'
-        return Email.contains("@") || Email.contains(".");
+        return Email.contains("@") && Email.contains(".");
     }
 
     public static boolean isValidAddress (String Address) {
         // check if address is empty (not allowed)
-        return !Address.isEmpty();
+        if (Address.isEmpty()) {
+            return false;
+        }
+        return Address.length() > 2;
     }
 
     public static boolean isValidMobileNo (String MobileNo) {
@@ -51,14 +54,9 @@ public class FieldVerifier {
         if (MobileNo.isEmpty()) {
             return false;
         }
-        // check if mobile no. contains letters (not allowed)
-        for (int n = 0; n < MobileNo.length(); n++) {
-            //if (Character.isAlphabetic(MobileNo.charAt(n)))
-                return false;
-        }
 
         //check if mobile no. contains exactly 8 digits
-        return MobileNo.length() == 8;
+        return MobileNo.length() == 8 || MobileNo.length() == 4;
     }
 
     public static boolean isValidEducation (String Education) {
@@ -68,7 +66,11 @@ public class FieldVerifier {
 
     public static boolean isValidExperience (String Experience) {
         // check if experience is empty (not allowed)
-        return !Experience.isEmpty();
+        if (Experience.isEmpty()){
+            return false;
+        }
+
+        return true;
     }
 
     public static boolean isValidHoursPrWeek (Integer HoursPrWeek) {
@@ -78,13 +80,14 @@ public class FieldVerifier {
 
     public static boolean isValidPassword (String Password) {
         //check if password is at least 4 characters
-        return Password.length() > 3;
+        return Password.length() == 4;
     }
 
-    /** public static boolean isValidTeamtype (String Teamtype) {
+    /*/
+    public static boolean isValidTeamtype (String Teamtype) {
         // check if teamtype is empty (not allowed)
         return !Teamtype.isEmpty();
-    }*/
-
+    }
+    /*/
 
 }

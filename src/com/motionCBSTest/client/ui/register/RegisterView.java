@@ -35,13 +35,13 @@ public class RegisterView extends Composite {
         initWidget(ourUiBinder.createAndBindUi(this));
 
         // define widgets
-        newtxtFname.getElement().setPropertyString("placeholder", "Firstname");
-        newtxtLname.getElement().setPropertyString("placeholder", "Lastname");
+        newtxtFname.getElement().setPropertyString("placeholder", "First name");
+        newtxtLname.getElement().setPropertyString("placeholder", "Last name");
         newtxtEmail.getElement().setPropertyString("placeholder", "E-mail");
         newtxtAddress.getElement().setPropertyString("placeholder", "Address");
-        newtxtMobileNo.getElement().setPropertyString("placeholder", "MobileNo");
+        newtxtMobileNo.getElement().setPropertyString("placeholder", "Mobile Number");
         newtxtEducation.getElement().setPropertyString("placeholder", "Education");
-        newtxtExperience.getElement().setPropertyString("placeholder","Experince");
+        newtxtExperience.getElement().setPropertyString("placeholder","Experience");
         newtxtHoursPrWeek.getElement().setPropertyString("placeholder", "Hours Pr. Week");
         newtxtPassword.getElement().setPropertyString("placeholder", "Password");
 
@@ -49,13 +49,13 @@ public class RegisterView extends Composite {
         // set tooltip text
         newtxtFname.setTitle("Fornavn skal mindst være 2 bogstaver");
         newtxtLname.setTitle("Efternavn skal midst være 2 bogstaver");
-        newtxtEmail.setTitle("Email skal indeholde '@'");
-        newtxtAddress.setTitle("Adresse skal midst være 3 bogstaver");
+        newtxtEmail.setTitle("Email skal indeholde '@' og '.'");
+        newtxtAddress.setTitle("Adressen skal midst være 3 bogstaver");
         newtxtMobileNo.setTitle("Mobil nr. skal være 8 tal");
         newtxtEducation.setTitle("Uddannelse skal udfyldes");
-        newtxtExperience.setTitle("Erfaring skal udfyldes");
+        newtxtExperience.setTitle("Erfaring skal udfyldes i år i hele tal");
         newtxtHoursPrWeek.setTitle("Timer pr. uge skal udfyldes");
-        newtxtPassword.setTitle("Password skal mindst være 4 tegn");
+        newtxtPassword.setTitle("Password skal være 4 tegn");
     }
 
     public void addClickHandler (ClickHandler clickHandler) {

@@ -1,11 +1,12 @@
-package com.motionCBSTest.client.ui.user.trainersTableUserView;
+package com.motionCBSTest.client.ui.user.tableUserView;
 
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.dom.client.Style;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.Column;
+import com.google.gwt.user.cellview.client.ColumnSortEvent;
 import com.google.gwt.user.cellview.client.ColumnSortEvent.ListHandler;
 import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.cellview.client.SimplePager;
@@ -17,21 +18,20 @@ import com.motionCBSTest.shared.User;
 import java.util.Comparator;
 
 
-public class TrainersTableUserView extends Composite {
+public class TableUserView extends Composite {
 
-    private static StatisticsUserViewUiBinder UiBinder = GWT.create(StatisticsUserViewUiBinder.class);
+    private static TableUserViewUiBinder ourUiBinder = GWT.create(TableUserViewUiBinder.class);
 
     @UiField
     DataGrid<User> dataGrid;
     @UiField
     SimplePager pager;
 
-    interface StatisticsUserViewUiBinder extends UiBinder<HTMLPanel, TrainersTableUserView> {
-    }
+    interface TableUserViewUiBinder extends UiBinder<HTMLPanel, TableUserView> {}
 
 
-    public TrainersTableUserView() {
-        initWidget(UiBinder.createAndBindUi(this));
+    public TableUserView() {
+        initWidget(ourUiBinder.createAndBindUi(this));
 
         // Setting the page size of the table
         dataGrid.setPageSize(25);
@@ -57,8 +57,8 @@ public class TrainersTableUserView extends Composite {
 
     }
 
-    private void initTableColumns(ListHandler<User> sortHandler) {
-        
+    private void initTableColumns(ColumnSortEvent.ListHandler<User> sortHandler) {
+
 
         //First name
         Column<User, String> firstnameColumn = new Column<User, String>(new TextCell()) {
@@ -78,7 +78,7 @@ public class TrainersTableUserView extends Composite {
         // Adding the column to the table. The "firstname" is the title of the column
         dataGrid.addColumn(firstnameColumn, "First name");
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
-        dataGrid.setColumnWidth(firstnameColumn, 7, Unit.PX);
+        dataGrid.setColumnWidth(firstnameColumn, 7, Style.Unit.PX);
 
 
         //Last name
@@ -99,7 +99,7 @@ public class TrainersTableUserView extends Composite {
         // Adding the column to the table. The "lastname" is the title of the column
         dataGrid.addColumn(lastnameColumn, "Last name");
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
-        dataGrid.setColumnWidth(lastnameColumn, 7, Unit.PX);
+        dataGrid.setColumnWidth(lastnameColumn, 7, Style.Unit.PX);
 
 
 
@@ -121,7 +121,7 @@ public class TrainersTableUserView extends Composite {
         // Adding the column to the table. The "Mobile" is the title of the column
         dataGrid.addColumn(mobileColumn, "Mobile");
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
-        dataGrid.setColumnWidth(mobileColumn, 7, Unit.PX);
+        dataGrid.setColumnWidth(mobileColumn, 7, Style.Unit.PX);
 
 
         //Team
@@ -142,10 +142,7 @@ public class TrainersTableUserView extends Composite {
         // Adding the column to the table. The "Team Name" is the title of the column
         dataGrid.addColumn(teamNameColumn, "Team name");
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
-        dataGrid.setColumnWidth(teamNameColumn, 7, Unit.PX);
-
-
-
-
+        dataGrid.setColumnWidth(teamNameColumn, 7, Style.Unit.PX);
     }
+
 }

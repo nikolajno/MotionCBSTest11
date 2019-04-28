@@ -10,7 +10,7 @@ import com.motionCBSTest.client.ui.admin.showInfoAdminView.ShowInfoAdminView;
 import com.motionCBSTest.client.ui.admin.statisticsPartTimeAdminView.TabLayot;
 import com.motionCBSTest.client.ui.admin.statisticsFullTimeAdminView.StatisticsFullTimeAdminView;
 import com.motionCBSTest.client.ui.admin.trainerStatusView.TrainerStatusView;
-import com.motionCBSTest.client.ui.user.trainersTableUserView.TrainersTableUserView;
+import com.motionCBSTest.client.ui.user.tableUserView.TableUserView;
 
 // We use DockLayoutPanel which contains option to place panels/widgets in North, east, west, south
 // and center of the screen. We use DeckLayoutPanel in the center.
@@ -20,7 +20,7 @@ public class MainAdminView extends Composite {
     private static MainAdminViewUiBinder UiBinder = GWT.create(MainAdminViewUiBinder.class);
 
     private ChangeInfoAdminView changeInfoAdminView;
-    private TrainersTableUserView trainersTableUserView;
+    private TableUserView tableUserView;
     private ShowInfoAdminView showInfoAdminView;
     private TrainerStatusView trainerStatusView;
     private TabLayot tabLayot;
@@ -48,8 +48,8 @@ public class MainAdminView extends Composite {
         changeInfoAdminView = new ChangeInfoAdminView();
         centerPanel.add(changeInfoAdminView);
 
-        trainersTableUserView = new TrainersTableUserView();
-        centerPanel.add(trainersTableUserView);
+        tableUserView = new TableUserView();
+        centerPanel.add(tableUserView);
 
         showInfoAdminView = new ShowInfoAdminView();
         centerPanel.add(showInfoAdminView);
@@ -64,7 +64,7 @@ public class MainAdminView extends Composite {
         centerPanel.add(statisticsFullTimeAdminView);
 
         // The panel that is shown when the application start
-        centerPanel.showWidget(trainerStatusView);
+        centerPanel.showWidget(statisticsFullTimeAdminView);
     }
 
 
@@ -85,7 +85,7 @@ public class MainAdminView extends Composite {
 
     // The following getters is for view and tables
     public ChangeInfoAdminView getChangeInfoAdminView() {return changeInfoAdminView;}
-    public TrainersTableUserView getTrainersTableUserView() {return trainersTableUserView; }
+    public TableUserView getTableUserView() {return tableUserView; }
     public ShowInfoAdminView getShowInfoAdminView() {return showInfoAdminView;}
     public TrainerStatusView getTrainerStatusView(){return trainerStatusView;}
     public TabLayot getTabLayot() {return tabLayot;}

@@ -1,10 +1,11 @@
+
+
 .gwt-TabBar {
     background: #ccc;
     padding-top: 6px;
 }
 .gwt-TabBar .gwt-TabBarFirst {
-    width: 5px;  /* first tab distance from the left */
-}
+    width: 5px;  }
 .gwt-TabBar .gwt-TabBarRest {
 }
 .gwt-TabBar .gwt-TabBarItem {
@@ -38,3 +39,38 @@
     overflow: hidden;
     padding: 6px;
 }
+
+.flextable {
+    height: 150px;
+}
+
+table.flextable td:nth-child(1){
+    width: 100px;
+}
+
+table.flextable td:nth-child(2) {
+    width: 200px;
+}
+
+
+/* mark error in inputfield */
+
+.textBox-invalidEntry {
+    font-size: 18px;
+    height: 32px;
+    border-radius: 2px;
+    width: 100%;
+    color: red;
+    border: none;
+}
+
+.textInputStd {
+    font-size: 18px;
+    height: 32px;
+    border-radius: 2px;
+    width: 100%;
+    color: #333;
+    border: none;
+}
+
+

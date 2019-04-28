@@ -23,9 +23,12 @@ public class TabLayot extends Composite {
         // "Deltid" and "Fuldtid" is the title of the tab
         sdeltid = new StatisticsPartTimeAdminView();
         tp.add(sdeltid,"Deltid");
+        sdeltid.setStyleName("gwt-TabBar");
 
         sfuldtid = new StatisticsFullTimeAdminView();
         tp.add(sfuldtid,"Fuldtid");
+        sfuldtid.setStyleName("gwt-TabBar");
+
 
         tp.selectTab(sdeltid);
 
