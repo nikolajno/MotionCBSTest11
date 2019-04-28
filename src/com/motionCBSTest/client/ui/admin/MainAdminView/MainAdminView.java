@@ -58,7 +58,7 @@ public class MainAdminView extends Composite {
         centerPanel.add(statisticsFullTimeAdminView);
 
         // The panel that is shown when the application start
-        centerPanel.showWidget(statisticsFullTimeAdminView);
+        centerPanel.showWidget(trainerStatusView);
     }
 
     // This method is used to add the clickHandlers from the logic to the menu buttons

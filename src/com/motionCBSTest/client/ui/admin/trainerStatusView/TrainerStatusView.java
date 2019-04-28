@@ -32,7 +32,8 @@ public class TrainerStatusView extends Composite {
     interface DeleteTrainerViewUiBinder extends UiBinder<HTMLPanel, TrainerStatusView> {
     }
 
-    private ActionCell.Delegate<User> actionCell;
+    private ActionCell.Delegate<User> approveActionCell;
+    private ActionCell.Delegate<User> deleteActionCell;
 
 
     public TrainerStatusView() {
@@ -142,7 +143,7 @@ public class TrainerStatusView extends Composite {
 
 
         //Here we create a row with a containing actionButton to approve trainers
-            ActionCell<User> approveUserCell = new ActionCell<User>("Approve", actionCell);
+            ActionCell<User> approveUserCell = new ActionCell<>("Approve", approveActionCell);
             Column<User, User> approveColumn = new Column<User, User>(approveUserCell) {
                 @Override
                 public User getValue(User user) {
@@ -156,7 +157,7 @@ public class TrainerStatusView extends Composite {
 
 
         //Here we create a row with a containing DeleteButton to delete trainers
-        ActionCell<User> deleteUserCell = new ActionCell<>("Delete", actionCell);
+        ActionCell<User> deleteUserCell = new ActionCell<>("Delete", deleteActionCell);
         Column<User, User> deleteColumn = new Column<User, User>(deleteUserCell) {
             @Override
             public User getValue(User user) {
@@ -171,10 +172,16 @@ public class TrainerStatusView extends Composite {
 
 
 
+
+
     }
 
-    public void addClickHandler(ActionCell.Delegate<User> actionCell) {
-        this.actionCell = actionCell;
+    public void addDeleteClickHandler (ActionCell.Delegate<User> deleteActionCell){
+        this.deleteActionCell = deleteActionCell;
+    }
+
+    public void addApproveClickHandler (ActionCell.Delegate<User> approveActionCell){
+        this.approveActionCell = approveActionCell;
     }
 
 }

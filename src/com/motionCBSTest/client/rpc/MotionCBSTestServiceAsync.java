@@ -18,4 +18,6 @@ public interface MotionCBSTestServiceAsync {
     void getUsersPartTime(int trainerID, AsyncCallback<ArrayList<User>> async);
 
     void deleteUser(int trainerID, AsyncCallback<Boolean> asyncCallback) throws IllegalArgumentException;
+
+    void approveUser(int trainerID, AsyncCallback<Boolean> asyncCallback) throws IllegalArgumentException;
 }

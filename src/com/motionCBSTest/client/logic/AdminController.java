@@ -69,7 +69,8 @@ public class AdminController {
         mainAdminView.getTabLayout().addSelectionHandler(new StatisticTypeHandler());
         mainAdminView.getChangeInfoAdminView().addClickHandler(new GetInfoHandler());
         mainAdminView.getChangeInfoAdminView().addClickHandlers(new ChangeInfoHanlder());
-        mainAdminView.getTrainerStatusView().addClickHandler(new DeleteUserHandler());
+        mainAdminView.getTrainerStatusView().addDeleteClickHandler(new DeleteUserHandler());
+        mainAdminView.getTrainerStatusView().addApproveClickHandler(new ApproveUserHandler());
 
     }
 
@@ -268,6 +269,39 @@ public class AdminController {
                         } else {
                             // If the user is deleted the user will be removed from the list of users
                             listProviderUsers.getList().remove(user);
+                        }
+
+                    }
+                });
+        }
+    }
+    class ApproveUserHandler implements ActionCell.Delegate<User> {
+
+        @Override
+        public void execute(final User user) {
+            //First that is executed is a confirmation window to delete the user
+            boolean approveUserConfirmed = Window.confirm("Are you sure you want to approve:\n" + user.getFname() + " " + user.getLname());
+
+            //If its confirmed a RPC call will be made so the user is deleted in the database
+            if (approveUserConfirmed)
+                motionCBSTestServiceAsync.approveUser(user.getId(), new AsyncCallback<Boolean>() {
+
+                    @Override
+                    public void onFailure(Throwable caught) {
+                        Window.alert("Something went wrong");
+                    }
+
+                    @Override
+                    public void onSuccess(Boolean isApproved) {
+                        // The callback returns either true or false depending if the user were deleted or not
+                        if (!isApproved) {
+                            Window.alert("Could not approve user");
+                        } else {
+                            // If the user is deleted the user will be removed from the list of users
+                            user.setIsApproved(true);
+                            listProviderUsers.refresh();
+
+                            Window.alert("User was successfully approved!");
                         }
 
                     }

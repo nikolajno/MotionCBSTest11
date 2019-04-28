@@ -23,7 +23,6 @@ public class ContentPanel  extends Composite {
         loginView = new LoginView();
         contentPanel.add(loginView);
 
-
         mainUserView = new MainUserView();
         contentPanel.add(mainUserView);
 

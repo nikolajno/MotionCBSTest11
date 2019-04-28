@@ -38,7 +38,7 @@ public class RegisterView extends Composite {
         newtxtAddress.getElement().setPropertyString("placeholder", "Address");
         newtxtMobileNo.getElement().setPropertyString("placeholder", "Mobile Number");
         newtxtEducation.getElement().setPropertyString("placeholder", "Education");
-        newtxtExperience.getElement().setPropertyString("placeholder","Experience");
+        newtxtExperience.getElement().setPropertyString("placeholder","Experience in years");
         newtxtHoursPrWeek.getElement().setPropertyString("placeholder", "Hours Pr. Week");
         newtxtPassword.getElement().setPropertyString("placeholder", "Password");
 

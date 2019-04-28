@@ -309,5 +309,25 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         return false;
     }
 
+    @Override
+    public boolean approveUser(int trainerID) throws IllegalArgumentException{
+        try {
+            PreparedStatement approveUser = connection.prepareStatement("UPDATE users SET isApproved = 1 WHERE trainerID = ?");
+
+            approveUser.setBoolean(1,true);
+
+            int rowsAffected = approveUser.executeUpdate();
+
+            if (rowsAffected == 1){
+                return true;
+            }
+
+
+        } catch (SQLException sqlException){
+            sqlException.printStackTrace();
+        }
+        return false;
+    }
+
 
 }
