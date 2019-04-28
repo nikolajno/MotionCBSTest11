@@ -19,7 +19,6 @@ public class TabLayout extends Composite {
         tp.setAnimationDuration(300);
         tp.setHeight("100%");
 
-
         // Here we are creating two different objects of statisticTable which is added to the TabLayoutPanel.
         // "Part time" and "Full time" is the title of the tab
         sdeltid = new StatisticsPartTimeAdminView();
