@@ -11,34 +11,20 @@ public class ChangeInfoUserView extends Composite {
 
     private static ChangeUserInfoUserViewUiBinder ourUiBinder = GWT.create(ChangeUserInfoUserViewUiBinder.class);
 
-    @UiField
-    TextBox txtFname;
-    @UiField
-    TextBox txtLname;
-    @UiField
-    TextBox txtEmail;
-    @UiField
-    TextBox txtAddress;
-    @UiField
-    TextBox txtMobileNo;
-    @UiField
-    TextBox txtEducation;
-    @UiField
-    TextBox txtExperience;
-    @UiField
-    IntegerBox txtHoursPrWeek;
-    @UiField
-    TextBox txtPassword;
-    @UiField
-    RadioButton newCrossfitBtn;
-    @UiField
-    RadioButton newHitBtn;
-    @UiField
-    RadioButton newStramopBtn;
-    @UiField
-    RadioButton newSpinningBtn;
-    @UiField
-    Button changeProfileBtn;
+    @UiField TextBox txtFname;
+    @UiField TextBox txtLname;
+    @UiField TextBox txtEmail;
+    @UiField TextBox txtAddress;
+    @UiField TextBox txtMobileNo;
+    @UiField TextBox txtEducation;
+    @UiField TextBox txtExperience;
+    @UiField IntegerBox txtHoursPrWeek;
+    @UiField TextBox txtPassword;
+    @UiField RadioButton newCrossfitBtn;
+    @UiField RadioButton newHitBtn;
+    @UiField RadioButton newStramopBtn;
+    @UiField RadioButton newSpinningBtn;
+    @UiField Button changeProfileBtn;
 
     interface ChangeUserInfoUserViewUiBinder extends UiBinder<HTMLPanel, ChangeInfoUserView> {}
 

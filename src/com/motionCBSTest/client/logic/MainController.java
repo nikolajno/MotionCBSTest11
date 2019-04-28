@@ -52,22 +52,14 @@ public class MainController {
                 content.getLoginView().getMobilenrTxtBox().setStyleName("textInputStd");
                 content.getLoginView().getPasswordTxtBox().setStyleName("textInputStd");
 
-
                 // RPC authenticating user method
                 motionCBSTestService.authorizeUser(mobileNr, password, new AsyncCallback<User>() {
 
-                    /*
-                     * Handles error from callback function
-                     */
                     @Override
                     public void onFailure(Throwable caught) {
                         Window.alert("Der skete en fejl");
                     }
 
-                    /*
-                     * Handles success response from callback
-                     * The callback returns a user
-                     */
                     @Override
                     public void onSuccess(User user) {
                         // Failed to match input with User in database
@@ -79,12 +71,7 @@ public class MainController {
 
 
 
-                            /*
-                             * 1) User match in database,
-                             * 2) Checks access level Admin != User
-                             * 3) Change the view to either admin og user view
-                             */
-
+                            // Here we check the type and if they are type 1 we go to admin view and the other way around
                             if (user.getType() == 1) {
                                 adminController.loadUser(user);
                                 content.changeView(content.getMainAdminView());
@@ -93,8 +80,7 @@ public class MainController {
                                 content.changeView(content.getMainUserView());
                             }
 
-                        // Clearing the text fields (mobileNr & password) from
-                        // the login screen
+                        // Clearing the text fields (mobileNr & password) from the login screen
                         content.getLoginView().clearTextBoxFields();
                     }
                 });
@@ -124,6 +110,8 @@ public class MainController {
             String experience = content.getRegisterView().getNewtxtExperience().getText();
             Integer hoursPrWeek = content.getRegisterView().getNewtxtHoursPrWeek().getValue();
             String password = content.getRegisterView().getNewtxtPassword().getText();
+
+            // Here we check witch radiobuttom the user chose and give them the rigth teamtype_teamID
             String teamtype = null;
             int teamtype_teamID = 0;
 
@@ -144,7 +132,7 @@ public class MainController {
                 teamtype_teamID = 4;
             }
 
-
+            // Here we check for mistakes and if there is no mistake we create the user
             if (!FieldVerifier.isValidFname(fName)){content.getRegisterView().getNewtxtFname().setStyleName("textBox-invalidEntry");}
             else if (!FieldVerifier.isValidLname(lName)){content.getRegisterView().getNewtxtLname().setStyleName("textBox-invalidEntry");}
             else if (!FieldVerifier.isValidEmail(email)){content.getRegisterView().getNewtxtEmail().setStyleName("textBox-invalidEntry");}
@@ -155,8 +143,6 @@ public class MainController {
             else if (!FieldVerifier.isValidHoursPrWeek(hoursPrWeek)){content.getRegisterView().getNewtxtHoursPrWeek().setStyleName("textBox-invalidEntry");}
             else if (!FieldVerifier.isValidPassword(password)){content.getRegisterView().getNewtxtPassword().setStyleName("textBox-invalidEntry");}
             else {
-
-
                             User user = new User();
                             user.setFname(fName);
                             user.setLname(lName);
@@ -174,13 +160,10 @@ public class MainController {
 
                             // RPC authenticating user method
                             motionCBSTestService.createUser(user, new AsyncCallback<Boolean>() {
-                                /*
-                                 * Handles error from callback function
-                                 */
+
                                 @Override
                                 public void onFailure(Throwable caught) {
                                     Window.alert("Something went wrong");
-
                                 }
 
                                 @Override
@@ -189,12 +172,9 @@ public class MainController {
                                         Window.alert("Could not create user");
                                     } else {
                                         content.getRegisterView().clearTextBoxFields();
-                                        // userController.loadTables();
                                         Window.alert("Du er nu tilføjet, vent på at en administrator godkender dig");
                                     }
                                 }
-
-
                             });
                         }
                     }

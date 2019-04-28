@@ -24,10 +24,7 @@ public class RegisterView extends Composite {
     @UiField Button registerBtn;
     @UiField Button gobackBtn;
 
-
-    interface registerUiBinder extends UiBinder<HTMLPanel, RegisterView> {
-
-    }
+    interface registerUiBinder extends UiBinder<HTMLPanel, RegisterView> {}
 
     private static registerUiBinder ourUiBinder = GWT.create(registerUiBinder.class);
 
@@ -58,11 +55,13 @@ public class RegisterView extends Composite {
         newtxtPassword.setTitle("Password skal være 4 tegn");
     }
 
+    // Method to add a Click Handler to the register and goback button
     public void addClickHandler (ClickHandler clickHandler) {
         registerBtn.addClickHandler(clickHandler);
         gobackBtn.addClickHandler(clickHandler);
     }
 
+    // Method to clean the textbox fiels
     public void clearTextBoxFields () {
         newtxtFname.setText("");
         newtxtLname.setText("");
@@ -75,7 +74,7 @@ public class RegisterView extends Composite {
         newtxtPassword.setText("");
     }
 
-
+    // Getters
     public TextBox getNewtxtFname() {return newtxtFname;}
 
     public TextBox getNewtxtLname() {return newtxtLname;}

@@ -22,21 +22,20 @@ public class TableUserView extends Composite {
 
     private static TableUserViewUiBinder ourUiBinder = GWT.create(TableUserViewUiBinder.class);
 
-    @UiField
-    DataGrid<User> dataGrid;
-    @UiField
-    SimplePager pager;
+    @UiField DataGrid<User> dataGrid;
+    @UiField SimplePager pager;
 
     interface TableUserViewUiBinder extends UiBinder<HTMLPanel, TableUserView> {}
-
 
     public TableUserView() {
         initWidget(ourUiBinder.createAndBindUi(this));
 
         // Setting the page size of the table
         dataGrid.setPageSize(25);
+
         // Adding the pager to the datagrid
         pager.setDisplay(dataGrid);
+
         // Ensures the headers doesn't get refreshed every time the data is updated
         dataGrid.setAutoHeaderRefreshDisabled(true);
     }
@@ -49,16 +48,11 @@ public class TableUserView extends Composite {
         // Creating all the necessary columns to the table
         initTableColumns(sortHandler);
 
-        /*
-         * Adding the data grid to the DataProvider The DataProvider is
-         * containing a List with all the data
-         */
+        // Adding the data grid to the DataProvider.
         dataProvider.addDataDisplay(dataGrid);
-
     }
 
     private void initTableColumns(ColumnSortEvent.ListHandler<User> sortHandler) {
-
 
         //First name
         Column<User, String> firstnameColumn = new Column<User, String>(new TextCell()) {
@@ -67,6 +61,7 @@ public class TableUserView extends Composite {
                 return user.getFname();
             }
         };
+
         // Setting the firstname column to sortable
         firstnameColumn.setSortable(true);
         sortHandler.setComparator(firstnameColumn, new Comparator<User>() {
@@ -75,11 +70,12 @@ public class TableUserView extends Composite {
                 return u1.getFname().compareTo(u2.getFname());
             }
         });
+
         // Adding the column to the table. The "firstname" is the title of the column
         dataGrid.addColumn(firstnameColumn, "First name");
+
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
         dataGrid.setColumnWidth(firstnameColumn, 7, Style.Unit.PX);
-
 
         //Last name
         Column<User, String> lastnameColumn = new Column<User, String>(new TextCell()) {
@@ -88,6 +84,7 @@ public class TableUserView extends Composite {
                 return user.getLname();
             }
         };
+
         // Setting the lastname column to sortable
         lastnameColumn.setSortable(true);
         sortHandler.setComparator(lastnameColumn, new Comparator<User>() {
@@ -96,12 +93,12 @@ public class TableUserView extends Composite {
                 return u1.getLname().compareTo(u2.getLname());
             }
         });
+
         // Adding the column to the table. The "lastname" is the title of the column
         dataGrid.addColumn(lastnameColumn, "Last name");
+
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
         dataGrid.setColumnWidth(lastnameColumn, 7, Style.Unit.PX);
-
-
 
         //Mobile
         Column<User, String> mobileColumn = new Column<User, String>(new TextCell()) {
@@ -110,6 +107,7 @@ public class TableUserView extends Composite {
                 return user.getMobilenr();
             }
         };
+
         // Setting the MobileNr column to sortable
         mobileColumn.setSortable(true);
         sortHandler.setComparator(mobileColumn, new Comparator<User>() {
@@ -118,11 +116,12 @@ public class TableUserView extends Composite {
                 return u1.getMobilenr().compareTo(u2.getMobilenr());
             }
         });
+
         // Adding the column to the table. The "Mobile" is the title of the column
         dataGrid.addColumn(mobileColumn, "Mobile");
+
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
         dataGrid.setColumnWidth(mobileColumn, 7, Style.Unit.PX);
-
 
         //Team
         Column<User, String> teamNameColumn = new Column<User, String>(new TextCell()) {
@@ -131,6 +130,7 @@ public class TableUserView extends Composite {
                 return user.getTeamName();
             }
         };
+
         // Setting the teamName column to sortable
         teamNameColumn.setSortable(true);
         sortHandler.setComparator(teamNameColumn, new Comparator<User>() {
@@ -139,10 +139,11 @@ public class TableUserView extends Composite {
                 return u1.getTeamName().compareTo(u2.getTeamName());
             }
         });
+
         // Adding the column to the table. The "Team Name" is the title of the column
         dataGrid.addColumn(teamNameColumn, "Team name");
+
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
         dataGrid.setColumnWidth(teamNameColumn, 7, Style.Unit.PX);
     }
-
 }

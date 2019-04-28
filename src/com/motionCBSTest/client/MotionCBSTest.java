@@ -8,26 +8,21 @@ import com.motionCBSTest.client.rpc.MotionCBSTestService;
 import com.motionCBSTest.client.rpc.MotionCBSTestServiceAsync;
 import com.motionCBSTest.client.ui.ContentPanel;
 
-/**
- * Entry point classes define <code>onModuleLoad()</code>
- */
 public class MotionCBSTest implements EntryPoint {
 
-
-    /**
-     * This is the entry point method.
-     */
+    // This is the entry point method.
     public void onModuleLoad() {
 
+        // Instantiate the panel
         ContentPanel content = new ContentPanel();
 
+        // Adding the panel to the RootLayoutPanel
         RootLayoutPanel.get().add(content);
 
+        //Instantiate the RPC service
         MotionCBSTestServiceAsync motionCBSTestService = GWT.create(MotionCBSTestService.class);
 
+        //Passes the panel and the RPC service to the MainController
         new MainController(content, motionCBSTestService);
-
     }
-
-
 }

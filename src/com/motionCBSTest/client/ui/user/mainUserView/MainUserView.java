@@ -18,14 +18,10 @@ public class MainUserView extends Composite {
     private ChangeInfoUserView changeInfoUserView;
     private TableUserView tableUserView;
 
-    @UiField
-    DeckLayoutPanel centerPanel;
-    @UiField
-    Button changeBtn;
-    @UiField
-    Button trainersTable;
-    @UiField
-    Button logoutBtn;
+    @UiField DeckLayoutPanel centerPanel;
+    @UiField Button changeBtn;
+    @UiField Button trainersTable;
+    @UiField Button logoutBtn;
 
     interface MainUserViewUiBinder extends UiBinder<HTMLPanel, MainUserView> {}
 
@@ -40,7 +36,7 @@ public class MainUserView extends Composite {
         centerPanel.add(tableUserView);
 
         // The panel that is shown when the application start
-        centerPanel.showWidget(changeInfoUserView);
+        centerPanel.showWidget(tableUserView);
     }
 
 

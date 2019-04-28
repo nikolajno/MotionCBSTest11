@@ -19,43 +19,26 @@ import com.motionCBSTest.shared.User;
 import java.util.Comparator;
 
 public class ChangeInfoAdminView extends Composite {
-    interface ChangeInfoAdminViewUiBinder extends UiBinder<HTMLPanel, ChangeInfoAdminView> {
-    }
+    interface ChangeInfoAdminViewUiBinder extends UiBinder<HTMLPanel, ChangeInfoAdminView> {}
 
     private static ChangeInfoAdminViewUiBinder ourUiBinder = GWT.create(ChangeInfoAdminViewUiBinder.class);
 
-    @UiField
-    TextBox txtFname;
-    @UiField
-    TextBox txtLname;
-    @UiField
-    TextBox txtEmail;
-    @UiField
-    TextBox txtAddress;
-    @UiField
-    TextBox txtMobileNo;
-    @UiField
-    TextBox txtEducation;
-    @UiField
-    TextBox txtExperience;
-    @UiField
-    IntegerBox txtHoursPrWeek;
-    @UiField
-    TextBox txtPassword;
-    @UiField
-    RadioButton newCrossfitBtn;
-    @UiField
-    RadioButton newHitBtn;
-    @UiField
-    RadioButton newStramopBtn;
-    @UiField
-    RadioButton newSpinningBtn;
-    @UiField
-    Button changeProfileBtn;
-    @UiField
-    DataGrid<User> dataGrid;
-    @UiField
-    SimplePager pager;
+    @UiField TextBox txtFname;
+    @UiField TextBox txtLname;
+    @UiField TextBox txtEmail;
+    @UiField TextBox txtAddress;
+    @UiField TextBox txtMobileNo;
+    @UiField TextBox txtEducation;
+    @UiField TextBox txtExperience;
+    @UiField IntegerBox txtHoursPrWeek;
+    @UiField TextBox txtPassword;
+    @UiField RadioButton newCrossfitBtn;
+    @UiField RadioButton newHitBtn;
+    @UiField RadioButton newStramopBtn;
+    @UiField RadioButton newSpinningBtn;
+    @UiField Button changeProfileBtn;
+    @UiField DataGrid<User> dataGrid;
+    @UiField SimplePager pager;
 
     private ActionCell.Delegate<User> actionCell;
 
@@ -70,7 +53,6 @@ public class ChangeInfoAdminView extends Composite {
 
         // Ensures the headers doesn't get refreshed every time the data is updated
         dataGrid.setAutoHeaderRefreshDisabled(true);
-
     }
 
     // This method is called from the logic so it is possible to load the table with data from the database
@@ -90,6 +72,7 @@ public class ChangeInfoAdminView extends Composite {
     // This method is creating all the columns. Each column wont be described since it is more or less the
     // same with small changes
     private void initTableColumns(ColumnSortEvent.ListHandler<User> sortHandler) {
+
         // In this next lines the user id column will be explained in details
 
         // The user id column is created. Remark that when it is a cell it isn't a IntegerCell but a NumberCell.
@@ -170,7 +153,10 @@ public class ChangeInfoAdminView extends Composite {
             }
         };
 
+        // Adding the column to the table. The "Efternavn" is the title of the column
         dataGrid.addColumn(joinColumn, "Info");
+
+        // Setting the size of the column
         dataGrid.setColumnWidth(joinColumn, 6, Style.Unit.PX);
     }
 
@@ -194,7 +180,6 @@ public class ChangeInfoAdminView extends Composite {
     public void addClickHandlers(ClickHandler clickHandler) {
         changeProfileBtn.addClickHandler(clickHandler);
     }
-
 
     // This method is used to set all the widgets with the current users information
     public void setProfileChanges(User user) {

@@ -26,18 +26,12 @@ public class MainAdminView extends Composite {
     private TabLayout tabLayout;
     private StatisticsFullTimeAdminView statisticsFullTimeAdminView;
 
-    @UiField
-    DeckLayoutPanel centerPanel;
-    @UiField
-    Button showInfoBtn;
-    @UiField
-    Button statisticBtn;
-    @UiField
-    Button trainerStatusBtn;
-    @UiField
-    Button changeBtn;
-    @UiField
-    Button logoutBtn;
+    @UiField DeckLayoutPanel centerPanel;
+    @UiField Button showInfoBtn;
+    @UiField Button statisticBtn;
+    @UiField Button trainerStatusBtn;
+    @UiField Button changeBtn;
+    @UiField Button logoutBtn;
 
     interface MainAdminViewUiBinder extends UiBinder<HTMLPanel, MainAdminView> {}
 
@@ -66,7 +60,6 @@ public class MainAdminView extends Composite {
         // The panel that is shown when the application start
         centerPanel.showWidget(statisticsFullTimeAdminView);
     }
-
 
     // This method is used to add the clickHandlers from the logic to the menu buttons
     public void addClickHandlers(ClickHandler clickHandler) {

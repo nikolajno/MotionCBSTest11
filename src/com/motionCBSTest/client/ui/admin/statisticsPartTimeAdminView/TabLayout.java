@@ -21,13 +21,13 @@ public class TabLayout extends Composite {
 
 
         // Here we are creating two different objects of statisticTable which is added to the TabLayoutPanel.
-        // "Deltid" and "Fuldtid" is the title of the tab
+        // "Part time" and "Full time" is the title of the tab
         sdeltid = new StatisticsPartTimeAdminView();
-        tp.add(sdeltid,"Deltid");
+        tp.add(sdeltid," Part time ");
         sdeltid.setStyleName("gwt-TabBar");
 
         sfuldtid = new StatisticsFullTimeAdminView();
-        tp.add(sfuldtid,"Fuldtid");
+        tp.add(sfuldtid," Full time ");
         sfuldtid.setStyleName("gwt-TabBar");
 
         tp.selectTab(sdeltid);
@@ -41,7 +41,6 @@ public class TabLayout extends Composite {
     }
 
     // Getters
-
     public TabLayoutPanel getTp() { return tp; }
     public StatisticsPartTimeAdminView getSdeltid() {return sdeltid;}
     public StatisticsFullTimeAdminView getSfuldtid() {return sfuldtid;}

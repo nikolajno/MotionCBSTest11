@@ -16,16 +16,12 @@ package com.motionCBSTest.client.ui.admin.statisticsPartTimeAdminView;
         import java.util.Comparator;
 
 public class StatisticsPartTimeAdminView extends Composite {
-    interface StatisticsAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsPartTimeAdminView> {
-    }
+    interface StatisticsAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsPartTimeAdminView> {}
 
     private static StatisticsAdminViewUiBinder ourUiBinder = GWT.create(StatisticsAdminViewUiBinder.class);
 
-    @UiField
-    DataGrid<User> dataGrid;
-    @UiField
-    SimplePager pager;
-
+    @UiField DataGrid<User> dataGrid;
+    @UiField SimplePager pager;
 
     public StatisticsPartTimeAdminView() {
         initWidget(ourUiBinder.createAndBindUi(this));
@@ -33,15 +29,11 @@ public class StatisticsPartTimeAdminView extends Composite {
         // Setting the page size of the table
         dataGrid.setPageSize(10);
 
-
         // Adding the pager to the datagrid
         pager.setDisplay(dataGrid);
 
-
         // Ensures the headers doesn't get refreshed every time the data is updated
         dataGrid.setAutoHeaderRefreshDisabled(true);
-
-
     }
 
     // This method is called from the logic so it is possible to load the table with data from the database
@@ -56,7 +48,6 @@ public class StatisticsPartTimeAdminView extends Composite {
 
         // Adding the data grid to the DataProvider. The DataProvider is containing a List with all the data
         dataProvider.addDataDisplay(dataGrid);
-
     }
 
     // This method is creating all the columns. Each column wont be described since it is more or less the
@@ -133,7 +124,6 @@ public class StatisticsPartTimeAdminView extends Composite {
         // Setting the size of the column
         dataGrid.setColumnWidth(lnameColumn, 8, Unit.PX);
 
-
         // The hours pr week column is created. Remark that when it is a cell it isn't a IntegerCell but a NumberCell.
         Column<User, Number> hoursColumn = new Column<User, Number>(new NumberCell()) {
             @Override
@@ -157,5 +147,4 @@ public class StatisticsPartTimeAdminView extends Composite {
         // Setting the size of the column.
         dataGrid.setColumnWidth(hoursColumn, 4, Unit.PX);
     }
-
 }

@@ -38,10 +38,12 @@ public class ContentPanel  extends Composite {
         initWidget(contentPanel);
     }
 
+    // Method used to change the view
     public void changeView(Widget panel) {
         contentPanel.showWidget(panel);
     }
 
+    // Getters
     public LoginView getLoginView() {return loginView;}
 
     public MainUserView getMainUserView() {return mainUserView;}

@@ -18,15 +18,12 @@ import com.motionCBSTest.shared.User;
 import java.util.Comparator;
 
 public class StatisticsFullTimeAdminView extends Composite {
-    interface StatisticsFuldtidAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsFullTimeAdminView> {
-    }
+    interface StatisticsFuldtidAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsFullTimeAdminView> {}
 
     private static StatisticsFuldtidAdminViewUiBinder ourUiBinder = GWT.create(StatisticsFuldtidAdminViewUiBinder.class);
 
-    @UiField
-    DataGrid<User> dataGrid;
-    @UiField
-    SimplePager pager;
+    @UiField DataGrid<User> dataGrid;
+    @UiField SimplePager pager;
 
 
     public StatisticsFullTimeAdminView() {
@@ -34,16 +31,12 @@ public class StatisticsFullTimeAdminView extends Composite {
 
         // Setting the page size of the table
         dataGrid.setPageSize(10);
-        //dataGridDown.setPageSize(10);
 
         // Adding the pager to the datagrid
         pager.setDisplay(dataGrid);
-        //pagerDown.setDisplay(dataGridDown);
 
         // Ensures the headers doesn't get refreshed every time the data is updated
         dataGrid.setAutoHeaderRefreshDisabled(true);
-        //dataGridDown.setAutoHeaderRefreshDisabled(true);
-
     }
 
     // This method is called from the logic so it is possible to load the table with data from the database
@@ -56,7 +49,7 @@ public class StatisticsFullTimeAdminView extends Composite {
         // Creating all the necessary columns to the table
         initTableColumns(sortHandler);
 
-        // Adding the data grid to the DataProvider. The DataProvider is containing a List with all the data
+        // Adding the data grid to the DataProvider
         dataProvider.addDataDisplay(dataGrid);
 
     }
@@ -134,7 +127,6 @@ public class StatisticsFullTimeAdminView extends Composite {
         // Setting the size of the column
         dataGrid.setColumnWidth(lnameColumn, 8, Style.Unit.PX);
 
-
         // The user id column is created. Remark that when it is a cell it isn't a IntegerCell but a NumberCell.
         Column<User, Number> hoursColumn = new Column<User, Number>(new NumberCell()) {
             @Override
@@ -158,6 +150,4 @@ public class StatisticsFullTimeAdminView extends Composite {
         // Setting the size of the column.
         dataGrid.setColumnWidth(hoursColumn, 4, Style.Unit.PX);
     }
-
-
 }

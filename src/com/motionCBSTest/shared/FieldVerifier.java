@@ -54,7 +54,6 @@ public class FieldVerifier {
         if (MobileNo.isEmpty()) {
             return false;
         }
-
         //check if mobile no. contains exactly 8 digits
         return MobileNo.length() == 8 || MobileNo.length() == 4;
     }
@@ -69,7 +68,6 @@ public class FieldVerifier {
         if (Experience.isEmpty()){
             return false;
         }
-
         return true;
     }
 
@@ -82,12 +80,4 @@ public class FieldVerifier {
         //check if password is at least 4 characters
         return Password.length() == 4;
     }
-
-    /*/
-    public static boolean isValidTeamtype (String Teamtype) {
-        // check if teamtype is empty (not allowed)
-        return !Teamtype.isEmpty();
-    }
-    /*/
-
 }
