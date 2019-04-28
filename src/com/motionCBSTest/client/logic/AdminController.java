@@ -33,8 +33,8 @@ public class AdminController {
         listProviderUsers = new ListDataProvider<User>();
         mainAdminView.getTrainerStatusView().initUsersTable(listProviderUsers);
         mainAdminView.getShowInfoAdminView().initUsersTable(listProviderUsers);
-        mainAdminView.getTabLayot().getSdeltid().initUsersTable(listProviderUsers);
-        mainAdminView.getTabLayot().getSfuldtid().initUsersTable(listProviderUsers);
+        mainAdminView.getTabLayout().getSdeltid().initUsersTable(listProviderUsers);
+        mainAdminView.getTabLayout().getSfuldtid().initUsersTable(listProviderUsers);
         mainAdminView.getChangeInfoAdminView().initUsersTable(listProviderUsers);
     }
 
@@ -65,7 +65,7 @@ public class AdminController {
 
         mainAdminView.addClickHandlers(new MenuClickHandler());
         mainAdminView.getShowInfoAdminView().addClickHandler(new SelectInfoHandler());
-        mainAdminView.getTabLayot().addSelectionHandler(new StatisticTypeHandler());
+        mainAdminView.getTabLayout().addSelectionHandler(new StatisticTypeHandler());
         mainAdminView.getChangeInfoAdminView().addClickHandler(new GetInfoHandler());
         mainAdminView.getChangeInfoAdminView().addClickHandlers(new ChangeInfoHanlder());
         mainAdminView.getTrainerStatusView().addClickHandler(new DeleteUserHandler());
@@ -111,7 +111,7 @@ public class AdminController {
                 loadTables();
                 listProviderUsers.refresh();
             } else if (event.getSource() == mainAdminView.getStatisticBtn()) {
-                mainAdminView.changeView(mainAdminView.getTabLayot());
+                mainAdminView.changeView(mainAdminView.getTabLayout());
             } else if (event.getSource() == mainAdminView.getChangeBtn()) {
                 mainAdminView.changeView(mainAdminView.getChangeInfoAdminView());
                 listProviderUsers.getList().clear();

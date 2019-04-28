@@ -2,33 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="254705e7-0ad4-425e-b90c-c4606346f8d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MotionCBSTest_Web_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/MotionCBSTest_Web_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/gwt_user__2_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MotionCBSTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MotionCBSTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/MotionCBSTest.gwt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/MotionCBSTest.gwt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController$LoginClickHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController$LoginClickHandler$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController$LoginClickHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController$LoginClickHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/logic/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/ui/ContentPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/ui/ContentPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/ui/login/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/client/ui/login/LoginView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/server/MotionCBSTestServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/server/MotionCBSTestServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/MotionCBSTest.gwt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/MotionCBSTest.gwt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/ContentPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/ContentPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/MainAdminView/MainAdminView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/MainAdminView/MainAdminView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/statisticsPartTimeAdminView/TabLayot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/statisticsPartTimeAdminView/TabLayot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/trainerStatusView/TrainerStatusView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/trainerStatusView/TrainerStatusView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/register/RegisterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/register/RegisterView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/trainersTableUserView/TrainersTableUserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/tableUserView/TableUserView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/trainersTableUserView/TrainersTableUserView.ui.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/tableUserView/TableUserView.ui.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/shared/FieldVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/shared/FieldVerifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/war/MotionCBSTest.css" beforeDir="false" afterPath="$PROJECT_DIR$/war/MotionCBSTest.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/statisticsPartTimeAdminView/TabLayot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/statisticsPartTimeAdminView/TabLayout.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,16 +41,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="142" />
-          <entry key="java" value="8787" />
-          <entry key="txt" value="36" />
+          <entry key="java" value="8790" />
+          <entry key="txt" value="120" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="142" />
-          <entry key="JAVA" value="8787" />
-          <entry key="PLAIN_TEXT" value="36" />
+          <entry key="JAVA" value="8790" />
+          <entry key="PLAIN_TEXT" value="120" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
@@ -185,10 +162,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2096">
+            <state relative-caret-position="-479">
               <caret line="151" column="45" selection-start-line="151" selection-start-column="45" selection-end-line="151" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -218,11 +195,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/statisticsPartTimeAdminView/TabLayot.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/statisticsPartTimeAdminView/TabLayout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="166">
+              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -253,7 +230,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/java/sql/ConnectionImpl.java" />
         <option value="$PROJECT_DIR$/war/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/rpc/MotionCBSTestServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/changeUserInfoUserView/ChangeUserInfoUserView.ui.xml" />
@@ -299,11 +275,12 @@
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/ContentPanel.java" />
-        <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/statisticsPartTimeAdminView/TabLayot.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/MainAdminView/MainAdminView.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/shared/FieldVerifier.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/register/RegisterView.java" />
+        <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/statisticsPartTimeAdminView/TabLayot.java" />
+        <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/statisticsPartTimeAdminView/TabLayout.java" />
       </list>
     </option>
   </component>
@@ -444,16 +421,6 @@
               <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="trainerStatusView" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MotionCBSTest11" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MotionCBSTest11" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="motionCBSTest" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -536,7 +503,7 @@
     <property name="SearchEverywhereHistoryKey" value="table&#9;PSI&#9;JAVA://com.motionCBSTest.client.ui.user.mainUserView.MainUserView#getTrainersTable&#10;Table&#9;PSI&#9;JAVA://com.motionCBSTest.client.ui.user.mainUserView.MainUserView#getTrainersTable&#10;clearT&#9;PSI&#9;JAVA://com.motionCBSTest.client.ui.register.RegisterView#clearTextBoxFields&#10;clearTex&#9;PSI&#9;JAVA://com.motionCBSTest.client.ui.login.LoginView#clearTextBoxFields&#10;mobile&#9;PSI&#9;JAVA://com.motionCBSTest.client.ui.login.LoginView#getMobilenrTxtBox&#10;getUsers&#9;PSI&#9;JAVA://com.motionCBSTest.client.rpc.MotionCBSTestService#getUsers" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556448665947" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556451989948" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/eventbinder/eventbinder-1.1.0.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -740,7 +707,7 @@
       <workItem from="1556435122931" duration="85000" />
       <workItem from="1556435359357" duration="7882000" />
       <workItem from="1556443293176" duration="66000" />
-      <workItem from="1556443478021" duration="5407000" />
+      <workItem from="1556443478021" duration="6104000" />
     </task>
     <task id="LOCAL-00001" summary="hsh">
       <created>1554208851268</created>
@@ -910,11 +877,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556175422543</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Fieldverifier klasse opdateret og rettet&#10;&#10;FieldVerifier for login og register done">
+      <created>1556448940887</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1556448940887</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164629000" />
+    <option name="totallyTimeSpent" value="165326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="2" width="1930" height="1084" extended-state="0" />
@@ -989,7 +963,8 @@
     <MESSAGE value="Log ud knap tilføjet usercontroller" />
     <MESSAGE value="Har fikset så den ikke skriver dobbelt i users table" />
     <MESSAGE value="GGWP" />
-    <option name="LAST_COMMIT_MESSAGE" value="GGWP" />
+    <MESSAGE value="Fieldverifier klasse opdateret og rettet&#10;&#10;FieldVerifier for login og register done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fieldverifier klasse opdateret og rettet&#10;&#10;FieldVerifier for login og register done" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/showInfoAdminView/ShowInfoAdminView.java">
@@ -1390,13 +1365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/statisticsPartTimeAdminView/TabLayot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -1435,11 +1403,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2096">
+        <state relative-caret-position="-479">
           <caret line="151" column="45" selection-start-line="151" selection-start-column="45" selection-end-line="151" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/statisticsPartTimeAdminView/TabLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
         </state>
       </provider>
     </entry>

@@ -7,13 +7,13 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.motionCBSTest.client.ui.admin.statisticsFullTimeAdminView.StatisticsFullTimeAdminView;
 
-public class TabLayot extends Composite {
+public class TabLayout extends Composite {
 
     private TabLayoutPanel tp;
     private StatisticsPartTimeAdminView sdeltid;
     private StatisticsFullTimeAdminView sfuldtid;
 
-    public TabLayot() {
+    public TabLayout() {
         tp = new TabLayoutPanel(2.5, Style.Unit.EM);
         // This is animating the switch between tabs. 300 indicates the time of the animation in milliseconds
         tp.setAnimationDuration(300);

@@ -7,7 +7,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
 import com.motionCBSTest.client.ui.admin.changeInfoAdminView.ChangeInfoAdminView;
 import com.motionCBSTest.client.ui.admin.showInfoAdminView.ShowInfoAdminView;
-import com.motionCBSTest.client.ui.admin.statisticsPartTimeAdminView.TabLayot;
+import com.motionCBSTest.client.ui.admin.statisticsPartTimeAdminView.TabLayout;
 import com.motionCBSTest.client.ui.admin.statisticsFullTimeAdminView.StatisticsFullTimeAdminView;
 import com.motionCBSTest.client.ui.admin.trainerStatusView.TrainerStatusView;
 import com.motionCBSTest.client.ui.user.tableUserView.TableUserView;
@@ -23,7 +23,7 @@ public class MainAdminView extends Composite {
     private TableUserView tableUserView;
     private ShowInfoAdminView showInfoAdminView;
     private TrainerStatusView trainerStatusView;
-    private TabLayot tabLayot;
+    private TabLayout tabLayout;
     private StatisticsFullTimeAdminView statisticsFullTimeAdminView;
 
     @UiField
@@ -57,8 +57,8 @@ public class MainAdminView extends Composite {
         trainerStatusView = new TrainerStatusView();
         centerPanel.add(trainerStatusView);
 
-        tabLayot = new TabLayot();
-        centerPanel.add(tabLayot);
+        tabLayout = new TabLayout();
+        centerPanel.add(tabLayout);
 
         statisticsFullTimeAdminView = new StatisticsFullTimeAdminView();
         centerPanel.add(statisticsFullTimeAdminView);
@@ -88,7 +88,7 @@ public class MainAdminView extends Composite {
     public TableUserView getTableUserView() {return tableUserView; }
     public ShowInfoAdminView getShowInfoAdminView() {return showInfoAdminView;}
     public TrainerStatusView getTrainerStatusView(){return trainerStatusView;}
-    public TabLayot getTabLayot() {return tabLayot;}
+    public TabLayout getTabLayout() {return tabLayout;}
     public StatisticsFullTimeAdminView getStatisticsFullTimeAdminView() {return statisticsFullTimeAdminView;}
 
     // The following getters is used for the menu buttons
