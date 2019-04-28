@@ -111,7 +111,7 @@ public class MainController {
             Integer hoursPrWeek = content.getRegisterView().getNewtxtHoursPrWeek().getValue();
             String password = content.getRegisterView().getNewtxtPassword().getText();
 
-            // Here we check witch radiobuttom the user chose and give them the rigth teamtype_teamID
+            // Here we check which radiobutton the user choose and give them the right teamtype_teamID
             String teamtype = null;
             int teamtype_teamID = 0;
 

@@ -4,7 +4,7 @@
         .top {
             color: white;
             background-image: url("https://fitnessunivers.dk/wp-content/uploads/2018/04/crossfit-udstyr.jpg");
-            background-size: 100%;
+            background-size: cover;
             text-align: center;
             justify-content: space-between;
             align-items: center;
