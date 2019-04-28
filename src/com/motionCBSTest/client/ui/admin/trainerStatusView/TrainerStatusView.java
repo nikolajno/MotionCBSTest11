@@ -1,5 +1,6 @@
 package com.motionCBSTest.client.ui.admin.trainerStatusView;
 
+import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style;
@@ -9,7 +10,6 @@ import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.cellview.client.ColumnSortEvent;
 import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.cellview.client.SimplePager;
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.view.client.ListDataProvider;
@@ -19,11 +19,6 @@ import java.util.Comparator;
 
 
 public class TrainerStatusView extends Composite {
-
-    Button greenBtn = new Button("Green");
-    Button redBtn = new Button("Red");
-
-
 
 
     private static TrainerStatusView.DeleteTrainerViewUiBinder UiBinder = GWT.create(TrainerStatusView.DeleteTrainerViewUiBinder.class);
@@ -36,6 +31,8 @@ public class TrainerStatusView extends Composite {
 
     interface DeleteTrainerViewUiBinder extends UiBinder<HTMLPanel, TrainerStatusView> {
     }
+
+    private ActionCell.Delegate<User> actionCell;
 
 
     public TrainerStatusView() {
@@ -87,7 +84,7 @@ public class TrainerStatusView extends Composite {
         // Adding the column to the table. The "firstname" is the title of the column
         dataGrid.addColumn(firstnameColumn, "First name");
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
-        dataGrid.setColumnWidth(firstnameColumn, 7, Style.Unit.PX);
+        dataGrid.setColumnWidth(firstnameColumn, 5, Style.Unit.PX);
 
 
         //Last name
@@ -108,7 +105,7 @@ public class TrainerStatusView extends Composite {
         // Adding the column to the table. The "lastname" is the title of the column
         dataGrid.addColumn(lastnameColumn, "Last name");
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
-        dataGrid.setColumnWidth(lastnameColumn, 7, Style.Unit.PX);
+        dataGrid.setColumnWidth(lastnameColumn, 5, Style.Unit.PX);
 
 
         //Last name
@@ -127,10 +124,9 @@ public class TrainerStatusView extends Composite {
                 boolean _o1 = o1.getIsApproved();
                 boolean _o2 = o2.getIsApproved();
 
-                if(_o1 && _o2 || !_o1 && !_o2) {
+                if (_o1 && _o2 || !_o1 && !_o2) {
                     return 0;
-                }
-                else if(_o1 && !_o2) {
+                } else if (_o1 && !_o2) {
                     return 1;
                 } else {
                     return -1;
@@ -139,8 +135,43 @@ public class TrainerStatusView extends Composite {
         });
 
         dataGrid.addColumn(isApprovedColumn, "Status");
-        dataGrid.setColumnWidth(isApprovedColumn, 7, Style.Unit.PX);
+        dataGrid.setColumnWidth(isApprovedColumn, 5, Style.Unit.PX);
+
+
+
+
+
+        //Here we create a row with a containing actionButton to approve trainers
+
+
+
+
+        //Here we create a row with a containing DeleteButton to delete trainers
+        ActionCell<User> deleteUserCell = new ActionCell<>("Delete", actionCell);
+        Column<User, User> deleteColumn = new Column<User, User>(deleteUserCell) {
+            @Override
+            public User getValue(User user) {
+                return user;
+            }
+        };
+
+        dataGrid.addColumn(deleteColumn, "Delete Trainers");
+        dataGrid.setColumnWidth(deleteColumn, 5, Style.Unit.PX);
+
+
+
 
 
     }
+
+    public void addClickHandler(ActionCell.Delegate<User> actionCell) {
+        this.actionCell = actionCell;
+    }
+
+
+
+
 }
+
+
+

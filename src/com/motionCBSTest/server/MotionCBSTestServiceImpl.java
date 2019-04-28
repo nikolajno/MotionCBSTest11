@@ -284,4 +284,28 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         }
         return users;
     }
+
+    @Override
+    public boolean deleteUser(int trainerID) throws IllegalArgumentException {
+        try {
+            /*
+             * This statement is deleting a row/rows in the users table by id. There should only be on user with a id
+             * since this should be unique
+             */
+            PreparedStatement deleteUser = connection.prepareStatement("DELETE FROM users WHERE trainerID = ?");
+
+            deleteUser.setInt(1, trainerID);
+
+            int rowsAffected = deleteUser.executeUpdate();
+
+            if (rowsAffected == 1) {
+                return true;
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        return false;
+    }
+
+
 }
