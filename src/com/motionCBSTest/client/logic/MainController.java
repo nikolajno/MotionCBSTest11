@@ -172,7 +172,7 @@ public class MainController {
                                         Window.alert("Could not create user");
                                     } else {
                                         content.getRegisterView().clearTextBoxFields();
-                                        Window.alert("Du er nu tilføjet, vent på at en administrator godkender dig");
+                                        Window.alert("You have successfully been created. Please wait for Admin to approve you");
                                     }
                                 }
                             });

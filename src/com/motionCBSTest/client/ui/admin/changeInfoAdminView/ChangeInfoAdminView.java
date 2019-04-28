@@ -65,7 +65,7 @@ public class ChangeInfoAdminView extends Composite {
         // Creating all the necessary columns to the table
         initTableColumns(sortHandler);
 
-        // Adding the data grid to the DataProvider. The DataPrivider is containing a List with all the data
+        // Adding the data grid to the DataProvider. The DataProvider is containing a List with all the data
         dataProvider.addDataDisplay(dataGrid);
     }
 
