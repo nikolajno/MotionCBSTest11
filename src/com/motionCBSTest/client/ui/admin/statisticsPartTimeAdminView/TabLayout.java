@@ -1,7 +1,7 @@
 package com.motionCBSTest.client.ui.admin.statisticsPartTimeAdminView;
 
 
-import com.google.gwt.dom.client.Style;
+import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.logical.shared.SelectionHandler;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
@@ -14,10 +14,11 @@ public class TabLayout extends Composite {
     private StatisticsFullTimeAdminView sfuldtid;
 
     public TabLayout() {
-        tp = new TabLayoutPanel(2.5, Style.Unit.EM);
+        tp = new TabLayoutPanel(2.5, Unit.EM);
         // This is animating the switch between tabs. 300 indicates the time of the animation in milliseconds
         tp.setAnimationDuration(300);
         tp.setHeight("100%");
+
 
         // Here we are creating two different objects of statisticTable which is added to the TabLayoutPanel.
         // "Deltid" and "Fuldtid" is the title of the tab
@@ -40,6 +41,8 @@ public class TabLayout extends Composite {
     }
 
     // Getters
+
+    public TabLayoutPanel getTp() { return tp; }
     public StatisticsPartTimeAdminView getSdeltid() {return sdeltid;}
     public StatisticsFullTimeAdminView getSfuldtid() {return sfuldtid;}
 }
