@@ -84,12 +84,12 @@
                 <g:VerticalPanel spacing="15">
 
                     <g:FlowPanel styleName="{style.changeInfoContainer}">
-                        <g:Label styleName="{style.title}" text="Fornavn:"></g:Label>
+                        <g:Label styleName="{style.title}" text="Firstname:"></g:Label>
                         <g:TextBox ui:field="txtFname" styleName="{style.textInput} {style.input}"></g:TextBox>
                     </g:FlowPanel>
 
                     <g:FlowPanel styleName="{style.changeInfoContainer}">
-                        <g:Label styleName="{style.title}" text="Efternavn:"></g:Label>
+                        <g:Label styleName="{style.title}" text="Lastname:"></g:Label>
                         <g:TextBox ui:field="txtLname" styleName="{style.textInput} {style.input}"></g:TextBox>
                     </g:FlowPanel>
 
@@ -99,32 +99,32 @@
                     </g:FlowPanel>
 
                     <g:FlowPanel styleName="{style.changeInfoContainer}">
-                        <g:Label styleName="{style.title}" text="Addresse:"></g:Label>
+                        <g:Label styleName="{style.title}" text="Address:"></g:Label>
                         <g:TextBox ui:field="txtAddress" styleName="{style.textInput} {style.input}"></g:TextBox>
                     </g:FlowPanel>
 
                     <g:FlowPanel styleName="{style.changeInfoContainer}">
-                        <g:Label styleName="{style.title}" text="Mobil nr.:"></g:Label>
+                        <g:Label styleName="{style.title}" text="Mobile number:"></g:Label>
                         <g:TextBox ui:field="txtMobileNo" styleName="{style.textInput} {style.input}"></g:TextBox>
                     </g:FlowPanel>
 
                     <g:FlowPanel styleName="{style.changeInfoContainer}">
-                        <g:Label styleName="{style.title}" text="Uddannelse:"></g:Label>
+                        <g:Label styleName="{style.title}" text="Education"></g:Label>
                         <g:TextBox ui:field="txtEducation" styleName="{style.textInput} {style.input}"></g:TextBox>
                     </g:FlowPanel>
 
                     <g:FlowPanel styleName="{style.changeInfoContainer}">
-                        <g:Label styleName="{style.title}" text="Års erfaring:"></g:Label>
+                        <g:Label styleName="{style.title}" text="Experience in years"></g:Label>
                         <g:TextBox ui:field="txtExperience" styleName="{style.textInput} {style.input}"></g:TextBox>
                     </g:FlowPanel>
 
                     <g:FlowPanel styleName="{style.changeInfoContainer}">
-                        <g:Label styleName="{style.title}" text="Timer om ugen:"></g:Label>
+                        <g:Label styleName="{style.title}" text="Hours pr. week:"></g:Label>
                         <g:IntegerBox ui:field="txtHoursPrWeek" styleName="{style.textInput} {style.input}"></g:IntegerBox>
                     </g:FlowPanel>
 
                     <g:FlowPanel styleName="{style.changeInfoContainer}">
-                        <g:Label styleName="{style.title}" text="Pinkode:"></g:Label>
+                        <g:Label styleName="{style.title}" text="Password:"></g:Label>
                         <g:TextBox ui:field="txtPassword" styleName="{style.textInput}"></g:TextBox>
                     </g:FlowPanel>
 
@@ -136,7 +136,7 @@
                     </g:HorizontalPanel>
 
 
-                    <g:Button styleName="{style.btn}" ui:field="changeProfileBtn" text="Ændre oplysninger"/>
+                    <g:Button styleName="{style.btn}" ui:field="changeProfileBtn" text="Change information"/>
 
                 </g:VerticalPanel>
             </g:east>
