@@ -11,7 +11,6 @@
             font-size: 50px;
         }
 
-
         .btn {
             height: 40px;
             width: 100%;
@@ -33,8 +32,16 @@
 
         .menu {
             padding: 10px;
-            background-color: #E6E8EC;
+            background-color: lightgrey;
         }
+
+        .photo {
+            height: 80px;
+            width: 100%;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
     </ui:style>
 
     <g:HTMLPanel>
@@ -42,15 +49,16 @@
 
             <g:north size="4">
                 <g:FlowPanel styleName="{style.top}">
-                    <g:Label> Motion CBS </g:Label>
+                    <g:Label text="MOTION CBS - trainer"></g:Label>
                 </g:FlowPanel>
             </g:north>
 
             <g:west size="10">
                 <g:FlowPanel styleName="{style.menu}">
-                    <g:Button styleName="{style.btn}" text="Ændre dine oplysninger" ui:field="changeBtn"/>
-                    <g:Button styleName="{style.btn}" text="Se info om trænere" ui:field="trainersTable"/>
-                    <g:Button styleName="{style.btn}" text="Log ud" ui:field="logoutBtn"/>
+                    <g:Image url="images/motioncbs.png" styleName="{style.photo}"></g:Image>
+                    <g:Button styleName="{style.btn}" text="Change your information" ui:field="changeBtn"/>
+                    <g:Button styleName="{style.btn}" text="Se info about your coworkers" ui:field="trainersTable"/>
+                    <g:Button styleName="{style.btn}" text="Log out" ui:field="logoutBtn"/>
                 </g:FlowPanel>
             </g:west>
 

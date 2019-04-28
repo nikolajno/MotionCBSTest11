@@ -29,7 +29,6 @@ public class TabLayout extends Composite {
         tp.add(sfuldtid,"Fuldtid");
         sfuldtid.setStyleName("gwt-TabBar");
 
-
         tp.selectTab(sdeltid);
 
         initWidget(tp);

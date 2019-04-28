@@ -15,10 +15,6 @@
             align-items: center;
         }
 
-        .vpanel{
-
-        }
-
         .title {
             font-size: 14px;
             font-weight: bold;
@@ -84,14 +80,8 @@
                 </g:DockLayoutPanel>
             </g:center>
 
-
-            <!-- Pager.
-            <g:south size="2">
-            </g:south>
-            -->
-
             <g:east size="38.5">
-                <g:VerticalPanel spacing="15" styleName="{style.vpanel}">
+                <g:VerticalPanel spacing="15">
 
                     <g:FlowPanel styleName="{style.changeInfoContainer}">
                         <g:Label styleName="{style.title}" text="Fornavn:"></g:Label>

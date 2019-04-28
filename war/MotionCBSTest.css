@@ -1,7 +1,7 @@
 
 
 .gwt-TabBar {
-    background: #ccc;
+    background: lightgray;
     padding-top: 6px;
 }
 .gwt-TabBar .gwt-TabBarFirst {
@@ -16,7 +16,7 @@
     color: white;
     font-weight: normal;
     text-align: center;
-    background: #8E8E8E;
+    background: lightgray;
     -moz-border-radius: 3px 3px 0px 0px;
     border-radius: 3px 3px 0px 0px;
 }
@@ -30,8 +30,7 @@
     cursor: default;
     color: #999999;
 }
-.gwt-TabPanel {
-}
+
 .gwt-TabPanelBottom {
     border-color: #ccc;
     border-style: solid;

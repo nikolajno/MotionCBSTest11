@@ -3,7 +3,6 @@ package com.motionCBSTest.server;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.motionCBSTest.client.rpc.MotionCBSTestService;
 import com.motionCBSTest.shared.User;
-
 import java.sql.*;
 import java.util.ArrayList;
 

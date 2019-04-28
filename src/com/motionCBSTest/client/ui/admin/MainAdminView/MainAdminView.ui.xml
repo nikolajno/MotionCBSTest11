@@ -2,14 +2,15 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <ui:style>
 
-        /*.outerPanel {
-            display: flex;
-            width: 100%;
-            background-color: #E6E8EC;
-            justify-content: center;
+        .top {
+            color: white;
+            background-image: url("https://fitnessunivers.dk/wp-content/uploads/2018/04/crossfit-udstyr.jpg");
+            background-size: 100%;
+            text-align: center;
+            justify-content: space-between;
             align-items: center;
-        }*/
-
+            font-size: 50px;
+        }
 
         .btn {
             height: 40px;
@@ -32,7 +33,14 @@
 
         .menu {
             padding: 10px;
-            background-color: #E6E8EC;
+            background-color: lightgrey;
+        }
+
+        .photo {
+            height: 80px;
+            width: 100%;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
     </ui:style>
@@ -40,13 +48,20 @@
     <g:HTMLPanel>
         <g:DockLayoutPanel unit="EM" width="100%" height="100%">
 
+            <g:north size="4">
+                <g:FlowPanel styleName="{style.top}">
+                    <g:Label text="MOTION CBS - Admin"></g:Label>
+                </g:FlowPanel>
+            </g:north>
+
             <g:west size="10">
                 <g:FlowPanel styleName="{style.menu}">
-                    <g:Button text="Ændr træner oplysninger" styleName="{style.btn}" ui:field="changeBtn"/>
-                    <g:Button text="Godkend/Slet trænere" styleName="{style.btn}" ui:field="trainerStatusBtn"/>
-                    <g:Button text="Vis oplysninger om trænere" styleName="{style.btn}" ui:field="showInfoBtn"/>
-                    <g:Button text="Statistik" styleName="{style.btn}" ui:field="statisticBtn"/>
-                    <g:Button text="Log ud" styleName="{style.btn}" ui:field="logoutBtn"/>
+                    <g:Image url="images/motioncbs.png" styleName="{style.photo}"></g:Image>
+                    <g:Button text="Change trainer info" styleName="{style.btn}" ui:field="changeBtn"/>
+                    <g:Button text="Approve/delete trainers" styleName="{style.btn}" ui:field="trainerStatusBtn"/>
+                    <g:Button text="Show info about trainers" styleName="{style.btn}" ui:field="showInfoBtn"/>
+                    <g:Button text="Statistics" styleName="{style.btn}" ui:field="statisticBtn"/>
+                    <g:Button text="Log out" styleName="{style.btn}" ui:field="logoutBtn"/>
                 </g:FlowPanel>
             </g:west>
 

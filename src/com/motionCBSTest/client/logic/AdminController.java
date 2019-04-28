@@ -20,7 +20,7 @@ public class AdminController {
     private User currentUser;
     private MainAdminView mainAdminView;
 
-    // A List Data Provider which contains an ArrayList with users is used for the DataGrid
+    // A List Data Provider which contains an ArrayList with users, is used for the DataGrid
     private ListDataProvider<User> listProviderUsers;
 
     public AdminController(ContentPanel content, MotionCBSTestServiceAsync motionCBSTestServiceAsync) {
@@ -38,11 +38,13 @@ public class AdminController {
         mainAdminView.getChangeInfoAdminView().initUsersTable(listProviderUsers);
     }
 
+    // A method that can load the users with the current information
     public void loadUser(User currentUser) {
         this.currentUser = currentUser;
         loadTables();
     }
 
+    // A method that can load the tables with the current information
     private void loadTables() {
         // The RPC to get all the users
         motionCBSTestServiceAsync.getUsers(currentUser.getId(), new AsyncCallback<ArrayList<User>>() {
@@ -62,7 +64,6 @@ public class AdminController {
     }
 
     private void bindHandlers() {
-
         mainAdminView.addClickHandlers(new MenuClickHandler());
         mainAdminView.getShowInfoAdminView().addClickHandler(new SelectInfoHandler());
         mainAdminView.getTabLayout().addSelectionHandler(new StatisticTypeHandler());
@@ -72,7 +73,9 @@ public class AdminController {
 
     }
 
+    // This inner class create an ActionCell that shows all information about a specific user
     class SelectInfoHandler implements ActionCell.Delegate<User> {
+
         @Override
         public void execute(User user) {
             Window.alert("Here is all the information about " + user.getFname() + " " + user.getLname() +
@@ -91,7 +94,7 @@ public class AdminController {
         }
     }
 
-
+    // This inner class finds out which button is pressed and then switches the view
     class MenuClickHandler implements ClickHandler {
 
         @Override
@@ -112,6 +115,7 @@ public class AdminController {
                 listProviderUsers.refresh();
             } else if (event.getSource() == mainAdminView.getStatisticBtn()) {
                 mainAdminView.changeView(mainAdminView.getTabLayout());
+                loadTables();
             } else if (event.getSource() == mainAdminView.getChangeBtn()) {
                 mainAdminView.changeView(mainAdminView.getChangeInfoAdminView());
                 listProviderUsers.getList().clear();
@@ -121,14 +125,8 @@ public class AdminController {
         }
     }
 
-
-
-
-    /**
-     * This is used for the TabLayoutPanel. The panel that can show either fuldtid or
-     * deltid. If this isn't used it is likely that the DataGrids will show up empty.
-     * Mark that this isn't ClickHandler but a SelectionHandler instead
-     */
+    // This is used for the TabLayoutPanel. The panel that can show either fuldtid or deltid. If this isn't used it is
+    // likely that the DataGrids will show up empty. Mark that this isn't ClickHandler but a SelectionHandler instead
     class StatisticTypeHandler implements SelectionHandler<Integer> {
 
         @Override
@@ -148,7 +146,6 @@ public class AdminController {
                             // Adding all the users to the DataProvider (ArrayList)
                             listProviderUsers.getList().addAll(users);
                             listProviderUsers.refresh();
-
                         }
                     });
                     break;
@@ -171,11 +168,12 @@ public class AdminController {
                     });
                     break;
             }
-
         }
-
     }
 
+
+    // In the next lines we are creating actioncells that can take one specific user and show all their information and
+    // give the administration the ability to change the chosen Users info.
     private User chosenUser;
     class GetInfoHandler implements ActionCell.Delegate<User> {
 
@@ -190,11 +188,7 @@ public class AdminController {
 
         @Override
         public void onClick(ClickEvent clickEvent) {
-            /*
-             * It firsts sets(change) all the user info with the info from
-             * the text fields and radio button in the settings view
-             */
-
+            //It firsts sets all the user info with the info from the text fields and radio button in the settings view
             chosenUser.setFname(mainAdminView.getChangeInfoAdminView().getTxtFname().getText());
             chosenUser.setLname(mainAdminView.getChangeInfoAdminView().getTxtLname().getText());
             chosenUser.setEmail(mainAdminView.getChangeInfoAdminView().getTxtEmail().getText());
@@ -205,6 +199,7 @@ public class AdminController {
             chosenUser.setHoursPrWeek(Integer.valueOf(mainAdminView.getChangeInfoAdminView().getTxtHoursPrWeek().getText()));
             chosenUser.setPassword(mainAdminView.getChangeInfoAdminView().getTxtPassword().getText());
 
+            // Here we check witch of the radiobuttons the administration chose and then set it for the chosen user
             int teamtype_teamID = 0;
 
             if (mainAdminView.getChangeInfoAdminView().getNewCrossfitBtn().isChecked()) {
@@ -232,53 +227,42 @@ public class AdminController {
                     // TODO Auto-generated method stub
                 }
 
-                /*
-                 * Confirmation if the info was updated
-                 */
+                // Confirmation if the info was updated
                 @Override
                 public void onSuccess(Boolean updated) {
                     if (updated) {
                         Window.alert("Change succes");
                         listProviderUsers.getList().clear();
                         loadTables();
-
                     } else {
                         Window.alert("Could not make changes");
                     }
-
                 }
             });
-
         }
     }
 
 
+    // Here we make an ActionCell that can delete a specific user.
     class DeleteUserHandler implements ActionCell.Delegate<User> {
 
         @Override
         public void execute(final User user) {
-
             //First that is executed is a confirmation window to delete the user
             boolean deleteUserConfirmed = Window.confirm("Are you sure you want to delete:\n" + user.getFname() + " " + user.getLname());
+
             //If its confirmed a RPC call will be made so the user is deleted in the database
             if (deleteUserConfirmed)
                 motionCBSTestServiceAsync.deleteUser(user.getId(), new AsyncCallback<Boolean>() {
 
-                    /*
-                     * Handles error from callback function
-                     */
                     @Override
                     public void onFailure(Throwable caught) {
                         Window.alert("Something went wrong");
                     }
 
-                    /*
-                     * Handles success response from callback
-                     * The callback returns either true or false depending if the user
-                     * were deleted or not
-                     */
                     @Override
                     public void onSuccess(Boolean isDeleted) {
+                        // The callback returns either true or false depending if the user were deleted or not
                         if (!isDeleted) {
                             Window.alert("Could not delete user");
                         } else {

@@ -68,9 +68,8 @@ public class MainAdminView extends Composite {
     }
 
 
-    //This method is used to add the clickHandlers from the logic to the menu buttons
+    // This method is used to add the clickHandlers from the logic to the menu buttons
     public void addClickHandlers(ClickHandler clickHandler) {
-
         logoutBtn.addClickHandler(clickHandler);
         showInfoBtn.addClickHandler(clickHandler);
         trainerStatusBtn.addClickHandler(clickHandler);

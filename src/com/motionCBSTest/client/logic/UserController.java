@@ -32,18 +32,39 @@ public class UserController {
         mainUserView.getTableUserView().initUsersTable(listProviderUsers);
     }
 
+    // A method that can load the users with the current information
 
     public void loadUser(User currentUser) {
         this.currentUser = currentUser;
         loadTables();
     }
 
+    // A method that can load the tables with the current information
+    public void loadTables() {
+
+        // The RPC to get all the users
+        motionCBSTestServiceAsync.getUsers(currentUser.getId(), new AsyncCallback<ArrayList<User>>() {
+
+            @Override
+            public void onFailure(Throwable caught) {
+                Window.alert("Could not load users");
+            }
+
+            @Override
+            public void onSuccess(ArrayList<User> users) {
+                listProviderUsers.getList().clear();
+                // Adding all the users to the DataProvider (ArrayList)
+                listProviderUsers.getList().addAll(users);
+            }
+        });
+    }
+
     private void bindHandlers() {
         mainUserView.addClickHandlers(new MenuClickHandler());
-        //mainUserView.getTrainersTableUserView().addClickHandler(new ChooseRecieverHandler());
         mainUserView.getChangeInfoUserView().addClickHandlers(new ChangeSettingsClickHandler());
     }
 
+    // This inner class finds out which button is pressed and then switches the view
     class MenuClickHandler implements ClickHandler {
 
         @Override
@@ -69,35 +90,14 @@ public class UserController {
         }
     }
 
-
-
-    public void loadTables() {
-
-        // The RPC to get all the users
-        motionCBSTestServiceAsync.getUsers(currentUser.getId(), new AsyncCallback<ArrayList<User>>() {
-
-            @Override
-            public void onFailure(Throwable caught) {
-                Window.alert("Could not load users");
-            }
-
-            @Override
-            public void onSuccess(ArrayList<User> users) {
-                listProviderUsers.getList().clear();
-                // Adding all the users to the DataProvider (ArrayList)
-                listProviderUsers.getList().addAll(users);
-            }
-        });
-    }
-
+    // In the next lines we are creating an actioncell that can take the current user and show all their information
+    // and give the current user the ability to change their info.
     class ChangeSettingsClickHandler implements ClickHandler {
 
         @Override
         public void onClick(ClickEvent event) {
-            /*
-             * It firsts sets(change) all the user info with the info from
-             * the text fields and radio button in the settings view
-             */
+            // It firsts sets(change) all the user info with the info from the text fields and
+            // radio button in the settings view
             currentUser.setFname(mainUserView.getChangeInfoUserView().getTxtFname().getText());
             currentUser.setLname(mainUserView.getChangeInfoUserView().getTxtLname().getText());
             currentUser.setEmail(mainUserView.getChangeInfoUserView().getTxtEmail().getText());
@@ -108,6 +108,7 @@ public class UserController {
             currentUser.setHoursPrWeek(mainUserView.getChangeInfoUserView().getTxtHoursPrWeek().getTabIndex());
             currentUser.setPassword(mainUserView.getChangeInfoUserView().getTxtPassword().getText());
 
+            // Here we check witch of the radiobuttons the current user chose and then set it
             int teamtype_teamID = 0;
 
                 if (content.getMainUserView().getChangeInfoUserView().getNewCrossfitBtn().isChecked()) {
@@ -132,18 +133,14 @@ public class UserController {
                 @Override
                 public void onFailure(Throwable caught) {
                     // TODO Auto-generated method stub
-
                 }
 
-                /*
-                 * Confirmation if the info was updated
-                 */
+                // Confirmation if the info was updated
                 @Override
                 public void onSuccess(Boolean updated) {
                     if (updated) {
                         Window.alert("Change succes");
                         loadTables();
-
                     } else {
                         Window.alert("Could not make changes");
                     }
