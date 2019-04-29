@@ -26,7 +26,6 @@ public class TrainerStatusView extends Composite {
     @UiField DataGrid<User> dataGrid;
     @UiField SimplePager pager;
 
-
     interface DeleteTrainerViewUiBinder extends UiBinder<HTMLPanel, TrainerStatusView> {
     }
 
