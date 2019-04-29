@@ -200,7 +200,7 @@ public class AdminController {
             chosenUser.setHoursPrWeek(Integer.valueOf(mainAdminView.getChangeInfoAdminView().getTxtHoursPrWeek().getText()));
             chosenUser.setPassword(mainAdminView.getChangeInfoAdminView().getTxtPassword().getText());
 
-            // Here we check witch of the radiobuttons the administration chose and then set it for the chosen user
+            // Here we check which of the radiobuttons the administration chose and then set it for the chosen user
             int teamtype_teamID = 0;
 
             if (mainAdminView.getChangeInfoAdminView().getNewCrossfitBtn().isChecked()) {
@@ -216,9 +216,7 @@ public class AdminController {
                 teamtype_teamID = 4;
             }
 
-            Window.alert(""+teamtype_teamID);
             chosenUser.setTeamtype_teamID(teamtype_teamID);
-
 
             // The RPC call which through the server updates the user info in the users table in the database
             motionCBSTestServiceAsync.changeUserInfo(chosenUser, new AsyncCallback<Boolean>() {
