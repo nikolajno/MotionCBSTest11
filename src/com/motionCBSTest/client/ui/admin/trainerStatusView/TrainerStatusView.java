@@ -23,11 +23,8 @@ public class TrainerStatusView extends Composite {
 
     private static TrainerStatusView.DeleteTrainerViewUiBinder UiBinder = GWT.create(TrainerStatusView.DeleteTrainerViewUiBinder.class);
 
-    @UiField
-    DataGrid<User> dataGrid;
-    @UiField
-    SimplePager pager;
-
+    @UiField DataGrid<User> dataGrid;
+    @UiField SimplePager pager;
 
     interface DeleteTrainerViewUiBinder extends UiBinder<HTMLPanel, TrainerStatusView> {
     }
@@ -41,10 +38,11 @@ public class TrainerStatusView extends Composite {
 
         // Setting the page size of the table
         dataGrid.setPageSize(20);
+
         // Adding the pager to the datagrid
         pager.setDisplay(dataGrid);
-        // Ensures the headers doesn't get refreshed every time the data is
-        // updated
+
+        // Ensures the headers doesn't get refreshed every time the data is updated
         dataGrid.setAutoHeaderRefreshDisabled(true);
     }
 
@@ -56,12 +54,8 @@ public class TrainerStatusView extends Composite {
         // Creating all the necessary columns to the table
         initTableColumns(sortHandler);
 
-        /*
-         * Adding the data grid to the DataProvider The DataProvider is
-         * containing a List with all the data
-         */
+        // Adding the data grid to the DataProvider
         dataProvider.addDataDisplay(dataGrid);
-
     }
 
     private void initTableColumns(ColumnSortEvent.ListHandler<User> sortHandler) {
@@ -74,6 +68,7 @@ public class TrainerStatusView extends Composite {
                 return user.getFname();
             }
         };
+
         // Setting the firstname column to sortable
         firstnameColumn.setSortable(true);
         sortHandler.setComparator(firstnameColumn, new Comparator<User>() {
@@ -82,8 +77,10 @@ public class TrainerStatusView extends Composite {
                 return u1.getFname().compareTo(u2.getFname());
             }
         });
+
         // Adding the column to the table. The "firstname" is the title of the column
         dataGrid.addColumn(firstnameColumn, "First name");
+
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
         dataGrid.setColumnWidth(firstnameColumn, 5, Style.Unit.PX);
 
@@ -105,6 +102,7 @@ public class TrainerStatusView extends Composite {
         });
         // Adding the column to the table. The "lastname" is the title of the column
         dataGrid.addColumn(lastnameColumn, "Last name");
+
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
         dataGrid.setColumnWidth(lastnameColumn, 5, Style.Unit.PX);
 
@@ -135,7 +133,10 @@ public class TrainerStatusView extends Composite {
             }
         });
 
+        // Adding the column to the table. The "lastname" is the title of the column
         dataGrid.addColumn(isApprovedColumn, "Status");
+
+        // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
         dataGrid.setColumnWidth(isApprovedColumn, 5, Style.Unit.PX);
 
 
@@ -150,8 +151,13 @@ public class TrainerStatusView extends Composite {
                     return user;
                 }
             };
-            dataGrid.addColumn(approveColumn, "Status");
-            dataGrid.setColumnWidth(approveColumn, 5, Style.Unit.PX);
+
+        // Adding the column to the table. The "lastname" is the title of the column
+        dataGrid.addColumn(approveColumn, "Status");
+
+        // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
+        dataGrid.setColumnWidth(approveColumn, 5, Style.Unit.PX);
+
 
 
 
@@ -165,25 +171,15 @@ public class TrainerStatusView extends Composite {
             }
         };
 
+        // Adding the column to the table. The "lastname" is the title of the column
         dataGrid.addColumn(deleteColumn, "Delete Trainers");
+
+        // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
         dataGrid.setColumnWidth(deleteColumn, 5, Style.Unit.PX);
-
-
-
-
-
-
-
     }
 
-    public void addDeleteClickHandler (ActionCell.Delegate<User> deleteActionCell){
-        this.deleteActionCell = deleteActionCell;
-    }
-
-    public void addApproveClickHandler (ActionCell.Delegate<User> approveActionCell){
-        this.approveActionCell = approveActionCell;
-    }
-
+    public void addDeleteClickHandler (ActionCell.Delegate<User> deleteActionCell){this.deleteActionCell = deleteActionCell;}
+    public void addApproveClickHandler (ActionCell.Delegate<User> approveActionCell){this.approveActionCell = approveActionCell;}
 }
 
 

@@ -8,10 +8,8 @@ import java.util.ArrayList;
 
 public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements MotionCBSTestService {
 
-    /*
-     * The url, username and password for the database. The password is not necessarily
-     * the same pass as your computer password
-     */
+    //The url, username and password for the database
+
     //private static final String JDBC_DRIVER = "com.mysql.jdcb.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/motioncbs?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private static final String USERNAME = "motioncbs";
@@ -19,13 +17,9 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
 
     private static Connection connection = null;
 
-
-    /**
-     * The constructor which is creating the connection the the database
-     */
+    // The constructor which is creating the connection to the the database
     public MotionCBSTestServiceImpl() {
         try {
-            // Class.forName("com.mysql.jdcb.Driver");
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
@@ -47,21 +41,13 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         ResultSet resultSet = null;
         User user = null;
 
-
         // Using a catch since a query to the database can fail
         try {
-
-            /*
-             * The PreparedStatement which is used to make authorize a user.
-             * This statement will return all users which both have a specific username and password in combination
-             * The username and password is set later in this method
-             */
+            // The PreparedStatement which is used to make authorize a user
             PreparedStatement authorizeUser = connection
                     .prepareStatement("SELECT * FROM users where mobilenr = ? AND password = ?");
-            /*
-             * In the next two lines the username and password is set.
-             * The 1 is referring to the first question mark and the 2 is referring to the second question mark
-             */
+
+            // In the next two lines the username and password is set
             authorizeUser.setString(1, mobileNr);
             authorizeUser.setString(2, password);
 
@@ -85,6 +71,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
                 user.setId(resultSet.getInt("TrainerID"));
                 user.setIsApproved(resultSet.getBoolean("isApproved"));
             }
+
             // The catch which is used if either the statement or connection is failing
         } catch (SQLException e) {
             e.printStackTrace();
@@ -103,7 +90,6 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
     @Override
     public boolean changeUserInfo(User user) throws IllegalArgumentException {
         try {
-            // Look at the previous method
             PreparedStatement updateUser = connection.prepareStatement("UPDATE users SET firstname = ?, lastname = ?, email = ?, address = ?, mobileNr = ?, education = ?, experience = ?, hoursPrWeek = ?,  password = ?, teamtype_teamID = ? WHERE trainerID = ?;");
 
             updateUser.setString(1, user.getFname());
@@ -123,9 +109,11 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             if (rowsAffected == 1) {
                 return true;
             }
+
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
+
         return false;
     }
 
@@ -140,7 +128,6 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
                     "email, address, mobilenr, education, experience, hoursPrWeek, password, isApproved, teamtype_teamid, teamname " +
                     "FROM users INNER JOIN teamtype on teamtype_teamID = teamID WHERE type != 1;");
 
-            //getUsers.setInt(1, userId);
             resultSet = getUsers.executeQuery();
 
             while (resultSet.next()) {
@@ -180,7 +167,6 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
     public boolean createUser(User user) throws IllegalArgumentException {
 
             try {
-                // Same concept as createMessage method
                 PreparedStatement createUser = connection
                         .prepareStatement("INSERT INTO users (firstname, lastname, email, address, mobilenr, education," +
                                 "experience, hoursprweek, password, isapproved, type, teamtype_teamID) " +
@@ -198,8 +184,9 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
                 createUser.setBoolean(10, user.getIsApproved());
                 createUser.setInt(11, user.getType());
                 createUser.setInt(12, user.getTeamtype_teamID());
-                //
+
                 int rowsAffected = createUser.executeUpdate();
+
                 if (rowsAffected == 1) {
                     return true;
                 }
@@ -216,12 +203,10 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         ArrayList<User> users = new ArrayList<>();
 
         try {
-            // Same concept as getMessages method except there is no join in this statement
             PreparedStatement getUsers = connection.prepareStatement("SELECT trainerID, firstname, lastname, " +
                     "hoursPrWeek, teamname " +
                     "FROM users INNER JOIN teamtype on teamtype_teamID = teamID WHERE type != 1 AND hoursPrWeek > 30;");
 
-            //getUsers.setInt(1, userId);
             resultSet = getUsers.executeQuery();
 
             while (resultSet.next()) {
@@ -246,7 +231,6 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             }
         }
         return users;
-
     }
 
     @Override
@@ -255,12 +239,10 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         ArrayList<User> users = new ArrayList<>();
 
         try {
-            // Same concept as getMessages method except there is no join in this statement
             PreparedStatement getUsers = connection.prepareStatement("SELECT trainerID, firstname, lastname, " +
                     "hoursPrWeek, teamname " +
                     "FROM users INNER JOIN teamtype on teamtype_teamID = teamID WHERE type != 1 AND hoursPrWeek <= 30;");
 
-            //getUsers.setInt(1, userId);
             resultSet = getUsers.executeQuery();
 
             while (resultSet.next()) {
@@ -290,10 +272,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
     @Override
     public boolean deleteUser(int trainerID) throws IllegalArgumentException {
         try {
-            /*
-             * This statement is deleting a row/rows in the users table by id. There should only be on user with a id
-             * since this should be unique
-             */
+            //This statement is deleting a row/rows in the users table by id, because it is unique
             PreparedStatement deleteUser = connection.prepareStatement("DELETE FROM users WHERE trainerID = ?");
 
             deleteUser.setInt(1, trainerID);
@@ -328,6 +307,4 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         }
         return false;
     }
-
-
 }
