@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="254705e7-0ad4-425e-b90c-c4606346f8d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gwt_user__5_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MotionCBSTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MotionCBSTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/server/MotionCBSTestServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MotionCBSTest/com/motionCBSTest/server/MotionCBSTestServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.ui.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.ui.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/trainerStatusView/TrainerStatusView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/trainerStatusView/TrainerStatusView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -49,13 +47,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="33" />
+          <entry key="java" value="99" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="33" />
+          <entry key="JAVA" value="99" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
@@ -81,11 +79,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/trainerStatusView/TrainerStatusView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="635">
-              <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
+            <state relative-caret-position="221">
+              <caret line="179" column="85" selection-start-line="179" selection-start-column="85" selection-end-line="179" selection-end-column="85" />
+              <folding>
+                <element signature="e#2440#2441#0" expanded="true" />
+                <element signature="e#2494#2495#0" expanded="true" />
+                <element signature="e#2749#2750#0" expanded="true" />
+                <element signature="e#2826#2827#0" expanded="true" />
+                <element signature="e#3318#3319#0" expanded="true" />
+                <element signature="e#3372#3373#0" expanded="true" />
+                <element signature="e#3624#3625#0" expanded="true" />
+                <element signature="e#3701#3702#0" expanded="true" />
+                <element signature="e#5313#5314#0" expanded="true" />
+                <element signature="e#5364#5365#0" expanded="true" />
+                <element signature="e#5879#5880#0" expanded="true" />
+                <element signature="e#5922#5923#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,11 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="320" column="35" lean-forward="true" selection-start-line="320" selection-start-column="35" selection-end-line="320" selection-end-column="35" />
+            <state relative-caret-position="255">
+              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -163,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/login/EventBinder.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/events/LoginPersonEvent.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/MotionCBSTest.gwt.xml" />
-        <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/trainerStatusView/TrainerStatusView.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/trainersTableUserView/TrainersTableUserView.ui.xml" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/tableUserView/TableUserView.ui.xml" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/trainersTableUserView/TrainersTableUserView.java" />
@@ -188,6 +199,7 @@
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/logic/MainController.java" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/user/mainUserView/MainUserView.ui.xml" />
         <option value="$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/trainerStatusView/TrainerStatusView.java" />
       </list>
     </option>
   </component>
@@ -522,7 +534,7 @@
     <property name="SearchEverywhereHistoryKey" value="tablayoutpaneltab&#9;null&#9;null&#10;paneltab&#9;null&#9;null&#10;table&#9;PSI&#9;JAVA://com.motionCBSTest.client.ui.user.mainUserView.MainUserView#getTrainersTable&#10;Table&#9;PSI&#9;JAVA://com.motionCBSTest.client.ui.user.mainUserView.MainUserView#getTrainersTable&#10;clearT&#9;PSI&#9;JAVA://com.motionCBSTest.client.ui.register.RegisterView#clearTextBoxFields&#10;clearTex&#9;PSI&#9;JAVA://com.motionCBSTest.client.ui.login.LoginView#clearTextBoxFields&#10;mobile&#9;PSI&#9;JAVA://com.motionCBSTest.client.ui.login.LoginView#getMobilenrTxtBox&#10;getUsers&#9;PSI&#9;JAVA://com.motionCBSTest.client.rpc.MotionCBSTestService#getUsers" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556524283691" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556524286915" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/eventbinder/eventbinder-1.1.0.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -814,16 +826,24 @@
       <option name="project" value="LOCAL" />
       <updated>1556482544811</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="TabLay(out)*">
+      <created>1556524294930</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1556524294930</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180373000" />
+    <option name="totallyTimeSpent" value="181230000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4981203" visible="true" weight="0.16801292" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4981203" visible="true" weight="0.16801292" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -833,7 +853,7 @@
       <window_info id="Web" order="7" sideWeight="0.50093806" side_tool="true" weight="0.21283422" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3282887" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.80686694" visible="true" weight="0.3" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.80686694" visible="true" weight="0.3" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.90772533" weight="0.39813736" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -853,7 +873,7 @@
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.16074313" />
+      <window_info anchor="right" id="Database" order="6" weight="0.16074313" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.32956383" />
@@ -1371,19 +1391,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/trainerStatusView/TrainerStatusView.java">
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
+        <state relative-caret-position="255">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/server/MotionCBSTestServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/motionCBSTest/client/ui/admin/trainerStatusView/TrainerStatusView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="320" column="35" lean-forward="true" selection-start-line="320" selection-start-column="35" selection-end-line="320" selection-end-column="35" />
+        <state relative-caret-position="221">
+          <caret line="179" column="85" selection-start-line="179" selection-start-column="85" selection-end-line="179" selection-end-column="85" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2440#2441#0" expanded="true" />
+            <element signature="e#2494#2495#0" expanded="true" />
+            <element signature="e#2749#2750#0" expanded="true" />
+            <element signature="e#2826#2827#0" expanded="true" />
+            <element signature="e#3318#3319#0" expanded="true" />
+            <element signature="e#3372#3373#0" expanded="true" />
+            <element signature="e#3624#3625#0" expanded="true" />
+            <element signature="e#3701#3702#0" expanded="true" />
+            <element signature="e#5313#5314#0" expanded="true" />
+            <element signature="e#5364#5365#0" expanded="true" />
+            <element signature="e#5879#5880#0" expanded="true" />
+            <element signature="e#5922#5923#0" expanded="true" />
           </folding>
         </state>
       </provider>
