@@ -49,7 +49,7 @@
 
             <g:north size="4">
                 <g:FlowPanel styleName="{style.top}">
-                    <g:Label text="MOTION CBS - trainer"></g:Label>
+                    <g:Label text="MOTION CBS - Trainer"></g:Label>
                 </g:FlowPanel>
             </g:north>
 

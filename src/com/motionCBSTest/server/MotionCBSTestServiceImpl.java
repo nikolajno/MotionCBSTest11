@@ -175,7 +175,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         return users;
     }
 
-    // Her oprettes createUser
+    // Here we create a new User
     @Override
     public boolean createUser(User user) throws IllegalArgumentException {
 
@@ -314,7 +314,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         try {
             PreparedStatement approveUser = connection.prepareStatement("UPDATE users SET isApproved = 1 WHERE trainerID = ?");
 
-            approveUser.setBoolean(1,true);
+            approveUser.setInt(1, trainerID);
 
             int rowsAffected = approveUser.executeUpdate();
 
