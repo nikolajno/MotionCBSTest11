@@ -23,10 +23,8 @@ public class TrainerStatusView extends Composite {
 
     private static TrainerStatusView.DeleteTrainerViewUiBinder UiBinder = GWT.create(TrainerStatusView.DeleteTrainerViewUiBinder.class);
 
-    @UiField
-    DataGrid<User> dataGrid;
-    @UiField
-    SimplePager pager;
+    @UiField DataGrid<User> dataGrid;
+    @UiField SimplePager pager;
 
 
     interface DeleteTrainerViewUiBinder extends UiBinder<HTMLPanel, TrainerStatusView> {
