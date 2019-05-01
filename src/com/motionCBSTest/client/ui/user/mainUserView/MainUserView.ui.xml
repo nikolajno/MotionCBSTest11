@@ -57,7 +57,7 @@
                 <g:FlowPanel styleName="{style.menu}">
                     <g:Image url="https://i.imgur.com/qEE6avg.png" styleName="{style.photo}"></g:Image>
                     <g:Button styleName="{style.btn}" text="Change your information" ui:field="changeBtn"/>
-                    <g:Button styleName="{style.btn}" text="Se info about your coworkers" ui:field="trainersTable"/>
+                    <g:Button styleName="{style.btn}" text="Show info about co-workers" ui:field="trainersTable"/>
                     <g:Button styleName="{style.btn}" text="Log out" ui:field="logoutBtn"/>
                 </g:FlowPanel>
             </g:west>

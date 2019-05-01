@@ -33,7 +33,6 @@ public class MainController {
         content.getLoginView().getRegisterBtn().addClickHandler(new RegisterBtnClickHandler());
         content.getRegisterView().getRegisterBtn().addClickHandler(new RegisterClickHandler());
         content.getRegisterView().getGobackBtn().addClickHandler(new GoBack());
-        content.getMainAdminView().addClickHandlers(new LoginClickHandler());
     }
 
     class LoginClickHandler implements ClickHandler {
@@ -41,19 +40,15 @@ public class MainController {
         @Override
         public void onClick(ClickEvent event) {
 
+
             // Getting the text from the two text boxes on the login screen
             String mobileNr = content.getLoginView().getMobilenrTxtBox().getText();
             String password = content.getLoginView().getPasswordTxtBox().getText();
 
-            if (!FieldVerifier.isValidMobileNo(mobileNr) || !FieldVerifier.isValidPassword(password)) {
-                content.getLoginView().getMobilenrTxtBox().setStyleName("textBox-invalidEntry");
-                content.getLoginView().getPasswordTxtBox().setStyleName("textBox-invalidEntry");
-            } else {
-                content.getLoginView().getMobilenrTxtBox().setStyleName("textInputStd");
-                content.getLoginView().getPasswordTxtBox().setStyleName("textInputStd");
-
                 // RPC authenticating user method
                 motionCBSTestService.authorizeUser(mobileNr, password, new AsyncCallback<User>() {
+
+
 
                     @Override
                     public void onFailure(Throwable caught) {
@@ -62,11 +57,12 @@ public class MainController {
 
                     @Override
                     public void onSuccess(User user) {
+
                         // Failed to match input with User in database
-                        if (user.getIsApproved() != true) {
+                        if (user == null) {
+                            Window.alert("Wrong password or mobile number!");
+                        } else if (user.getIsApproved() != true) {
                             Window.alert("User not approved!");
-                        } else if (user == null) {
-                            Window.alert("Wrong password or mobile number");
                         } else
 
 
@@ -86,7 +82,6 @@ public class MainController {
                 });
             }
         }
-    }
 
     class RegisterBtnClickHandler implements ClickHandler {
         @Override

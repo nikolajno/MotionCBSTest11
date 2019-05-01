@@ -68,7 +68,7 @@ public class AdminController {
         mainAdminView.getShowInfoAdminView().addClickHandler(new SelectInfoHandler());
         mainAdminView.getTabLayout().addSelectionHandler(new StatisticTypeHandler());
         mainAdminView.getChangeInfoAdminView().addClickHandler(new GetInfoHandler());
-        mainAdminView.getChangeInfoAdminView().addClickHandlers(new ChangeInfoHanlder());
+        mainAdminView.getChangeInfoAdminView().addClickHandlers(new ChangeInfoHandler());
         mainAdminView.getTrainerStatusView().addDeleteClickHandler(new DeleteUserHandler());
         mainAdminView.getTrainerStatusView().addApproveClickHandler(new ApproveUserHandler());
 
@@ -185,7 +185,7 @@ public class AdminController {
         }
     }
 
-    class ChangeInfoHanlder implements ClickHandler {
+    class ChangeInfoHandler implements ClickHandler {
 
         @Override
         public void onClick(ClickEvent clickEvent) {
@@ -200,7 +200,7 @@ public class AdminController {
             chosenUser.setHoursPrWeek(Integer.valueOf(mainAdminView.getChangeInfoAdminView().getTxtHoursPrWeek().getText()));
             chosenUser.setPassword(mainAdminView.getChangeInfoAdminView().getTxtPassword().getText());
 
-            // Here we check which of the radiobuttons the administration chose and then set it for the chosen user
+            // Here we check which of the radiobuttons the administration choose and then set it for the chosen user
             int teamtype_teamID = 0;
 
             if (mainAdminView.getChangeInfoAdminView().getNewCrossfitBtn().isChecked()) {

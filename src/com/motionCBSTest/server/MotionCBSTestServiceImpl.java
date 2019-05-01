@@ -269,6 +269,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         return users;
     }
 
+    //Kommunikation til serveren om at slette en træner
     @Override
     public boolean deleteUser(int trainerID) throws IllegalArgumentException {
         try {
@@ -288,6 +289,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         return false;
     }
 
+    //Kummonikation til server siden om at ændre statussen over en træner - hvorvidt han er godkendt eller ej.
     @Override
     public boolean approveUser(int trainerID) throws IllegalArgumentException{
         try {
