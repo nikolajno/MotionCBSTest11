@@ -1,4 +1,4 @@
-package com.motionCBSTest.client.ui.admin.statisticsPartTimeAdminView;
+package com.motionCBSTest.client.ui.admin.statisticsAdminView;
 
         import com.google.gwt.cell.client.NumberCell;
         import com.google.gwt.cell.client.TextCell;
@@ -12,18 +12,21 @@ package com.motionCBSTest.client.ui.admin.statisticsPartTimeAdminView;
         import com.google.gwt.user.cellview.client.SimplePager;
         import com.google.gwt.user.client.ui.*;
         import com.google.gwt.view.client.ListDataProvider;
+        import com.google.gwt.view.client.SingleSelectionModel;
         import com.motionCBSTest.shared.User;
         import java.util.Comparator;
 
-public class StatisticsPartTimeAdminView extends Composite {
-    interface StatisticsAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsPartTimeAdminView> {}
+public class StatisticsAdminView extends Composite {
+    interface StatisticsAdminViewUiBinder extends UiBinder<HTMLPanel, StatisticsAdminView> {}
 
     private static StatisticsAdminViewUiBinder ourUiBinder = GWT.create(StatisticsAdminViewUiBinder.class);
 
     @UiField DataGrid<User> dataGrid;
     @UiField SimplePager pager;
 
-    public StatisticsPartTimeAdminView() {
+    private SingleSelectionModel<User> userSelectionModel;
+
+    public StatisticsAdminView() {
         initWidget(ourUiBinder.createAndBindUi(this));
 
         // Setting the page size of the table
@@ -34,6 +37,9 @@ public class StatisticsPartTimeAdminView extends Composite {
 
         // Ensures the headers doesn't get refreshed every time the data is updated
         dataGrid.setAutoHeaderRefreshDisabled(true);
+
+        //userSelectionModel = new SingleSelectionModel<>();
+        //dataGrid.setSelectionModel(userSelectionModel);
     }
 
     // This method is called from the logic so it is possible to load the table with data from the database
@@ -147,4 +153,8 @@ public class StatisticsPartTimeAdminView extends Composite {
         // Setting the size of the column.
         dataGrid.setColumnWidth(hoursColumn, 4, Unit.PX);
     }
+
+    /*public SingleSelectionModel<User> getUserSelectionModel() {
+        return userSelectionModel;
+    }*/
 }

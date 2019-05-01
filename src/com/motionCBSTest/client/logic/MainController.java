@@ -33,6 +33,7 @@ public class MainController {
         content.getLoginView().getRegisterBtn().addClickHandler(new RegisterBtnClickHandler());
         content.getRegisterView().getRegisterBtn().addClickHandler(new RegisterClickHandler());
         content.getRegisterView().getGobackBtn().addClickHandler(new GoBack());
+
     }
 
     class LoginClickHandler implements ClickHandler {

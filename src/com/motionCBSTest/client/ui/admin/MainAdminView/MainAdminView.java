@@ -7,8 +7,8 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
 import com.motionCBSTest.client.ui.admin.changeInfoAdminView.ChangeInfoAdminView;
 import com.motionCBSTest.client.ui.admin.showInfoAdminView.ShowInfoAdminView;
-import com.motionCBSTest.client.ui.admin.statisticsPartTimeAdminView.TabLayout;
-import com.motionCBSTest.client.ui.admin.statisticsFullTimeAdminView.StatisticsFullTimeAdminView;
+import com.motionCBSTest.client.ui.admin.statisticsAdminView.StatisticsAdminContainer;
+import com.motionCBSTest.client.ui.admin.statisticsAdminView.StatisticsAdminView;
 import com.motionCBSTest.client.ui.admin.trainerStatusView.TrainerStatusView;
 import com.motionCBSTest.client.ui.user.tableUserView.TableUserView;
 
@@ -23,8 +23,8 @@ public class MainAdminView extends Composite {
     private TableUserView tableUserView;
     private ShowInfoAdminView showInfoAdminView;
     private TrainerStatusView trainerStatusView;
-    private TabLayout tabLayout;
-    private StatisticsFullTimeAdminView statisticsFullTimeAdminView;
+    private StatisticsAdminContainer statisticsAdminContainer;
+    private StatisticsAdminView statisticsAdminView;
 
     @UiField DeckLayoutPanel centerPanel;
     @UiField Button showInfoBtn;
@@ -51,11 +51,11 @@ public class MainAdminView extends Composite {
         trainerStatusView = new TrainerStatusView();
         centerPanel.add(trainerStatusView);
 
-        tabLayout = new TabLayout();
-        centerPanel.add(tabLayout);
+        statisticsAdminContainer = new StatisticsAdminContainer();
+        centerPanel.add(statisticsAdminContainer);
 
-        statisticsFullTimeAdminView = new StatisticsFullTimeAdminView();
-        centerPanel.add(statisticsFullTimeAdminView);
+        statisticsAdminView = new StatisticsAdminView();
+        centerPanel.add(statisticsAdminView);
 
         // The panel that is shown when the application start
         centerPanel.showWidget(trainerStatusView);
@@ -80,8 +80,8 @@ public class MainAdminView extends Composite {
     public TableUserView getTableUserView() {return tableUserView; }
     public ShowInfoAdminView getShowInfoAdminView() {return showInfoAdminView;}
     public TrainerStatusView getTrainerStatusView(){return trainerStatusView;}
-    public TabLayout getTabLayout() {return tabLayout;}
-    public StatisticsFullTimeAdminView getStatisticsFullTimeAdminView() {return statisticsFullTimeAdminView;}
+    public StatisticsAdminContainer getStatisticsAdminContainer() {return statisticsAdminContainer;}
+    public StatisticsAdminView getStatisticsAdminView() {return statisticsAdminView;}
 
     // The following getters is used for the menu buttons
     public Button getTrainerStatusBtn(){return trainerStatusBtn;}

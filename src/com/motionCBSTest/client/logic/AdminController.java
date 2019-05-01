@@ -22,6 +22,8 @@ public class AdminController {
 
     // A List Data Provider which contains an ArrayList with users, is used for the DataGrid
     private ListDataProvider<User> listProviderUsers;
+    private ListDataProvider<User> listProviderParttime;
+    private ListDataProvider<User> listProviderFulltime;
 
     public AdminController(ContentPanel content, MotionCBSTestServiceAsync motionCBSTestServiceAsync) {
         this.content = content;
@@ -31,10 +33,12 @@ public class AdminController {
         bindHandlers();
 
         listProviderUsers = new ListDataProvider<User>();
+        listProviderFulltime = new ListDataProvider<User>();
+        listProviderParttime = new ListDataProvider<User>();
         mainAdminView.getTrainerStatusView().initUsersTable(listProviderUsers);
         mainAdminView.getShowInfoAdminView().initUsersTable(listProviderUsers);
-        mainAdminView.getTabLayout().getSdeltid().initUsersTable(listProviderUsers);
-        mainAdminView.getTabLayout().getSfuldtid().initUsersTable(listProviderUsers);
+        mainAdminView.getStatisticsAdminContainer().getSdeltid().initUsersTable(listProviderParttime);
+        mainAdminView.getStatisticsAdminContainer().getSfuldtid().initUsersTable(listProviderFulltime);
         mainAdminView.getChangeInfoAdminView().initUsersTable(listProviderUsers);
     }
 
@@ -61,12 +65,36 @@ public class AdminController {
             }
         });
 
+        motionCBSTestServiceAsync.getUsersFullTime(currentUser.getId(), new AsyncCallback<ArrayList<User>>() {
+            @Override
+            public void onFailure(Throwable caught)  {
+                Window.alert("Could not load users");
+            }
+
+            @Override
+            public void onSuccess(ArrayList<User> users) {
+                listProviderFulltime.getList().addAll(users);
+            }
+        });
+
+        motionCBSTestServiceAsync.getUsersPartTime(currentUser.getId(), new AsyncCallback<ArrayList<User>>() {
+            @Override
+            public void onFailure(Throwable caught)  {
+                Window.alert("Could not load users");
+            }
+
+            @Override
+            public void onSuccess(ArrayList<User> users) {
+                listProviderParttime.getList().addAll(users);
+            }
+        });
+
     }
 
     private void bindHandlers() {
         mainAdminView.addClickHandlers(new MenuClickHandler());
         mainAdminView.getShowInfoAdminView().addClickHandler(new SelectInfoHandler());
-        mainAdminView.getTabLayout().addSelectionHandler(new StatisticTypeHandler());
+        mainAdminView.getStatisticsAdminContainer().addSelectionHandler(new StatisticTypeHandler());
         mainAdminView.getChangeInfoAdminView().addClickHandler(new GetInfoHandler());
         mainAdminView.getChangeInfoAdminView().addClickHandlers(new ChangeInfoHandler());
         mainAdminView.getTrainerStatusView().addDeleteClickHandler(new DeleteUserHandler());
@@ -103,6 +131,8 @@ public class AdminController {
             if (event.getSource() == mainAdminView.getLogoutBtn()) {
                 content.changeView(content.getLoginView());
                 listProviderUsers.getList().clear();
+                listProviderParttime.getList().clear();
+                listProviderFulltime.getList().clear();
                 currentUser = null;
             } else if (event.getSource() == mainAdminView.getTrainerStatusBtn()) {
                 mainAdminView.changeView(mainAdminView.getTrainerStatusView());
@@ -115,8 +145,11 @@ public class AdminController {
                 loadTables();
                 listProviderUsers.refresh();
             } else if (event.getSource() == mainAdminView.getStatisticBtn()) {
-                mainAdminView.changeView(mainAdminView.getTabLayout());
+                mainAdminView.changeView(mainAdminView.getStatisticsAdminContainer());
+                listProviderParttime.getList().clear();
+                listProviderFulltime.getList().clear();
                 loadTables();
+                listProviderUsers.refresh();
             } else if (event.getSource() == mainAdminView.getChangeBtn()) {
                 mainAdminView.changeView(mainAdminView.getChangeInfoAdminView());
                 listProviderUsers.getList().clear();
@@ -134,39 +167,11 @@ public class AdminController {
         public void onSelection(SelectionEvent<Integer> event) {
             switch (event.getSelectedItem()) {
                 case 0:
-                    listProviderUsers.getList().clear();
-                    motionCBSTestServiceAsync.getUsersPartTime(currentUser.getId(), new AsyncCallback<ArrayList<User>>() {
-
-                        @Override
-                        public void onFailure(Throwable caught) {
-                            Window.alert("Could not load users");
-                        }
-
-                        @Override
-                        public void onSuccess(ArrayList<User> users) {
-                            // Adding all the users to the DataProvider (ArrayList)
-                            listProviderUsers.getList().addAll(users);
-                            listProviderUsers.refresh();
-                        }
-                    });
+                    listProviderParttime.refresh();
                     break;
 
                 case 1:
-                    listProviderUsers.getList().clear();
-                    motionCBSTestServiceAsync.getUsersFullTime(currentUser.getId(), new AsyncCallback<ArrayList<User>>() {
-
-                        @Override
-                        public void onFailure(Throwable caught) {
-                            Window.alert("Could not load users");
-                        }
-
-                        @Override
-                        public void onSuccess(ArrayList<User> users) {
-                            // Adding all the users to the DataProvider (ArrayList)
-                            listProviderUsers.getList().addAll(users);
-                            listProviderUsers.refresh();
-                        }
-                    });
+                    listProviderFulltime.refresh();
                     break;
             }
         }
