@@ -117,15 +117,15 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         return false;
     }
 
+    // This method is getting all users from the database and contains a inner join to get teamName
     @Override
     public ArrayList<User> getUsers(int id) throws IllegalArgumentException {
         ResultSet resultSet = null;
         ArrayList<User> users = new ArrayList<>();
 
         try {
-            // Same concept as getMessages method except there is no join in this statement
-            PreparedStatement getUsers = connection.prepareStatement("SELECT trainerID, firstname, lastname, " +
-                    "email, address, mobilenr, education, experience, hoursPrWeek, password, isApproved, teamtype_teamid, teamname " +
+
+            PreparedStatement getUsers = connection.prepareStatement("SELECT *" +
                     "FROM users INNER JOIN teamtype on teamtype_teamID = teamID WHERE type != 1;");
 
             resultSet = getUsers.executeQuery();
@@ -197,6 +197,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
             return false;
         }
 
+        //This method is getting all users which have hoursPrWeek above 30
     @Override
     public ArrayList<User> getUsersFullTime(int id) throws IllegalArgumentException {
         ResultSet resultSet = null;
@@ -233,6 +234,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         return users;
     }
 
+    //This method is getting all users which have hoursPrWeek as 30 or less
     @Override
     public ArrayList<User> getUsersPartTime(int id) throws IllegalArgumentException {
         ResultSet resultSet = null;
@@ -269,7 +271,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         return users;
     }
 
-    //Kommunikation til serveren om at slette en træner
+    //Method to delete a user
     @Override
     public boolean deleteUser(int trainerID) throws IllegalArgumentException {
         try {
@@ -289,7 +291,7 @@ public class MotionCBSTestServiceImpl extends RemoteServiceServlet implements Mo
         return false;
     }
 
-    //Kummonikation til server siden om at ændre statussen over en træner - hvorvidt han er godkendt eller ej.
+    //Method to approve a user and update the table
     @Override
     public boolean approveUser(int trainerID) throws IllegalArgumentException{
         try {
