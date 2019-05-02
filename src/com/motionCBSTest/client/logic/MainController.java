@@ -28,6 +28,8 @@ public class MainController {
         bindHandlers();
     }
 
+    //Here we add our ClickHandlers to our different content views. BindHandlers make sure our clicks on the site,
+    //redirect the user to the appropriate view.
     private void bindHandlers() {
         content.getLoginView().getLoginBtn().addClickHandler(new LoginClickHandler());
         content.getLoginView().getRegisterBtn().addClickHandler(new RegisterBtnClickHandler());
@@ -36,6 +38,8 @@ public class MainController {
 
     }
 
+    //Our LoginClickHandler creates a onClick event that either; redirects the user to the respective view,
+    //or gives him a window.alert message dependent on the error
     class LoginClickHandler implements ClickHandler {
 
         @Override
