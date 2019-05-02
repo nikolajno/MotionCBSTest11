@@ -26,12 +26,10 @@ public class TrainerStatusView extends Composite {
     @UiField DataGrid<User> dataGrid;
     @UiField SimplePager pager;
 
-    interface DeleteTrainerViewUiBinder extends UiBinder<HTMLPanel, TrainerStatusView> {
-    }
+    interface DeleteTrainerViewUiBinder extends UiBinder<HTMLPanel, TrainerStatusView> {}
 
     private ActionCell.Delegate<User> approveActionCell;
     private ActionCell.Delegate<User> deleteActionCell;
-
 
     public TrainerStatusView() {
         initWidget(UiBinder.createAndBindUi(this));
@@ -59,7 +57,6 @@ public class TrainerStatusView extends Composite {
     }
 
     private void initTableColumns(ColumnSortEvent.ListHandler<User> sortHandler) {
-
 
         //First name
         Column<User, String> firstnameColumn = new Column<User, String>(new TextCell()) {
@@ -157,8 +154,6 @@ public class TrainerStatusView extends Composite {
 
         // Setting the size of the column. Unit.PX can also be Unit.PCT, Unit.EM etc.
         dataGrid.setColumnWidth(approveColumn, 5, Style.Unit.PX);
-
-
 
 
 

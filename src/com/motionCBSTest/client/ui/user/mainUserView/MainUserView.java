@@ -39,7 +39,6 @@ public class MainUserView extends Composite {
         centerPanel.showWidget(tableUserView);
     }
 
-
     //This method is used to add the clickHandlers from the logic to the menu buttons
     public void addClickHandlers(ClickHandler clickHandler) {
         changeBtn.addClickHandler(clickHandler);

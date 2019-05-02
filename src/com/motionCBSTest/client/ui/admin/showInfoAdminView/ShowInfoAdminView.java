@@ -19,15 +19,12 @@ import com.motionCBSTest.shared.User;
 import java.util.Comparator;
 
 public class ShowInfoAdminView extends Composite {
-    interface ShowInfoAdminViewUiBinder extends UiBinder<HTMLPanel, ShowInfoAdminView> {
-    }
+    interface ShowInfoAdminViewUiBinder extends UiBinder<HTMLPanel, ShowInfoAdminView> {}
 
     private static ShowInfoAdminViewUiBinder ourUiBinder = GWT.create(ShowInfoAdminViewUiBinder.class);
 
-    @UiField
-    DataGrid<User> dataGrid;
-    @UiField
-    SimplePager pager;
+    @UiField DataGrid<User> dataGrid;
+    @UiField SimplePager pager;
 
     private ActionCell.Delegate<User> actionCell;
 
@@ -55,7 +52,7 @@ public class ShowInfoAdminView extends Composite {
         // Creating all the necessary columns to the table
         initTableColumns(sortHandler);
 
-        // Adding the data grid to the DataProvider. The DataPrivider is containing a List with all the data
+        // Adding the data grid to the DataProvider
         dataProvider.addDataDisplay(dataGrid);
     }
 
@@ -64,7 +61,7 @@ public class ShowInfoAdminView extends Composite {
     private void initTableColumns(ColumnSortEvent.ListHandler<User> sortHandler) {
         // In this next lines the user id column will be explained in details
 
-        // The user id column is created. Remark that when it is a cell it isn't a IntegerCell but a NumberCell.
+        // The user id column is created. When it is a cell it isn't a IntegerCell but a NumberCell.
         Column<User, Number> userIdColumn = new Column<User, Number>(new NumberCell()) {
             @Override
             public Number getValue(User object) {
@@ -81,7 +78,7 @@ public class ShowInfoAdminView extends Composite {
             }
         });
 
-        // Adding the column to the table. The "Træner id" is the title of the column
+        // Adding the column to the table. The "Trainer id" is the title of the column
         dataGrid.addColumn(userIdColumn, "Trainer Id");
 
         // Setting the size of the column.
@@ -104,7 +101,7 @@ public class ShowInfoAdminView extends Composite {
             }
         });
 
-        // Adding the column to the table. The "Fornavn" is the title of the column
+        // Adding the column to the table. The "First Name" is the title of the column
         dataGrid.addColumn(fnameColumn, "First Name");
 
         // Setting the size of the column
@@ -127,7 +124,7 @@ public class ShowInfoAdminView extends Composite {
             }
         });
 
-        // Adding the column to the table. The "Efternavn" is the title of the column
+        // Adding the column to the table. The "Last Name" is the title of the column
         dataGrid.addColumn(lnameColumn, "Last Name");
 
         // Setting the size of the column
@@ -151,7 +148,7 @@ public class ShowInfoAdminView extends Composite {
             }
         });
 
-        // Adding the column to the table. The "Hold" is the title of the column
+        // Adding the column to the table. The "Team" is the title of the column
         dataGrid.addColumn(teamtypeColumn, "Team");
 
         // Setting the size of the column
@@ -175,7 +172,7 @@ public class ShowInfoAdminView extends Composite {
             }
         });
 
-        // Adding the column to the table. The "Hold" is the title of the column
+        // Adding the column to the table. The "Mobile" is the title of the column
         dataGrid.addColumn(mobileColumn, "Mobile");
 
         // Setting the size of the column

@@ -22,7 +22,6 @@ public class MainController {
         this.motionCBSTestService = motionCBSTestService;
 
         userController = new UserController(content, motionCBSTestService);
-
         adminController = new AdminController(content, motionCBSTestService);
 
         bindHandlers();

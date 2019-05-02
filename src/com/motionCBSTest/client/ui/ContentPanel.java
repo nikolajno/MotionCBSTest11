@@ -17,6 +17,8 @@ public class ContentPanel  extends Composite {
     private RegisterView registerView;
     private MainAdminView mainAdminView;
 
+    // The constructor of this class is creating an instance of the panels
+    // and adding them to the DeckLayoutPanel
     public ContentPanel() {
         contentPanel = new DeckLayoutPanel();
 
@@ -32,8 +34,10 @@ public class ContentPanel  extends Composite {
         mainAdminView = new MainAdminView();
         contentPanel.add(mainAdminView);
 
+        //The panel that is shown when the application starts
         contentPanel.showWidget(loginView);
 
+        //Init the main widget in this class
         initWidget(contentPanel);
     }
 
@@ -50,8 +54,4 @@ public class ContentPanel  extends Composite {
     public MainAdminView getMainAdminView() {return mainAdminView;}
 
     public RegisterView getRegisterView() {return registerView;}
-
-
-
-
 }

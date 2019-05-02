@@ -37,9 +37,6 @@ public class StatisticsAdminView extends Composite {
 
         // Ensures the headers doesn't get refreshed every time the data is updated
         dataGrid.setAutoHeaderRefreshDisabled(true);
-
-        //userSelectionModel = new SingleSelectionModel<>();
-        //dataGrid.setSelectionModel(userSelectionModel);
     }
 
     // This method is called from the logic so it is possible to load the table with data from the database
@@ -153,8 +150,4 @@ public class StatisticsAdminView extends Composite {
         // Setting the size of the column.
         dataGrid.setColumnWidth(hoursColumn, 4, Unit.PX);
     }
-
-    /*public SingleSelectionModel<User> getUserSelectionModel() {
-        return userSelectionModel;
-    }*/
 }

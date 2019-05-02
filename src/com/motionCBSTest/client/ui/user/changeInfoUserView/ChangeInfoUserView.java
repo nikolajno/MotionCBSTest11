@@ -32,12 +32,10 @@ public class ChangeInfoUserView extends Composite {
         initWidget(ourUiBinder.createAndBindUi(this));
     }
 
-
     // This method is adding the click handler to the change profile button
     public void addClickHandlers(ClickHandler clickHandler) {
         changeProfileBtn.addClickHandler(clickHandler);
     }
-
 
     // This method is used to set all the widgets with the current users information
     public void setProfileChanges(User user) {
@@ -64,7 +62,6 @@ public class ChangeInfoUserView extends Composite {
             newStramopBtn.setValue(true);
             newStramopBtn.setEnabled(true);
         }
-
     }
 
     // Getters

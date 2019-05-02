@@ -25,6 +25,7 @@ public class AdminController {
     private ListDataProvider<User> listProviderParttime;
     private ListDataProvider<User> listProviderFulltime;
 
+    // The admincontrollers constructor
     public AdminController(ContentPanel content, MotionCBSTestServiceAsync motionCBSTestServiceAsync) {
         this.content = content;
         this.mainAdminView = content.getMainAdminView();
@@ -99,7 +100,6 @@ public class AdminController {
         mainAdminView.getChangeInfoAdminView().addClickHandlers(new ChangeInfoHandler());
         mainAdminView.getTrainerStatusView().addDeleteClickHandler(new DeleteUserHandler());
         mainAdminView.getTrainerStatusView().addApproveClickHandler(new ApproveUserHandler());
-
     }
 
     // This inner class create an ActionCell that shows all information about a specific user
@@ -159,7 +159,7 @@ public class AdminController {
         }
     }
 
-    // This is used for the TabLayoutPanel. The panel that can show either fuldtid or deltid. If this isn't used it is
+    // This is used for the TabLayoutPanel. The panel that can show either part time or full time. If this isn't used it is
     // likely that the DataGrids will show up empty. Mark that this isn't ClickHandler but a SelectionHandler instead
     class StatisticTypeHandler implements SelectionHandler<Integer> {
 
@@ -306,10 +306,8 @@ public class AdminController {
 
                             Window.alert("User was successfully approved!");
                         }
-
                     }
                 });
         }
     }
-
 }

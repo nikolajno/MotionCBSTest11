@@ -65,7 +65,7 @@ public class ChangeInfoAdminView extends Composite {
         // Creating all the necessary columns to the table
         initTableColumns(sortHandler);
 
-        // Adding the data grid to the DataProvider. The DataProvider is containing a List with all the data
+        // Adding the data grid to the DataProvider
         dataProvider.addDataDisplay(dataGrid);
     }
 
@@ -75,7 +75,7 @@ public class ChangeInfoAdminView extends Composite {
 
         // In this next lines the user id column will be explained in details
 
-        // The user id column is created. Remark that when it is a cell it isn't a IntegerCell but a NumberCell.
+        // The user id column is created. When it is a cell it isn't a IntegerCell but a NumberCell.
         Column<User, Number> userIdColumn = new Column<User, Number>(new NumberCell()) {
             @Override
             public Number getValue(User object) {

@@ -10,14 +10,10 @@ import com.google.gwt.user.client.ui.*;
 public class LoginView extends Composite {
 
     private static loginViewUiBinder UiBinder = GWT.create(loginViewUiBinder.class);
-    @UiField
-    TextBox mobilenrTxtBox;
-    @UiField
-    PasswordTextBox passwordTxtBox;
-    @UiField
-    Button loginBtn;
-    @UiField
-    Button registerBtn;
+    @UiField TextBox mobilenrTxtBox;
+    @UiField PasswordTextBox passwordTxtBox;
+    @UiField Button loginBtn;
+    @UiField Button registerBtn;
 
     interface loginViewUiBinder extends UiBinder<HTMLPanel, LoginView> {}
 
