@@ -76,13 +76,6 @@ public class UserController {
                 mainUserView.getChangeInfoUserView().setProfileChanges(currentUser);
                 mainUserView.changeView(mainUserView.getChangeInfoUserView());
             } else if (event.getSource() == mainUserView.getLogoutBtn()) {
-                /*
-                 * When a user is logged out it:
-                 * 1) Changing to the login view
-                 * 2) Clearing the List of users in the DataProvider
-                 * 3) Clearing the List of messages in the DataProvider
-                 * 4) Clearing the current user by setting it to null
-                 */
                 content.changeView(content.getLoginView());
                 listProviderUsers.getList().clear();
                 currentUser = null;
@@ -108,7 +101,7 @@ public class UserController {
             currentUser.setHoursPrWeek(mainUserView.getChangeInfoUserView().getTxtHoursPrWeek().getTabIndex());
             currentUser.setPassword(mainUserView.getChangeInfoUserView().getTxtPassword().getText());
 
-            // Here we check witch of the radiobuttons the current user chose and then set it
+            // Here we check which of the radiobuttons the current user choose and then set it
             int teamtype_teamID = 0;
 
                 if (content.getMainUserView().getChangeInfoUserView().getNewCrossfitBtn().isChecked()) {
@@ -125,7 +118,6 @@ public class UserController {
                 }
 
             currentUser.setTeamtype_teamID(teamtype_teamID);
-
 
             // The RPC call which through the server updates the user info in the users table in the database
             motionCBSTestServiceAsync.changeUserInfo(currentUser, new AsyncCallback<Boolean>() {
@@ -144,10 +136,8 @@ public class UserController {
                     } else {
                         Window.alert("Could not make changes");
                     }
-
                 }
             });
         }
     }
-
 }
