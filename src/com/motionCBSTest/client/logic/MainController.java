@@ -1,5 +1,4 @@
 package com.motionCBSTest.client.logic;
-//Hej Christian :)
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
