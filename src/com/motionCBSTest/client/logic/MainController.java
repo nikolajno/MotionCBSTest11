@@ -34,7 +34,6 @@ public class MainController {
         content.getLoginView().getRegisterBtn().addClickHandler(new RegisterBtnClickHandler());
         content.getRegisterView().getRegisterBtn().addClickHandler(new RegisterClickHandler());
         content.getRegisterView().getGobackBtn().addClickHandler(new GoBack());
-
     }
 
     //Our LoginClickHandler creates a onClick event that either; redirects the user to the respective view,
@@ -44,15 +43,12 @@ public class MainController {
         @Override
         public void onClick(ClickEvent event) {
 
-
             // Getting the text from the two text boxes on the login screen
             String mobileNr = content.getLoginView().getMobilenrTxtBox().getText();
             String password = content.getLoginView().getPasswordTxtBox().getText();
 
                 // RPC authenticating user method
                 motionCBSTestService.authorizeUser(mobileNr, password, new AsyncCallback<User>() {
-
-
 
                     @Override
                     public void onFailure(Throwable caught) {
