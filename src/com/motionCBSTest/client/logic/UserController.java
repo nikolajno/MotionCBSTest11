@@ -28,7 +28,7 @@ public class UserController {
 
         bindHandlers();
 
-        listProviderUsers = new ListDataProvider<>();
+        listProviderUsers = new ListDataProvider<User>();
         mainUserView.getTableUserView().initUsersTable(listProviderUsers);
     }
 
